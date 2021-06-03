@@ -41,7 +41,7 @@ function Empresas(props) {
         }}>Eliminar</button>
     </li>));
 
-    return (<div className=" pt-3">
+    return (<div className="fondopantalla">
         <h1 className="mb-5 text-center viajes">Empresas</h1>
 
         <Link className="btn btn-primary mb-5 text-center boton" to="/empresas/nueva">Crear nueva empresa</Link>

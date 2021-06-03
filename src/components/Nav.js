@@ -31,6 +31,12 @@ const Nav = () => {
       <a className="menu-item" href="/empresaspanel">
         Panel empresas
       </a>
+      <a className="menu-item" href="/viajesusuarios">
+        Viajes
+      </a>
+      <a className="menu-item" href="/viajes">
+        Panel viajes
+      </a>
     </Menu>
     </div>
   );

@@ -1321,6 +1321,9 @@ img {
   height: 30px;
   left: 36px;
   top: 36px;
+  background: #ecd96a;
+  border: 2px #ecd96a solid;
+  border-radius: 2px;
 }
 
 .bm-burger-bars {
