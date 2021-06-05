@@ -18,7 +18,7 @@ function Home() {
 return (<div className="fondopantalla">
 
         <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
                 <img
                 className="d-block w-100"
                 src={playa2}
@@ -29,7 +29,7 @@ return (<div className="fondopantalla">
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
                 <img
                 className="d-block w-100"
                 src={playa1}
@@ -41,7 +41,7 @@ return (<div className="fondopantalla">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
                 <img
                 className="d-block w-100"
                 src={playa3}

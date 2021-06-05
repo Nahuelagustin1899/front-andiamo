@@ -4,6 +4,7 @@ import Cargando from "../components/Cargando";
 import viajesService from "./../services/viajes";
 
 
+
 function ViajesUsuarios() {
     const [viajes, setViajes] = useState([]);
     const [cargando, setCargando] = useState(true); 
@@ -19,7 +20,6 @@ function ViajesUsuarios() {
 
     return (<div className="fondopantalla">
         <h1 className="mb-5 viajes">Viajes</h1>
-
                 {cargando ?
                 <Cargando/> :
                 (<ul className="container-fluid">

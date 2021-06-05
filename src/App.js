@@ -10,6 +10,7 @@ import NuevasEmpresas from "./views/NuevasEmpresas";
 import ViajesUsuarios from "./views/ViajesUsuarios";
 import Viajes from "./views/Viajes";
 import NuevosViajes from "./views/NuevosViajes";
+import Login from "./views/Login";
 /* Components */
 import Nav from "./components/Nav";
 
@@ -69,6 +70,14 @@ function App() {
     });
   };
 
+  const handleLogin = data => {
+    setNotification({
+        type: 'success',
+        text: 'Iniciaste sesión con éxito',
+        title: 'Éxito'
+    });
+};
+
 
   return (
     <div className="App">
@@ -101,7 +110,12 @@ function App() {
               <NuevasEmpresas
                 notExitosa={handleEmpresaCreada}
               />
-            </Route>   
+            </Route>
+            <Route path="/iniciar-sesion">
+              <Login 
+                notExitosa={handleLogin}
+              />
+            </Route>
             <Route path="/empresasusuarios" component={EmpresasUsuarios}/>
             <Route path="/" exact component={Home}/>
             <Route path="/blog" component={Blog} />

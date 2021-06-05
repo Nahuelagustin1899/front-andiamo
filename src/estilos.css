@@ -1315,6 +1315,10 @@ img {
 
 /* Menu Hamburguesa */
 
+    .btn-link{
+        color: blue;
+    }
+
 .bm-burger-button {
   position: fixed;
   width: 36px;

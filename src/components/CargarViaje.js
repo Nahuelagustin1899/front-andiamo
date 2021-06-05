@@ -7,7 +7,7 @@ import * as yup from "yup";
 
 const validateSchema = yup.object().shape({
     
-    empresa_id: yup.number().typeError('La empresa no puede estar vacia'),
+   /*  empresa_id: yup.number().typeError('La empresa no puede estar vacia'), */
     salida_id: yup.number().typeError('La salida no puede estar vacia'),
     destino_id: yup.number().typeError('El destino no puede estar vacio'),
     fecha_salida: yup.date().typeError('La fecha de salida no puede estar vacia'),
@@ -116,7 +116,7 @@ function CargarViaje(props) {
     return (<form onSubmit={handleSubmit}>
             
 
-            <div className="form-group">
+           {/*  <div className="form-group">
                 <label htmlFor="empresa_id"><b>Empresa</b></label>
                 <input
                     type="text"
@@ -132,7 +132,7 @@ function CargarViaje(props) {
                         <div className="alert alert-danger">{errores.empresa_id[0]}</div>
                     ) : null
                 }
-            </div>
+            </div> */}
 
             <div className="form-group">
                 <label htmlFor="salida_id"><b>Estacion de salida</b></label>
@@ -151,6 +151,27 @@ function CargarViaje(props) {
                     ) : null
                 }
             </div>
+
+            {/* <div className="form-group">
+                <label htmlFor="empresa_id"><b>Empresa</b></label>
+                <select className="form-control" 
+                        id="empresa_id"
+                        value={viaje.empresa_id}
+                        onChange={handleChange}
+                        type="text"
+                        name="empresa_id">
+                <option>Chevallier</option>
+                <option>Plusmar</option>
+                <option>Cata</option>
+                <option>Flecha Bus</option>
+                <option>Ruta Atlántica</option>
+                </select>
+                {
+                    errores.empresa_id ? (
+                        <div className="alert alert-danger">{errores.empresa_id[0]}</div>
+                    ) : null
+                }
+            </div> */}
 
             <div className="form-group">
                 <label htmlFor="destino_id"><b>Estacion de destino</b></label>
