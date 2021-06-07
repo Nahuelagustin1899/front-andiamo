@@ -397,6 +397,14 @@ img {
         border: 2px solid black;
     }
 
+    .verde{
+        width: 12em;
+        height: 3em;
+        border: 2px solid black;
+        margin: auto;
+        display: block;
+    }
+
     .disp{
         background-color: #ffc107;
         display: inline-block;

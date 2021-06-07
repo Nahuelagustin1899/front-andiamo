@@ -1,7 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Cargando from "../components/Cargando";
+import Viaje from "../components/Viaje";
 import viajesService from "./../services/viajes";
+import {useHistory} from "react-router-dom";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -9,9 +13,17 @@ function ViajesUsuarios() {
     const [viajes, setViajes] = useState([]);
     const [cargando, setCargando] = useState(true); 
 
+    const history = useHistory();
+    
+
+    function handleClick(e,viaje) {    
+        e.preventDefault(); 
+        console.log(viaje);   
+        history.push('/carrito', {viaje : viaje});  }
 
     useEffect(() => {
         (async () => {
+            
             const data = await viajesService.index();
             setViajes(data);
             setCargando(false);
@@ -24,18 +36,7 @@ function ViajesUsuarios() {
                 <Cargando/> :
                 (<ul className="container-fluid">
 
-                  {viajes.map(viaje => (
-                    <li className="listadoviajes bordes mb-4" key={viaje.id}>
-                        <h2 className="nombreviaje white">{viaje.salida.nombre} a {viaje.destino.nombre}
-                        </h2>
-                        <span className="salida"> <b className="mr-1">Empresa:</b> {viaje.empresa.nombre}</span>
-                        <span className="llegada"> <b className="mr-1">Hora salida:</b> {viaje.fecha_salida}</span>
-                        <span className="llegada"> <b className="mr-1">Hora llegada:</b> {viaje.fecha_llegada}</span>
-                        <span className="precio"><b className="mr-1">Precio: $ </b> {viaje.precio}</span>
-                        <span className="precio"><b className="mr-1">Asientos:</b> {viaje.cantidad_asientos}</span>
-                    </li>
-                    
-                    ))}
+                  {viajes.map(viaje => ( <Viaje viaje = {viaje} handleClick = {handleClick}/>))}
 
                 </ul>)}      
 

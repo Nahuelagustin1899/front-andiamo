@@ -1,5 +1,6 @@
 
 import {Route, Switch, BrowserRouter } from "react-router-dom";
+import React, {useState} from 'react';
 
 /* Views */
 import Home from "./views/Home";
@@ -11,9 +12,12 @@ import ViajesUsuarios from "./views/ViajesUsuarios";
 import Viajes from "./views/Viajes";
 import NuevosViajes from "./views/NuevosViajes";
 import Login from "./views/Login";
+import ElegirAsiento from "./views/ElegirAsiento";
+
 /* Components */
 import Nav from "./components/Nav";
-
+import authService, {AuthContext} from "./services/auth";
+import AuthRoute from "./components/AuthRoute";
 /* Hooks */
 import {useNotification} from "./hooks";
 
@@ -21,6 +25,7 @@ import {useNotification} from "./hooks";
 function App() {
 
   const [Notification, setNotification] = useNotification();
+  const [authUser, setAuthUser] = useState(authService.getUserData());
 
   const handleEmpresaEliminada = data => {
     setNotification({
@@ -80,14 +85,25 @@ function App() {
 
 
   return (
+
+    <AuthContext.Provider value={{
+      user: authUser,
+      
+      updateAuthData(data) {
+          setAuthUser(data);
+      }}}>
+        
     <div className="App">
       <div className="pt-3">
         <Nav/>
         {
          (Notification)
         }
-      <BrowserRouter>
+        <BrowserRouter>
         <Switch>
+            <AuthRoute path="/carrito">
+               <ElegirAsiento  component={ElegirAsiento} />
+            </AuthRoute>
             <Route path="/viajes/nueva" >
               <NuevosViajes
                 notExitosa={handleViajeCreada}
@@ -120,10 +136,12 @@ function App() {
             <Route path="/" exact component={Home}/>
             <Route path="/blog" component={Blog} />
         </Switch>
-      </BrowserRouter>
+        </BrowserRouter>
+
       </div>
       
     </div>
+    </AuthContext.Provider>
   );
 }
 

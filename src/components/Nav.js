@@ -57,19 +57,36 @@ const Nav = (props) => {
       <a className="menu-item" href="/empresasusuarios">
         Empresas
       </a>
-      <a className="menu-item" href="/empresaspanel">
+      {
+      authData.user.id == 1 ? 
+      (<>
+      <a className="menu-item bm-item" href="/empresaspanel">
         Panel empresas
       </a>
+      </>) :
+       (<>
+                          
+      </>)
+                      
+      }
       <a className="menu-item" href="/viajesusuarios">
         Viajes
       </a>
-      <a className="menu-item" href="/viajes">
+      {
+      authData.user.id == 2 ? 
+      (<>
+      <a className="menu-item bm-item" href="/viajes">
         Panel viajes
       </a>
+      </>) :
+       (<>
+                          
+      </>)
+      }
       {
       authData.user.id === null ?
             (<>
-              <a className="menu-item" href="/iniciar-sesion">Iniciar Sesión</a>
+              <a className="menu-item bm-item" href="/iniciar-sesion">Iniciar Sesión</a>
                             
             </>) :
                         
