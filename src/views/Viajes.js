@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import {useHistory} from "react-router-dom";
 import { ImOffice } from "react-icons/im";
 import Table from 'react-bootstrap/Table';
+import {format} from 'date-fns';
 
 
 
@@ -82,8 +83,10 @@ function Viajes(props) {
                         <tbody>
                         <tr className="row">
                         <td className="col-4 text-center colortd">{item.empresa.nombre}</td>
-                        <td className="col-4 text-center colortd">{item.fecha_salida}</td>
-                        <td className="col-4 text-center colortd ">{item.fecha_llegada}</td>
+                        <td className="col-4 text-center colortd">{format(new Date
+                        (item.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
+                        <td className="col-4 text-center colortd ">{format(new Date
+                        (item.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
                         </tr>
                         </tbody>
                         </Table>

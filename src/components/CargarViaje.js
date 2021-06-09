@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import viajesService from "./../services/viajes";
 import Cargando from "./Cargando";
 import { useHistory } from "react-router-dom";
@@ -29,7 +29,33 @@ function CargarViaje(props) {
         
     }
 
+    const[empresas, setEmpresas] = useState();
+    useEffect(() => {
+        (async () => {
+            
+            const data = await viajesService.indexTraerSelect();
+            console.log(data);
+            setEmpresas(data);
+            
+
+        })().catch(err => console.log("Error al traer los viajes: ", err));
+    }, []);
+    
+    const[estaciones, setEstaciones] = useState();
+    useEffect(() => {
+        (async () => {
+            
+            const data = await viajesService.indexTraerSelect2();
+            console.log(data);
+            setEstaciones(data);
+            
+
+        })().catch(err => console.log("Error al traer los viajes: ", err));
+    }, []);
+
+    
     const [errores, setErrores] = useState({ErroresTotales});
+
     const[viaje, setViajes] = useState({
         empresa_id: "",
         salida_id: "",
@@ -116,35 +142,40 @@ function CargarViaje(props) {
     return (<form onSubmit={handleSubmit}>
             
 
-           {/*  <div className="form-group">
+            <div className="form-group">
                 <label htmlFor="empresa_id"><b>Empresa</b></label>
-                <input
-                    type="text"
-                    id="empresa_id"
+
+                <select id="empresa_id"
                     name="empresa_id"
-                    placeholder="Tendra que poner el número 1 que le corresponde a Ruta Atlántica"
                     className="form-control"
-                    value={viaje.empresa_id}
-                    onChange={handleChange}
-                />
+                    
+                    onChange={handleChange}>
+
+                {empresas && empresas.map((empresa, key) => (
+                <option value={empresa.id}>{empresa.nombre}</option>
+                ))}
+                
+                </select>
+
                 {
                     errores.empresa_id ? (
                         <div className="alert alert-danger">{errores.empresa_id[0]}</div>
                     ) : null
                 }
-            </div> */}
+            </div>
 
             <div className="form-group">
                 <label htmlFor="salida_id"><b>Estacion de salida</b></label>
-                <input
-                    type="text"
-                    id="salida_id"
+                <select id="salida_id"
                     name="salida_id"
-                    placeholder="Estacion de salida"
                     className="form-control"
-                    value={viaje.salida_id}
-                    onChange={handleChange}
-                />
+                    onChange={handleChange}>
+
+                {estaciones && estaciones.map((estacion, key) => (
+                <option value={estacion.id}>{estacion.nombre}</option>
+                ))}
+                
+                </select>
                 {
                     errores.salida_id ? (
                         <div className="alert alert-danger">{errores.salida_id[0]}</div>
@@ -152,38 +183,19 @@ function CargarViaje(props) {
                 }
             </div>
 
-            {/* <div className="form-group">
-                <label htmlFor="empresa_id"><b>Empresa</b></label>
-                <select className="form-control" 
-                        id="empresa_id"
-                        value={viaje.empresa_id}
-                        onChange={handleChange}
-                        type="text"
-                        name="empresa_id">
-                <option>Chevallier</option>
-                <option>Plusmar</option>
-                <option>Cata</option>
-                <option>Flecha Bus</option>
-                <option>Ruta Atlántica</option>
-                </select>
-                {
-                    errores.empresa_id ? (
-                        <div className="alert alert-danger">{errores.empresa_id[0]}</div>
-                    ) : null
-                }
-            </div> */}
-
             <div className="form-group">
                 <label htmlFor="destino_id"><b>Estacion de destino</b></label>
-                <input
-                    type="text"
-                    id="destino_id"
+                <select id="destino_id"
                     name="destino_id"
-                    placeholder="Estacion de salida"
                     className="form-control"
-                    value={viaje.destino_id}
-                    onChange={handleChange}
-                />
+                    onChange={handleChange}>
+
+                {estaciones && estaciones.map((estacion, key) => (
+                <option value={estacion.id}>{estacion.nombre}</option>
+                ))}
+                
+                </select>
+                
                 {
                     errores.destino_id ? (
                         <div className="alert alert-danger">{errores.destino_id[0]}</div>

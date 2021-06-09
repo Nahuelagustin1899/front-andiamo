@@ -13,6 +13,8 @@ import Viajes from "./views/Viajes";
 import NuevosViajes from "./views/NuevosViajes";
 import Login from "./views/Login";
 import ElegirAsiento from "./views/ElegirAsiento";
+import Pago from "./views/Pago";
+import Perfil from "./views/Perfil";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -101,6 +103,9 @@ function App() {
         }
         <BrowserRouter>
         <Switch>
+            <AuthRoute path="/checkout" >
+               <Pago  exact component={Pago}/>
+            </AuthRoute>
             <AuthRoute path="/carrito">
                <ElegirAsiento  component={ElegirAsiento} />
             </AuthRoute>
@@ -132,6 +137,9 @@ function App() {
                 notExitosa={handleLogin}
               />
             </Route>
+            <AuthRoute path="/perfil" >
+                <Route  exact component={Perfil}/>
+            </AuthRoute>
             <Route path="/empresasusuarios" component={EmpresasUsuarios}/>
             <Route path="/" exact component={Home}/>
             <Route path="/blog" component={Blog} />

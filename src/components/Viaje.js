@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import {format} from 'date-fns';
 
 export default function Viaje(props) {
 
@@ -18,8 +19,9 @@ const handleShow = () => setShow(true);
                         <h2 className="nombreviaje white">{viaje.salida.nombre} a {viaje.destino.nombre}
                         </h2>
                         <span className="salida"> <b className="mr-1">Empresa:</b> {viaje.empresa.nombre}</span>
-                        <span className="llegada"> <b className="mr-1">Hora salida:</b> {viaje.fecha_salida}</span>
-                        <span className="llegada"> <b className="mr-1">Hora llegada:</b> {viaje.fecha_llegada}</span>
+                        <span className="llegada"> <b className="mr-1">Fecha salida:</b> {format(new Date(viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</span>
+                        <span className="llegada"> <b className="mr-1">Fecha llegada:</b> {format(new Date
+                        (viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</span>
                         <span className="precio"><b className="mr-1">Precio: $ </b> {viaje.precio}</span>
                         <span className="precio"><b className="mr-1">Asientos:</b> {viaje.cantidad_asientos}</span>
                         <div>
@@ -32,7 +34,13 @@ const handleShow = () => setShow(true);
                                 <Modal.Header closeButton>
                                 <Modal.Title>{viaje.nombre} ${viaje.precio}</Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body><b>Salida:</b> {viaje.fecha_salida} {viaje.fecha_llegada}<br></br><br></br><b>Empresa: </b>{viaje.empresa.nombre}<br></br><br></br>
+                                <Modal.Body>
+                                 <b>Salida:</b> {format(new Date(viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}
+                                 <br></br><br></br>
+                                 <b>Llegada:</b> {format(new Date(viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}
+                                 <br></br><br></br>
+                                 <b>Empresa: </b>{viaje.empresa.nombre}
+                                 <br></br><br></br>
                                 ¿Estás seguro que queres reservar este pasaje?</Modal.Body>
                                 <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>

@@ -31,6 +31,33 @@ const viajesService = {
         return viajes;
     },
 
+    async indexTraerSelect() {
+      
+        const fetchRes = await fetch(API + '/viaje/index/select', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        const response = await fetchRes.json();
+        viajes = response.data;
+        return viajes;
+    },
+
+    async indexTraerSelect2() {
+      
+        const fetchRes = await fetch(API + '/viaje/index/select2', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        const response = await fetchRes.json();
+        viajes = response.data;
+        return viajes;
+    },
+
+
     async delete(id) {
         const response = await fetch(API + '/viaje/' + id, {
             method: 'DELETE',

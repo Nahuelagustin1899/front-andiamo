@@ -28,6 +28,7 @@ const Nav = (props) => {
                     rol: null,
                     email: null,
                     name:null,
+                    logo:null,
                 });
                 if(typeof props.notExitosa === "function") {
                     props.notExitosa({
@@ -50,6 +51,9 @@ const Nav = (props) => {
     <Menu noOverlay onStateChange={toggleMenu}>
       <a className="menu-item" href="/">
         Home
+      </a>
+      <a className="menu-item" href="/perfil">
+        Perfil
       </a>
       <a className="menu-item" href="/blog">
         Blog

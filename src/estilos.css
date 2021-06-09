@@ -371,7 +371,7 @@ img {
     }
 
     .perfileshr{
-        border: 2px solid #131311;
+        border: 3px solid #131311;
     }
 
     .asientos-borde{
@@ -447,7 +447,6 @@ img {
     .carrito-boton{
         display: block;
         margin: auto;
-        width: 30%;
         margin-top: 3em;
     }
 

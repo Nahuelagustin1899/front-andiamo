@@ -23,9 +23,7 @@ function ElegirAsiento() {
           }, [location]);       
 
             
-            
-
-
+          
     return (<Fragment>{location && location.state && <div className='pt-3 mb-5'>
     <h1 className="text-center mt-5 mb-5 nuevo"><b>Elegí tu asiento para viajar</b></h1>
     
@@ -43,8 +41,8 @@ function ElegirAsiento() {
             variant="success">{location.state.viaje.cantidad_asientos} 
             </Button>                                          
     
- </span>
-         <Asientos reservados = {reservados}/>        
+    </span>
+         <Asientos viaje_id = {location.state.viaje.id} reservados = {reservados}/>        
     </div> 
 
 </div>}</Fragment>

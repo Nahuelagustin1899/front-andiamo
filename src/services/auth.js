@@ -5,7 +5,8 @@ let userData = {
     id: null,
     rol: null,
     email: null,
-    name:null
+    name:null,
+    logo:null
 };
 
 if(localStorage.getItem('user') !== null) {
@@ -55,6 +56,7 @@ const authService = {
                 rol: null,
                 email: null,
                 name: null,
+                logo:null,
             };
             localStorage.removeItem('user');
             return true; 

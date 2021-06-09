@@ -1,7 +1,7 @@
 
 import {API, FETCH_HEADERS} from "./../constants";
 
-let compras = [];
+let reservas = [];
 
 const reservasService = {
     
@@ -15,8 +15,22 @@ const reservasService = {
             credentials: 'include'
         });
         const response = await fetchRes.json();
-        compras = response.data;
-        return compras;
+        reservas = response.data;
+        return reservas;
+    },
+
+    async index() {
+      
+        const fetchRes = await fetch(API + '/reserva/index', {
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            credentials: 'include'
+        });
+        const response = await fetchRes.json();
+        reservas = response.data;
+        return reservas;
     },
 
 
