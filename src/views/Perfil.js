@@ -1,8 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
-import authService, {AuthContext} from "../services/auth";
+import {AuthContext} from "../services/auth";
 import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
-import tevez from '../img/tevez.png';
 import {format} from 'date-fns';
 
 function Perfil() {

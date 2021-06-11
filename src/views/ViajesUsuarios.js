@@ -4,8 +4,6 @@ import Cargando from "../components/Cargando";
 import Viaje from "../components/Viaje";
 import viajesService from "./../services/viajes";
 import {useHistory} from "react-router-dom";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 
 

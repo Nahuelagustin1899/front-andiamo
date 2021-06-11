@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button'
-import {useHistory, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import { GiSteeringWheel } from 'react-icons/gi';
 import reservasService from '../services/reservas';
 import Asientos from "./../components/Asientos";

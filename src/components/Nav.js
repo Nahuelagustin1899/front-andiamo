@@ -3,7 +3,6 @@ import { fallDown as Menu } from "react-burger-menu";
 import bus from '../img/bus.png';
 import authService, {AuthContext} from "../services/auth";
 import { GiExitDoor } from 'react-icons/gi';
-import { NavLink } from "react-router-dom";
 
 
 
@@ -62,7 +61,7 @@ const Nav = (props) => {
         Empresas
       </a>
       {
-      authData.user.id == 1 ? 
+      authData.user.id === 1 ? 
       (<>
       <a className="menu-item bm-item" href="/empresaspanel">
         Panel empresas
@@ -77,7 +76,7 @@ const Nav = (props) => {
         Viajes
       </a>
       {
-      authData.user.id == 2 ? 
+      authData.user.id === 2 ? 
       (<>
       <a className="menu-item bm-item" href="/viajes">
         Panel viajes

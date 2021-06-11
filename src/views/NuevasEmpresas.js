@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CargarEmpresa from "./../components/CargarEmpresa";
 
 function NuevasEmpresas(props) {

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import playa2 from '../img/playa2.jpg';
 import playa1 from '../img/playa1.jpg';
 import playa3 from '../img/playa3.jpg';
-import barco from '../img/barco.jpg';
 import clemente from '../img/clemente.jpg';
 import clemente2 from '../img/clemente2.jpg';
 import Carousel from 'react-bootstrap/Carousel';
