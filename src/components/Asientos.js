@@ -17,7 +17,7 @@ function Asientos(props) {
     const handleClick = ev => {
         ev.preventDefault();  
         if(select){
-            fetch('http://127.0.0.1:8000/api/reserva/store', {
+            fetch('https://andiamo-back.herokuapp.com/api/reserva/store', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -37,7 +37,6 @@ function Asientos(props) {
     function validarAsiento(index){
        const reservasx = props.reservados.filter(el => el.asiento_reservado === index.toString());
        return reservasx.length > 0 
-
     }
 
     return (

@@ -5,7 +5,7 @@ import Cargando from "../components/Cargando";
 
 function EmpresasUsuarios() {
 
-    const urlbase = "http://localhost:8000/imgs/empresas/logos/" ;
+    const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/" ;
     const [empresas, setEmpresas] = useState([]);
     const [cargando, setCargando] = useState(true);
 
