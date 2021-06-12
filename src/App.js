@@ -107,42 +107,42 @@ function App() {
                <Pago  exact component={Pago}/>
             </AuthRoute>
             <AuthRoute path="/carrito">
-               <ElegirAsiento  component={ElegirAsiento} />
+               <ElegirAsiento exact component={ElegirAsiento} />
             </AuthRoute>
             <Route path="/viajes/nueva" >
-              <NuevosViajes
+              <NuevosViajes exact
                 notExitosa={handleViajeCreada}
               />
             </Route>
             <Route path="/viajes" component={Viajes}> 
-              <Viajes 
+              <Viajes exact
                 notExitosaEliminar={handleEmpresaEliminada}
                 notDenegadaEliminar={handleEmpresaErrorEliminar}
               />
             </Route>
-            <Route path="/viajesusuarios" component={ViajesUsuarios}/>
+            <Route exact path="/viajesusuarios" component={ViajesUsuarios}/>
             <Route path="/empresaspanel"> 
-              <Empresas 
+              <Empresas exact
                 notExitosaEliminar={handleViajeEliminado}
                 notDenegadaEliminar={handleViajeErrorEliminar}
               />
             </Route>
             <Route path="/empresas/nueva"> 
-              <NuevasEmpresas
+              <NuevasEmpresas exact
                 notExitosa={handleEmpresaCreada}
               />
             </Route>
             <Route path="/iniciar-sesion">
-              <Login 
+              <Login exact
                 notExitosa={handleLogin}
               />
             </Route>
             <AuthRoute path="/perfil" >
-                <Route  exact component={Perfil}/>
+                <Perfil exact component={Perfil}/>
             </AuthRoute>
-            <Route path="/empresasusuarios" component={EmpresasUsuarios}/>
+            <Route exact path="/empresasusuarios" component={EmpresasUsuarios}/>
             <Route path="/" exact component={Home}/>
-            <Route path="/blog" component={Blog} />
+            <Route exact path="/blog" component={Blog} />
         </Switch>
         </BrowserRouter>
 
