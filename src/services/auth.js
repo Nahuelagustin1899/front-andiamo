@@ -30,8 +30,7 @@ const authService = {
             method: 'post',
             body: JSON.stringify(credenciales),
          
-            credentials: "include",
-            mode: 'no-cors'
+            credentials: "include"
         });
         const respuesta = await rta.json();
         if(respuesta.success) {
@@ -48,8 +47,7 @@ const authService = {
         const rta = await fetch(API + '/auth/logout', {
             headers: FETCH_HEADERS,
             method: 'post',
-            credentials: "include",
-            mode: 'no-cors'
+            credentials: "include"
         });
         const respuesta = await rta.json();
         if(respuesta.success) {
