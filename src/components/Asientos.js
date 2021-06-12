@@ -17,7 +17,7 @@ function Asientos(props) {
     const handleClick = ev => {
         ev.preventDefault();  
         if(select){
-            fetch('https://andiamo-back.herokuapp.com/reserva/store', {
+            fetch('https://andiamo-back.herokuapp.com/api/reserva/store', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

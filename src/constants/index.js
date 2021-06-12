@@ -1,5 +1,5 @@
 
-export const API = "https://andiamo-back.herokuapp.com/";
+export const API = "https://andiamo-back.herokuapp.com/api";
 export const FETCH_HEADERS = {
     'Content-Type': 'application/json',
     

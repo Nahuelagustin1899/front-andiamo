@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 function Empresas(props) {
-  const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/" ;
+  const urlbase = "https://andiamo-back.herokuapp.com/api/imgs/empresas/logos/" ;
 
     const [empresas, setEmpresas] = useState([]);
     const [cargando, setCargando] = useState(true);
