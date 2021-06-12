@@ -9,7 +9,8 @@ const empresasService = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const fetchData = await response.json();
         empresas = fetchData.data;
@@ -20,7 +21,8 @@ const empresasService = {
         const response = await fetch(API + '/empresa/' + id, {
             method: 'DELETE',
             headers: FETCH_HEADERS,
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const fetchData = await response.json();
         if(!fetchData.success) {
@@ -34,7 +36,8 @@ const empresasService = {
             method: 'POST',
             body: JSON.stringify(data),
             headers: FETCH_HEADERS,
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const fetchData = await response.json();
         if(!fetchData.success) {

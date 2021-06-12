@@ -12,7 +12,8 @@ const reservasService = {
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         reservas = response.data;
@@ -26,7 +27,8 @@ const reservasService = {
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         reservas = response.data;
