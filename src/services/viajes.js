@@ -11,7 +11,8 @@ const viajesService = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         viajes = response.data;
@@ -24,7 +25,8 @@ const viajesService = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         viajes = response.data;
@@ -37,7 +39,8 @@ const viajesService = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         viajes = response.data;
@@ -50,7 +53,8 @@ const viajesService = {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
         const response = await fetchRes.json();
         viajes = response.data;
@@ -65,7 +69,8 @@ const viajesService = {
                 'Content-Type': 'application/json',
                
                 'X-Requested-With': 'XMLHttpRequest'
-            }
+            },
+            mode: 'no-cors'
         });
         const fetchData = await response.json();
         if(!fetchData.success) {
