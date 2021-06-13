@@ -4,14 +4,12 @@ import Cargando from "../components/Cargando";
 import Viaje from "../components/Viaje";
 import viajesService from "./../services/viajes";
 import {useHistory} from "react-router-dom";
-import Alert from 'react-bootstrap/Alert';
 
 
 
 function ViajesUsuarios() {
     const [viajes, setViajes] = useState([]);
-    const [cargando, setCargando] = useState(true); 
-    const [show, setShow] = useState(true);
+    const [cargando, setCargando] = useState(true);
     const history = useHistory();
     
 
