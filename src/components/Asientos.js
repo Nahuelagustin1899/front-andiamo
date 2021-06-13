@@ -42,7 +42,7 @@ function Asientos(props) {
 
         {
             array20.map((item,index)=> <Button onClick={ () => setSelect(index + 1) } 
-            className="col-3 ml-1"
+            className="amarillos"
             disabled={validarAsiento(index+1)}
             variant={props.reservados && validarAsiento(index+1) ? "danger" : "warning"} >{index + 1 }</Button>)
         }
