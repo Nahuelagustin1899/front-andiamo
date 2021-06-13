@@ -26,6 +26,8 @@ function ElegirAsiento() {
           
     return (<Fragment>{location && location.state && <div className='pt-3 mb-5'>
     <h1 className="text-center mt-5 mb-5 nuevo"><b>Elegí tu asiento para viajar</b></h1>
+
+    <p className="alert-warning font-weigth-bold">Por el dsitanciamiento social, los asientos se dividirán en filas de 3.</p>
     
       <span className="disp">Disponible</span>
       <span className="ocupado">Ocupado</span>
