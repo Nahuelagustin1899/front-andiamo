@@ -26,8 +26,6 @@ function ElegirAsiento() {
           
     return (<Fragment>{location && location.state && <div className='pt-3 mb-5'>
     <h1 className="text-center mt-5 mb-5 nuevo"><b>Elegí tu asiento para viajar</b></h1>
-
-    <p className="alert-warning font-weight-bold p-5">Por el distanciamiento social, los asientos se dividirán en filas de 3.</p>
     
       <span className="disp">Disponible</span>
       <span className="ocupado">Ocupado</span>
@@ -36,14 +34,14 @@ function ElegirAsiento() {
     
      <div className="container asientos-borde">
     <Button className="conductor" disabled="true" variant="info"> <GiSteeringWheel size={40}/></Button>
-    <span>       
+    {/* <span>       
             
             <Button 
             className="verde"
             variant="success">{location.state.viaje.cantidad_asientos} 
             </Button>                                          
     
-    </span>
+    </span> */}
          <Asientos viaje_id = {location.state.viaje.id} reservados = {reservados}/>        
     </div> 
 

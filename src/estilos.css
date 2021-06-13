@@ -359,25 +359,29 @@ img {
         border-radius: 2px;
     }
 
-    .divss{
+    .checkout{
         background-color: #ffd146;
         padding: 1em;
-        margin: auto;
-        margin-bottom: auto;
-        margin-bottom: auto;
         border-radius: 7px;
         margin-bottom: 2em;
-        display: block;
     }
 
     .perfileshr{
         border: 3px solid #131311;
     }
 
+    input:required:valid {
+        border: 2px solid green;
+    }
+
+    input:required:invalid {
+        border: 2px solid red;
+    }
+
     .asientos-borde{
         border: 2px solid #c1ab33;;
-        padding: 2.27em;
-        width: 80%;
+        padding: 2.2em;
+        width: 95%;
         display: block;
         margin: auto;
         box-shadow: 5px 2px 5px 2px #c1ab33;
@@ -448,6 +452,7 @@ img {
         display: block;
         margin: auto;
         margin-top: 3em;
+        width: 60%;
     }
 
     .vermas{

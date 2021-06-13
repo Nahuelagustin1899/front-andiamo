@@ -7,7 +7,7 @@ import {format} from 'date-fns';
 function Perfil() {
 
     const [reservas, setReservas] = useState([]);
-    const urlbase = "http://localhost:8000/imgs/perfiles/logos/" ;
+    const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/" ;
 
 
     useEffect(() => {
