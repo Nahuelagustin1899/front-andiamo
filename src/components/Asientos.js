@@ -20,13 +20,10 @@ function Asientos(props) {
             fetch('https://andiamo-back.herokuapp.com/api/reserva/store', {
             method: 'post',
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest',
             },
-            credentials: 'include',
-            mode: 'no-cors',
-
+            credentials: 'include',    
             body: JSON.stringify({user_id : authData.user.id, viaje_id : props.viaje_id, asiento_reservado : select}),
         });
 
