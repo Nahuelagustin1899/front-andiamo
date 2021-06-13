@@ -391,9 +391,9 @@ img {
     }
 
     .amarillos{
-        width: 3em;
-        height: 3em;
-        margin:1em;
+        width: 2em;
+        height: 2em;
+        margin:0.5em;
         border: 2px solid black;
     }
 
