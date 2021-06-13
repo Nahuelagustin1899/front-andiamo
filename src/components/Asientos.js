@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import {useHistory} from "react-router-dom";
 import {AuthContext} from "../services/auth";
 
-const array20 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
+const array20 = ['1V','2P','3P','4V','5V','6P','7P','8V','9V','10P','11P','12V','13V','14P','15P','16V','17V','18P','19P','20V','21V','22P','23P','24V','25V','26P','27P','28V','29V','30P','31P','32V','33V','34P','35P','36V','37V','38P','39P','40V']
 
 function Asientos(props) {
     const [select, setSelect] = useState();
