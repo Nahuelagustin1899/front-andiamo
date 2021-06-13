@@ -30,7 +30,7 @@ function ViajesUsuarios() {
     return (<div className="fondopantalla">
         <h1 className="mb-5 viajes">Viajes</h1>
 
-        <p className="alert alert-info">Al usuario se le avisa que tendrá que pagar un 25% del pasaje para poder realizar la reserva.</p>
+        <p className="alert alert-info font-weigt-bold">Al usuario se le avisa que tendrá que pagar un 25% del pasaje para poder realizar la reserva.</p>
                 {cargando ?
                 <Cargando/> :
                 (<ul className="container-fluid">
