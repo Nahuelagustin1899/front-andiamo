@@ -25,6 +25,8 @@ function Asientos(props) {
                 'X-Requested-With': 'XMLHttpRequest',
             },
             credentials: 'include',
+            mode: 'no-cors',
+
             body: JSON.stringify({user_id : authData.user.id, viaje_id : props.viaje_id, asiento_reservado : select}),
         });
 
