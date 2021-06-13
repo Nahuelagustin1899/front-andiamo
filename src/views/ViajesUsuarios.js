@@ -4,13 +4,14 @@ import Cargando from "../components/Cargando";
 import Viaje from "../components/Viaje";
 import viajesService from "./../services/viajes";
 import {useHistory} from "react-router-dom";
+import Alert from 'react-bootstrap/Alert';
 
 
 
 function ViajesUsuarios() {
     const [viajes, setViajes] = useState([]);
     const [cargando, setCargando] = useState(true); 
-
+    const [show, setShow] = useState(true);
     const history = useHistory();
     
 
@@ -30,6 +31,8 @@ function ViajesUsuarios() {
 
     return (<div className="fondopantalla">
         <h1 className="mb-5 viajes">Viajes</h1>
+
+        <p className="alert alert-info">Al usuario se le avisa que tendrá que pagar un 25% del pasaje para poder realizar la reserva.</p>
                 {cargando ?
                 <Cargando/> :
                 (<ul className="container-fluid">
