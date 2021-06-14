@@ -20,6 +20,7 @@ import Perfil from "./views/Perfil";
 import Nav from "./components/Nav";
 import authService, {AuthContext} from "./services/auth";
 import AuthRoute from "./components/AuthRoute";
+import Footer from "./components/Footer";
 /* Hooks */
 import {useNotification} from "./hooks";
 
