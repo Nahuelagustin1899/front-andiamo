@@ -1,11 +1,14 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useHistory } from "react-router";
 
 
-const ValidateLoginCheckout = () => (
-  
-    <Formik
+const ValidateLoginCheckout = () => {
+
+  const history = useHistory();
+
+ return  <Formik
       initialValues={{ 
           nombre: "", 
           apellido: "",
@@ -16,12 +19,19 @@ const ValidateLoginCheckout = () => (
           numTarj:"",
           codigo:""
         }}
+        
       onSubmit={(values, { setSubmitting }) => {
+      
+        history.push("/");
         setTimeout(() => {
+          
           console.log("Formulario enviado con éxito", values);
           setSubmitting(false);
+          
         }, 500);
+        
       }}
+      
     
       validationSchema={Yup.object().shape({
           nombre: Yup.string()
@@ -32,19 +42,13 @@ const ValidateLoginCheckout = () => (
           .email("El email no es válido")
           .required("El campo email no puede estar vacío"),
           dni: Yup.number()
-          .required("El campo DNI no puede estar vacío")
-          .min(8, 'El DNI es inválido')
-          .max(8, 'El DNI es inválido'),
+          .required("El campo DNI no puede estar vacío"),
           numTarj: Yup.number()
-          .required("El campo número de tarjeta no puede estar vacío")
-          .min(16, 'El número de tarjeta es inválido')
-          .max(16, 'El número de tarjeta es inválido'),
+          .required("El campo número de tarjeta no puede estar vacío"),
           expiracion: Yup.date()
           .required("El campo fecha de expiración no puede estar vacío"),
           codigo: Yup.number()
-          .required("El campo fecha de expiración no puede estar vacío")
-          .min(3, 'El código de seguridad es inválido')
-          .max(3, 'El código de seguridad es inválido'),      
+          .required("El campo fecha de expiración no puede estar vacío")   
       })}
     >
       
@@ -58,10 +62,10 @@ const ValidateLoginCheckout = () => (
           handleSubmit
         } = props;
 
+     
         
         return (
             
-
           <form onSubmit={handleSubmit}>
             <div className="row global">
                 <div className="col-md-12 mb-3">
@@ -77,7 +81,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.nombre && touched.nombre && (
-                        <div className="alert alert-danger">{errors.nombre}</div>
+                        <div className="alert alert-danger mt-1">{errors.nombre}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -93,7 +97,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.apellido && touched.apellido && (
-                        <div className="alert alert-danger">{errors.apellido}</div>
+                        <div className="alert alert-danger mt-1">{errors.apellido}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -109,7 +113,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.email && touched.email && (
-                        <div className="alert alert-danger">{errors.email}</div>
+                        <div className="alert alert-danger mt-1">{errors.email}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -125,7 +129,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.dni && touched.dni && (
-                        <div className="alert alert-danger">{errors.dni}</div>
+                        <div className="alert alert-danger mt-1">{errors.dni}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -140,7 +144,7 @@ const ValidateLoginCheckout = () => (
                             <option>Entre Ríos</option>
                         </select>
                         {errors.provincia && touched.provincia && (
-                        <div className="alert alert-danger">{errors.provincia}</div>
+                        <div className="alert alert-danger mt-1">{errors.provincia}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -156,7 +160,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.numTarj && touched.numTarj && (
-                        <div className="alert alert-danger">{errors.numTarj}</div>
+                        <div className="alert alert-danger mt-1">{errors.numTarj}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -172,7 +176,7 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.expiracion && touched.expiracion && (
-                        <div className="alert alert-danger">{errors.expiracion}</div>
+                        <div className="alert alert-danger mt-1">{errors.expiracion}</div>
                      )}
                 </div>
                 <div className="col-md-12 mb-3">
@@ -188,19 +192,20 @@ const ValidateLoginCheckout = () => (
                         required
                       />
                       {errors.codigo && touched.codigo && (
-                        <div className="alert alert-danger">{errors.codigo}</div>
+                        <div className="alert alert-danger mt-1">{errors.codigo}</div>
                      )}
                 </div>
             </div>
-
-
-            <button  onClick={handleSubmit} class="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Continuar</button>
+            <button className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Continuar</button>
 
           </form>
         );
       }}
     </Formik>
+
     
-  );
+    
+
+    };
   
   export default ValidateLoginCheckout;

@@ -144,6 +144,7 @@ function App() {
             <Route path="/" exact component={Home}/>
             <Route exact path="/blog" component={Blog} />
         </Switch>
+        <Footer/>
         </BrowserRouter>
 
       </div>
