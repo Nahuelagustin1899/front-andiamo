@@ -5,7 +5,7 @@ function token(){
     var token = localStorage.getItem('user');
     var tokenUser = '';
     if(token !== null){
-      tokenUser =  'bearer' + JSON.parse(localStorage.getItem('user')).token ;
+      tokenUser =  'Bearer' + JSON.parse(localStorage.getItem('user')).token ;
     }
 
     return tokenUser;
