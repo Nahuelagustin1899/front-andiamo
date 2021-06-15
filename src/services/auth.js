@@ -33,8 +33,10 @@ const authService = {
             credentials: "include"
         });
         const respuesta = await rta.json();
+
         if(respuesta.success) {
-        
+            console.log(respuesta);
+            console.log(respuesta.token);
             userData = respuesta.user;
            
             localStorage.setItem('user', JSON.stringify(userData));
