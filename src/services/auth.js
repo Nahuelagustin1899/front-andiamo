@@ -44,7 +44,7 @@ const authService = {
     },
 
     async logout() {
-        dd(FETCH_HEADERS); console.log(typeof FETCH_HEADERS); 
+        console.log(FETCH_HEADERS); console.log(typeof FETCH_HEADERS); 
         const rta = await fetch(API + '/auth/logout', {
             headers: FETCH_HEADERS,
             method: 'post',
