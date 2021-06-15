@@ -49,7 +49,7 @@ const authService = {
         var token = localStorage.getItem('user');
   
         if(token !== null){
-            FETCH_HEADERS.Autorization =  'Bearer' + JSON.parse(localStorage.getItem('user')).token ;
+            FETCH_HEADERS.Autorization =  'Bearer ' + JSON.parse(localStorage.getItem('user')).token ;
         }
         console.log(FETCH_HEADERS); console.log(typeof FETCH_HEADERS); 
         const rta = await fetch(API + '/auth/logout', {
