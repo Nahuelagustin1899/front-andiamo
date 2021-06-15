@@ -1,7 +1,19 @@
 
 export const API = "https://andiamo-back.herokuapp.com/api";
+
+function token(){
+    var token = localStorage.getItem('user');
+    var tokenUser = '';
+    if(token !== null){
+      tokenUser =  'bearer' + JSON.parse(localStorage.getItem('user')).token ;
+    }
+
+    return tokenUser;
+}
+
+
 export const FETCH_HEADERS = {
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest',
-    'Autorization' : JSON.parse(localStorage.getItem('user')).token !== undefined ? 'bearer' + JSON.parse(localStorage.getItem('user')).token : ''
+    'Autorization' : token()
 };
