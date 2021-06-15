@@ -62,7 +62,7 @@ function CargarViaje(props) {
         destino_id: "",
         fecha_salida:"",
         fecha_llegada:"",
-        cantidad_asientos:"20",
+        cantidad_asientos:"40",
         precio:""
 
     });

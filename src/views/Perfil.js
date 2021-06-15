@@ -20,7 +20,7 @@ function Perfil() {
     const lista = reservas && reservas.map(reserva => ( <div key={reserva.id}>
        
 
-            <Table  variant="warning" striped bordered hover   >
+       <Table  variant="warning" striped bordered hover   >
                 <thead>
                     <tr className="row">
                     <th className="col-4 text-center colorth">Nombre</th>
@@ -41,11 +41,15 @@ function Perfil() {
                 <thead>
                     <tr className="row">
                     <th className="col-4 text-center colorth">Precio</th>
+                    <th className="col-4 text-center colorth">Salida</th>
+                    <th className="col-4 text-center colorth">Destino</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="row"> 
                     <td className="col-4 text-center colortd">{reserva.viaje.precio}</td>
+                    <td className="col-4 text-center colortd">{reserva.viaje.salida.nombre}</td>
+                    <td className="col-4 text-center colortd">{reserva.viaje.destino.nombre}</td>
                     </tr>
                 </tbody>
             </Table>
