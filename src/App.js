@@ -18,6 +18,9 @@ import Perfil from "./views/Perfil";
 import SantaTeresita from "./views/SantaTeresita";
 import Miramar from "./views/Miramar";
 import SanBernardo from "./views/SanBernardo";
+import Documentos from "./views/Documentos";
+import Menores from "./views/Menores";
+import Terminales from "./views/Terminales";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -150,6 +153,15 @@ function App() {
             <Route exact path="/santateresita" component={SantaTeresita} />
             <Route exact path="/miramar" component={Miramar} />
             <Route exact path="/sanber" component={SanBernardo} />
+            <AuthRoute path="/menores" >
+               <Menores  exact component={Menores}/>
+            </AuthRoute>
+            <AuthRoute path="/documentos" >
+               <Documentos  exact component={Documentos}/>
+            </AuthRoute>
+            <AuthRoute path="/terminales" >
+               <Terminales  exact component={Terminales}/>
+            </AuthRoute>
         </Switch>
         <Footer/>
         </BrowserRouter>
