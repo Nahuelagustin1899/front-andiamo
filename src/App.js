@@ -23,7 +23,7 @@ import Menores from "./views/Menores";
 import Terminales from "./views/Terminales";
 import Registrarse from "./views/Registrarse";
 import EditarUsuario from "./views/EditarUsuario";
-
+import EditarViaje from "./views/EditarViaje";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -113,9 +113,12 @@ function App() {
         }
         <BrowserRouter>
         <Switch>
-            <Route path="/editarusuario">
+            <AuthRoute path="/editarviaje">
+               <EditarViaje  exact component={EditarViaje}/>
+            </AuthRoute>
+            <AuthRoute path="/editarusuario">
                <EditarUsuario  exact component={EditarUsuario}/>
-            </Route>
+            </AuthRoute>
             <Route path="/registrarse">
                <Registrarse  exact component={Registrarse}/>
             </Route>

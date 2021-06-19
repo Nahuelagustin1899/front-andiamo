@@ -11,7 +11,6 @@ import {format} from 'date-fns';
 
 
 
-
 function Viajes(props) {
     
     const history = useHistory();
@@ -22,6 +21,10 @@ function Viajes(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const editarViaje = (item) => {
+        history.push({pathname:"/editarviaje",state: {item : item}})
+    }
+
     useEffect(() => {
         (async () => {
             const data = await viajesService.indexEmpresa();
@@ -30,16 +33,15 @@ function Viajes(props) {
         })().catch(err => console.log("Error al traer los viajes: ", err));
     }, []); 
 
-    return (<div className="fondopantalla">
+    return (<div className="fondopantalla p-5">
         <h1 className="mb-5 viajes-empresa">Panel de viajes</h1>
     <div >
-        <Link className="btn btn-primary mb-5 text-center boton" to="/viajes/nueva">Crear nuevo viaje</Link>
 
         <form className="busqueda mb-5">
             <div class="form-group ">
             <label for="destino" className="labelcolor"><i className="mr-2 "><ImOffice style={{ fontSize: 28 }}/></i>Empresa</label>
                 <input
-                    className="d-flex mb-3 mt-3 input-empresa"
+                    className="ml-2"
                     type="text"
                     placeholder="Buscar por empresa"
                     onChange={(e) => setSearch(e.target.value)}
@@ -47,7 +49,7 @@ function Viajes(props) {
             </div>
          </form>
 
-      
+         <Link className="btn btn-primary mb-5 text-center boton" to="/viajes/nueva">Crear nuevo viaje</Link>
             
              {cargando ?
                 <Cargando/> :
@@ -87,14 +89,16 @@ function Viajes(props) {
                         (item.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
                         <td className="col-4 text-center colortd ">{format(new Date
                         (item.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
+                        
                         </tr>
                         </tbody>
                         </Table>
-                        
-            <Button variant="primary" onClick={handleShow} className="btn btn-danger mb-2 boton-eliminar-panel" >
-                Eliminar
-            </Button>
-
+             <div>           
+                <Button variant="primary" onClick={handleShow} className="btn btn-danger boton-eliminar-perfil" >
+                    Eliminar
+                </Button>
+                <a className="btn btn-success boton-editar-perfil" onClick={() => editarViaje(item)}>Editar Viaje</a>
+            </div>              
             <hr className="hr" />
 
 
