@@ -2,13 +2,15 @@ import React from 'react';
 import CargarEmpresa from "./../components/CargarEmpresa";
 
 function NuevasEmpresas(props) {
-    return (<div className="container pt-3">
-        <h1 className="text-center viajes-empresa mb-4">Crear nueva empresa</h1>
-
-        <CargarEmpresa
-            notExitosa={props.notExitosa}
-        />
-    </div>);
+    return (
+        <div className="fondopantalla p-5">
+            <h1 className="mb-4 viajes-empresa">Crear nueva empresa</h1>
+            <div className="container divs">
+                <CargarEmpresa
+                    notExitosa={props.notExitosa}
+                />
+            </div>
+        </div>);
 }
 
 export default NuevasEmpresas;

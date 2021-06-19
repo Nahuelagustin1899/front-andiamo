@@ -13,30 +13,25 @@ function EmpresasUsuarios() {
         (async () => {
             const data = await empresasService.index();
             setEmpresas(data);
-            
+
             setCargando(false);
         })().catch(err => console.error('Error al traer las empresas: ', err));
     }, []);
 
- 
-
-    return (<div className="fondopantalla">
-                <h1 className="mb-5 text-center viajes">Empresas</h1>    
-                {cargando ?
-                <Cargando/> :
+    return (
+        <div className="fondopantalla p-5">
+            <h1 className="mb-5 text-center viajes">Empresas</h1>
+            {cargando ?
+                <Cargando /> :
                 (<ul className="container-fluid">
-
-                  {empresas.map(empresa => (
-                    <li className="mb-4 imagenes" key={empresa.id}>
-                        <h2 className="mb-4 font">{empresa.nombre}</h2>
-                        <img className="imagen"  src={urlbase + empresa.logo} alt={empresa.id} /> 
-                        <p className="informacion">{empresa.informacion}</p>
-                    </li>
-                    
+                    {empresas.map(empresa => (
+                        <li className="li-empresas" key={empresa.id}>
+                            <img className="imagen-empresa" src={urlbase + empresa.logo} alt={empresa.id} />
+                            <p className="informacion-empresa">{empresa.informacion}</p>
+                        </li>
                     ))}
-
-                </ul>)}           
-            </div>);
+                </ul>)}
+        </div>);
 }
 
 export default EmpresasUsuarios;

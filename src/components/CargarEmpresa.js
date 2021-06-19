@@ -16,7 +16,6 @@ function CargarEmpresa(props) {
     
     const history = useHistory();
 
- 
     const [empresa, setEmpresa] = useState({
         nombre: '',
         logo: null,
@@ -43,9 +42,7 @@ function CargarEmpresa(props) {
     const handleImageChange = ev => {
       
         const name = ev.target.name; 
-        const file = refs[name].current.files[0];
-       
-
+        const file = refs[name].current.files[0];      
         const reader = new FileReader();
 
         reader.addEventListener('load', function() {
@@ -122,7 +119,7 @@ function CargarEmpresa(props) {
     };
 
 
-    return (<form className="form-alta-viajes" onSubmit={handleSubmit}>
+    return (<form className="form-alta-empresas" onSubmit={handleSubmit}>
         <fieldset disabled={cargando}>
             
             <div className="form-group">
