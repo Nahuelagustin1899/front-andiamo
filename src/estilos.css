@@ -114,12 +114,8 @@ img {
 
 .fondopantalla{
     background: url("img/app.jpg") no-repeat ;	
-        background-size: cover;
+    background-size: cover;
 }
-
-
-
-
 
 
 .Link {
@@ -191,11 +187,11 @@ img {
     margin-bottom: .5rem;
 }
 
-.boton{
+/* .boton{
     margin: auto;
     display: block;
     width: 60%;
-}
+} */
 .viajes{
     font-size: 4em;
     font-weight: bold;
@@ -207,15 +203,61 @@ img {
 
 
 @media screen and (min-width: 768px) {
+
+   /*  Informacion de la home */
+
+   .img-card-informacion{
+       width: 50%;
+       margin: auto;
+       display: block;
+   }
+
+   .card-informacion{
+       width: 50%;
+       margin: auto;
+       display: block;
+   }
+
+   .h1-informacion{
+       text-align: center;
+       width: 50%;
+       margin: auto;
+       display: block;
+   }
+
+   /* Menu hamburguesa */
+
+   .imagenperfil{
+    width: 100px;
+    display: block;
+    margin: auto;
+    height: 100px;
+    border-radius: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #ddd;
+    padding: 5px;
+    }
+
+    .iniciar-sesion{
+        text-align: center;
+        margin: auto;
+        font-weight: bold;
+    }
+
+  /*  Blog */
+
+    .h1-blog{
+    font-size: 2.2em;
+    background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+    }
+
+   /*  Termina aca */
+
     .nombreviaje {
         justify-content: space-between;
         flex-direction: row;
     }
 
-    .listadoviajes_precio {
-        margin-top: 0;
-        margin-left: 1rem;
-    }
 }
 
 .Cargando,
@@ -256,7 +298,7 @@ img {
 /*CELULARES*/
 
 @media (min-width: 360px) and (max-width: 740px) {
-    .letras {
+    .iniciar-sesion {
         text-align: center;
         margin: auto;
         font-weight: bold;
@@ -343,7 +385,7 @@ img {
     .conductor{
         display: block;
         margin: auto;
-        margin-bottom: 1em  ;
+        margin-bottom: 1em;
     }
 
     .caja-perfil{
@@ -472,12 +514,7 @@ img {
         border-radius: 7px;
         border: 2px solid #f2e997;
     }
-    .eliminar-empresa{
-        width: 20%;
-        display: block;
-        margin: auto;
-        margin-top: 1em;
-    }
+   
 
     .listadoviajes{
         border-radius: 5px;
@@ -511,23 +548,14 @@ img {
         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
             }
 
-    .form-alta-viajes{
-        background-color: #ace0ff;
-        padding: 2em;
-        margin: auto;
-        margin-bottom: auto;
-        border-radius: 1em;
-        margin-bottom: 2em;
-        width: 95%;
-        display: block;
-    }
+   
 
-    .blog{
+    .h1-blog{
         font-size: 2.2em;
          background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
     }
 
-    .holaaa{
+    .card-home{
         margin:auto;
         
      }
@@ -539,11 +567,7 @@ img {
         font-size: 2.2em;
     }
 
-    .boton-eliminar-panel{
-        width: 50%;
-        margin: auto;
-        display: block;
-    }
+  
 
     .viajes{
         font-size: 2.2em;
@@ -563,10 +587,7 @@ img {
         
     }
 
-    .TotalViajes {
-        list-style: none;
-        padding: 0;
-    }
+
     
     .listadoviajes {
         border-radius: 5px;
@@ -606,18 +627,25 @@ img {
         border: 1px solid #ddd;
         padding: 5px;
     }
-    .imagenes{
+
+    .imagenperfil{
+        width: 100px;
+        display: block;
+        margin: auto;
+        height: 100px;
+        border-radius: 150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 1px solid #ddd;
+        padding: 5px;
+    }
+    .li-empresas{
         list-style: none;
     }
 }
 
 @media (max-width: 480px){
 
-    .TotalViajes {
-        list-style: none;
-        padding: 0;
-    }
-    
+  
     .listadoviajes {
         border-radius: 5px;
         border: var(--border);
@@ -646,16 +674,13 @@ img {
     
     }
 
-    .letras{
+    .iniciar-sesion{
         text-align: center;
         margin: auto;
         font-weight: bold;
     }
 
-    .cart{
-        margin-bottom: 1em ;
-    }
-    
+ 
     .boton-buscador{
         width:70%;
         margin: auto;
@@ -708,21 +733,14 @@ img {
         display: block;
         margin: auto;
     }
-    .boton-eliminar{
-        margin: auto;
-        display:block;
-        margin-top: 4px;
-        width: 100%;
-        border:1px solid black;
-    }
-    
+
     .boton-empresa{
         display: block;
         margin: auto;
         width: 50%;
         margin-top: 1em;
     }
-    .imagenes{
+    .li-empresas{
         list-style: none;
     }
 
@@ -746,7 +764,7 @@ img {
         
     }
 
-    .blog{
+    .h1-blog{
         
         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
     }
@@ -762,17 +780,8 @@ img {
         font-size: 2.2em;
     }
 
-    .input-empresa{
-        margin: auto;
-        width: 100%;
-    }
 
-    .boton-eliminar-panel{
-        width: 50%;
-        margin: auto;
-        display: block;
-    }
-
+  
     .font{
         text-align: center;
         font-weight: bold;
@@ -782,24 +791,8 @@ img {
         color: black;
     }
 
-    .eliminar-empresa{
-        width: 57%;
-        display: block;
-        margin: auto;
-        margin-top: 1em;
-    }
 
-    .form-alta-viajes{
-        background-color: #ffd146;
-        padding: 2em;
-        margin: auto;
-        border-radius: 7px;
-        margin-bottom: 2em;
-        width: 95%;
-        display: block;
-        
-        
-    }
+ 
 
     .colortd{
         background-color: #ffeeba;
@@ -837,11 +830,7 @@ img {
         padding: 5px;
     }
 
-    .home{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border: 1px solid #ddd;
-        padding: 5px;
-    }
+   
     }
 
     /*tablets*/
@@ -862,21 +851,13 @@ img {
            
         }
 
-        .navegador{
-            margin: auto;
-        }
 
-        .letras{
+        .iniciar-sesion{
             text-align: center;
             margin: auto;
         }
 
-        .eliminar-empresa{
-            display: block;
-            margin: auto;
-            margin-top: 1em;
-            width: 20%
-        }
+    
         .nombre-panel{
             margin-top: 10%;
             font-weight: bold;
@@ -885,17 +866,6 @@ img {
         .imagen-panel{
             width: 200px;
             height: 200px;
-        }
-
-        .form-alta-viajes{
-            background-color: #ace0ff;
-            padding: 2em;
-            border-radius: 1em;
-            margin: auto;
-            margin-bottom: 2em;
-            width: 70%;
-            display: block;
-            
         }
 
         .nuevo{
@@ -939,18 +909,7 @@ img {
         .hr{
             border: 2px solid black;
         }
-        .input-empresa{
-            width: 50%;
-            margin: auto;
-        }
-
-        .boton-eliminar-panel{
-            width: 50%;
-            margin: auto;
-            display: block;
-        }
-
-        
+    
 
         
         .box{
@@ -968,27 +927,16 @@ img {
             width: 100%;
             margin-top: 1em;
         }
-        
-        .boton-eliminar{
-            margin: auto;
-            display:block;
-            margin-top: 2px;
-            width: 70%;
-            border:1px solid black;
-        }
 
-        .input-buscar{
-            margin: auto;
-            display:block;
-            width: 20%;
-        }
-        .holaaa{
+
+   
+        .card-home{
             margin:auto;
             
         
         }
 
-        .imagenes{
+        .li-empresas{
             list-style: none;
             text-align: center;
         }
@@ -1005,20 +953,12 @@ img {
             border: 1px solid #ddd;
             padding: 5px;
         }
-        .home{
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border: 1px solid #ddd;
-            padding: 5px;
-        }
-        .blog{
+       
+        .h1-blog{
             font-size: 2.2em;
              background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
         }
-        .TotalViajes {
-            list-style: none;
-            padding: 0;
-        }
-        
+    
         .listadoviajes {
             border-radius: 5px;
             border: var(--border);
@@ -1044,9 +984,28 @@ img {
     /*PC*/
     
     @media (min-width: 1200px)  {
-    
 
-        .holaaa{
+       /* Home */
+        .img-card-informacion{
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+     
+        .card-informacion{
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+     
+        .h1-informacion{
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+
+        .card-home{
             margin:auto;
             display:inline-block; 
             margin-top:2em;
@@ -1054,44 +1013,79 @@ img {
         
         }
 
-        .eliminar-empresa{
-            display: block;
-            margin: auto;
-            margin-top: 1em;
+    
+     
+        /* Menu hamburguesa */
+     
+        .imagenperfil{
+         width: 100px;
+         display: block;
+         margin: auto;
+         height: 100px;
+         border-radius: 150px;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         border: 1px solid #ddd;
+         padding: 5px;
+         }
+     
+         .iniciar-sesion{
+             text-align: center;
+             margin: auto;
+             font-weight: bold;
+         }
+     
+       /*  Blog */
+     
+         .h1-blog{
+         font-size: 2.2em;
+         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+         }
+
+        /* Empresas usuarios */
+
+        .li-empresas{
+            list-style: none;
         }
-        
-        .busqueda{
-            width: 40%;
-            background-color: #ecdb72;;;
-            padding: 2em;
-            display: block;
-            margin: auto;
-            border-radius: 1em;
-        }
-        .home{
+
+        .imagen-empresa{
+            width:200px;
+            height:200px;
+            border-radius:150px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border: 1px solid #ddd;
             padding: 5px;
-        }
-
-        .labelcolor{
-            color: black;
-        }
-
-        .cart{
-            margin-left:2em;
-        }
-
-        
-        .box{
-            width: 50%;
             margin: auto;
             display: block;
-            background-color: #d3e8fb;
-            padding-top: 3em;
-            padding-bottom: 3em;
-            border-radius: 1em;
         }
+
+        .informacion-empresa{
+            text-align: center;
+            margin: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            background-color: #f9f6db;
+            padding: 1em;
+            border-radius: 1em;
+            width: 60%;
+        }
+
+        /* Viajes usuarios */
+
+        .viajes-us-p{
+            text-align: center;
+            width: 68%;
+            display: block;
+            margin: auto;
+        }
+
+        .nombreviaje {
+            justify-content: space-between;
+            flex-direction: row;
+            text-align: center;
+            font-weight: bold;
+            margin: 1em;
+        }
+
         .listadoviajes {
             border-radius: 5px;
             border: 2px solid black;
@@ -1105,107 +1099,263 @@ img {
             margin-top: 2em;
            
         }
-    
-        .boton-eliminar{
+
+        /* Elegir asientos */
+
+        .nuevo{
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.2em;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .disp{
+            background-color: #ffc107;
+            display: inline-block;
             margin: auto;
-            display:block;
-            margin-top: 2px;
-            width: 40%;
-            border:1px solid black;
+            width: 20%;
+            margin-left: 2.3em;
+            text-align: center;
+            color: #2f2e2d;
+            border-radius: 0.5em;
+            border: 2px solid #ffc107;
         }
     
-        .input-buscar{
+        .ocupado{
+            background-color: red;
+            display: inline-block;
             margin: auto;
-            display:block;
-            width: 40%;
+            margin-left: 2em;
+            width: 20%;
+            text-align: center;
+            color: #e6dcdc;
+            margin-bottom: 2em;
+            border-radius: 0.5em;
+            border: 2px solid red;
         }
-    
+
+        .div-ocup-disp{
+            margin-left: 32%;
+        }
+
+        .conductor{
+            display: block;
+            margin: auto;
+            margin-bottom: 1em;
+        }
+
+        .asientos-borde{
+            border: 2px solid #c1ab33;;
+            padding: 1.9em;
+            width: 25%;
+            display: block;
+            margin: auto;
+            box-shadow: 5px 2px 5px 2px #c1ab33;
+        }
+
+        .amarillos{
+            width: 3.5em;
+            height: 3.5em;
+            margin:3px;
+        }
+
+        .carrito-boton{
+            display: block;
+            margin: auto;
+            width: 80%;
+            margin-top: 3em;
+        }
+
+        /* Checkout */
+
+        .check{
+            font-size: 2.2em;
+            font-weight: bold;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .checkout{
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
+
+        /* Panel viajes */
+
+        .hr{
+            border: 2px solid black;
+        }
+
+        .labelcolor{
+            color: black;
+        }
+
+        .busqueda{
+            width: 40%;
+            background-color: #ecdb72;;;
+            padding: 2em;
+            display: block;
+            margin: auto;
+            border-radius: 1em;
+        }
+
+        .boton-eliminar-perfil{
+            display: inline-block;
+            width: 30%;
+            margin-left: 18%;
+        }
+
+        .boton-editar-perfil{
+            display: inline-block;
+            width: 30%;
+            margin-left: 2%;
+        }
+
+        .colorth{
+            background-color: #ffb300;
+        }
+
+        .editar-perfil{
+            font-size: 2.2em;
+            font-weight: bold;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .form-editar-viajes{
+            width: 40%;
+            background-color: #ffb300;
+            padding: 2em;
+            display: block;
+            margin: auto;
+        }
+
+        .boton-terminar-edit{
+            width: 40%;
+            margin: auto;
+            display: block;
+        }
+
+        /* Cargar viajes */
+
         .divs{
+            background-color: #ffd146;;
+            padding: 2em;
+            margin: auto;
+            margin-bottom: auto;
+            border-radius: 7px;
+            margin-bottom: 2em;
             width:60%;
             display: block;
-            margin:auto;
-            background-color: red;
-            margin-bottom: 4em;
-            margin-top:4em;
-            padding: 3em;
-            background-color: #a29ffb;
-            border-radius:4px;
-    
         }
-    
+
+        .box{
+            width: 50%;
+            margin: auto;
+            display: block;
+            background-color: #ffd24a;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            border-radius: 1em;
+        }
+
+        
         .button-grabar{
             width: 40%;
             display:block;
             margin:auto;
         }
 
-        .imagenes{
+        /* Login */
+
+        .boton-ingresar{
             display: inline-block;
-            margin-left: 6em;
-            list-style: none;
+            width: 30%;
+            margin-left: 17%;
+            margin-top: 3em;
         }
-        
+
+        .boton-registrar{
+            display: inline-block;
+            width: 30%;
+            margin-left: 5%;
+            margin-top: 3em;
+        }
+
+        .div-sesion{
+            width: 40%;
+            margin: auto;
+            display: block;
+            background-color: #ffd24a;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            border-radius: 1em;
+        }
+
+        /* Registarse */
+
+        .form-registrarse{
+            width: 50%;
+            background-color: #ffd24a;
+            padding: 3em;
+            border-radius: 1em;
+            margin: auto;
+            display: block;
+        }
+
+        /* Nuevas Empresas */
+
+        .viajes-empresa{
+            text-align: center;
+            font-weight: bold;
+            font-size: 3.2em;
+         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .form-alta-empresas{
+            width: 60%;
+            display: block;
+            margin: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+            background-color: red;
+            margin-bottom: 4em;
+            margin-top: 4em;
+            padding: 3em;
+            background-color: #a29ffb;
+            border-radius: 4px;
+        }
+
+       /*  Editar perfil */
+
+       .imagen{
+        width:200px;
+        height:200px;
+        border-radius:150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 1px solid #ddd;
+        padding: 5px;
+        margin: auto;
+        display: block;
+        }
+
+        .nombre-perfil{
+            display: block;
+            padding: 1em;
+            margin-top: 1em;
+        }
+
+
+        /*  Termina aca */
+     
+    
         .viajes{
             text-align: center;
             font-size: 3.2em;
             background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));}
 
-            .input-empresa{
-                width: 40%;
-                margin: auto;
-            }
 
-            .boton-eliminar-panel{
-                width: 40%;
-                margin: auto;
-                display: block;
-
-            }
-
-            .viajes-empresa{
-                text-align: center;
-                font-weight: bold;
-                font-size: 3.2em;
-             background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-            }
-
-            .font{text-align: center;}
-
-            .form-alta-viajes{
-                width: 60%;
-                display: block;
-                margin: auto;
-                    margin-top: auto;
-                    margin-bottom: auto;
-                background-color: red;
-                margin-bottom: 4em;
-                margin-top: 4em;
-                padding: 3em;
-                background-color: #a29ffb;
-                border-radius: 4px;
-            }
-
-            .nuevo{text-align: center;
-            font-weight: bold;}
-
-            .imagen{
-                width:200px;
-                height:200px;
-                border-radius:150px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                border: 1px solid #ddd;
-                padding: 5px;
-                margin: auto;
-                display: block;
-            }
-            
-            .navegador{
-                margin: auto;
-            }
-            .TotalViajes {
-                list-style: none;
-                padding: 0;
-            }
             
             .listadoviajes {
                 border-radius: 5px;
@@ -1213,10 +1363,6 @@ img {
                 box-shadow: var(--shadow);
             }
             
-            .nombreviaje {
-                display: flex;
-                padding: var(--padding-box);
-            }
             
             .salida{
                 width: 60%;
@@ -1268,32 +1414,9 @@ img {
             .listadoviajes{
                 margin-bottom: 2em;
             }
-            
-        
-
-            
-            
-            .asientos-borde{
-                border: 2px solid #c1ab33;;
-                padding: 2em;
-                width: 25%;
-                display: block;
-                margin: auto;
-            }
-
-            .amarillos{
-                width: 4em;
-                height: 4em;
-                margin:3px;
-            }
 
            
-            .carrito-boton{
-                display: block;
-                margin: auto;
-                width: 30%;
-                margin-top: 3em;
-            }
+            
 
             .informacion{
                 text-align: center;
@@ -1328,9 +1451,9 @@ img {
 
 /* Menu Hamburguesa */
 
-    .btn-link{
-        color: blue;
-    }
+.btn-link{
+    color: blue;
+}
 
 .bm-burger-button {
   position: fixed;
