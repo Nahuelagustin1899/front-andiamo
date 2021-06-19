@@ -38,33 +38,33 @@ function Asientos(props) {
 
     return (
         
-        <>  
+      <>  
 
-        {
-            array20.map((item,index)=> <Button onClick={ () => setSelect(index + 1) } 
-            className="amarillos"
-            disabled={validarAsiento(index+1)}
-            variant={props.reservados && validarAsiento(index+1) ? "danger" : "warning"} >{index + 1 }</Button>)
-        }
+      {
+          array20.map((item,index)=> <Button onClick={ () => setSelect(index + 1) } 
+          className="amarillos"
+          disabled={validarAsiento(index+1)}
+          variant={props.reservados && validarAsiento(index+1) ? "danger" : "warning"} >{index + 1 }</Button>)
+      }
 
-        <Button onClick={handleShow} className="btn btn-primary carrito-boton">Reservar</Button>
-        <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>¿Estás seguro que deseas elegir este asiento?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-          <Button variant="primary" onClick={handleClick} >
-          Reservar
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>            
-        </>
-    );
+      <Button onClick={handleShow} className="btn btn-primary carrito-boton">Reservar</Button>
+      <>
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+      </Modal.Header>
+      <Modal.Body className="font-weight-bold">¿Estás seguro que deseas elegir este asiento?</Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Cerrar
+        </Button>
+        <Button variant="primary" onClick={handleClick} >
+        Reservar
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  </>            
+      </>
+  );
 }
 
 export default Asientos;
