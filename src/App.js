@@ -21,6 +21,8 @@ import SanBernardo from "./views/SanBernardo";
 import Documentos from "./views/Documentos";
 import Menores from "./views/Menores";
 import Terminales from "./views/Terminales";
+import Registrarse from "./views/Registrarse";
+
 
 /* Components */
 import Nav from "./components/Nav";
@@ -110,6 +112,9 @@ function App() {
         }
         <BrowserRouter>
         <Switch>
+            <Route path="/editarusuario">
+               <EditarUsuario  exact component={EditarUsuario}/>
+            </Route>
             <AuthRoute path="/checkout" >
                <Pago  exact component={Pago}/>
             </AuthRoute>
