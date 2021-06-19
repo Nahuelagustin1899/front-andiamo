@@ -15,6 +15,9 @@ import Login from "./views/Login";
 import ElegirAsiento from "./views/ElegirAsiento";
 import Pago from "./views/Pago";
 import Perfil from "./views/Perfil";
+import SantaTeresita from "./views/SantaTeresita";
+import Miramar from "./views/Miramar";
+import SanBernardo from "./views/SanBernardo";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -144,6 +147,9 @@ function App() {
             <Route exact path="/empresasusuarios" component={EmpresasUsuarios}/>
             <Route path="/" exact component={Home}/>
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/santateresita" component={SantaTeresita} />
+            <Route exact path="/miramar" component={Miramar} />
+            <Route exact path="/sanber" component={SanBernardo} />
         </Switch>
         <Footer/>
         </BrowserRouter>

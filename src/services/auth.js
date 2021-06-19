@@ -35,10 +35,7 @@ const authService = {
         const respuesta = await rta.json();
 
         if(respuesta.success) {
-            console.log(respuesta);
-            console.log(respuesta.token);
             userData = respuesta.user;
-           
             localStorage.setItem('user', JSON.stringify(userData));
             return {...userData}; 
         }
@@ -47,11 +44,10 @@ const authService = {
 
     async logout() {
         var token = localStorage.getItem('user');
-  
         if(token !== null){
             FETCH_HEADERS.Authorization  =  'Bearer ' + JSON.parse(localStorage.getItem('user')).token ;
         }
-        console.log(FETCH_HEADERS); console.log(typeof FETCH_HEADERS); 
+
         const rta = await fetch(API + '/auth/logout', {
             headers: FETCH_HEADERS,
             method: 'post',
