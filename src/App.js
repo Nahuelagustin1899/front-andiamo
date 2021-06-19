@@ -153,15 +153,10 @@ function App() {
             <Route exact path="/santateresita" component={SantaTeresita} />
             <Route exact path="/miramar" component={Miramar} />
             <Route exact path="/sanber" component={SanBernardo} />
-            <AuthRoute path="/menores" >
-               <Menores  exact component={Menores}/>
-            </AuthRoute>
-            <AuthRoute path="/documentos" >
-               <Documentos  exact component={Documentos}/>
-            </AuthRoute>
-            <AuthRoute path="/terminales" >
-               <Terminales  exact component={Terminales}/>
-            </AuthRoute>
+            <Route exact path="/menores" component={Menores} />
+            <Route exact path="/documentos" component={Documentos} />
+            <Route exact path="/terminales" component={Terminales} />
+
         </Switch>
         <Footer/>
         </BrowserRouter>
