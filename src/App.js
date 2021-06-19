@@ -22,6 +22,7 @@ import Documentos from "./views/Documentos";
 import Menores from "./views/Menores";
 import Terminales from "./views/Terminales";
 import Registrarse from "./views/Registrarse";
+import EditarUsuario from "./views/EditarUsuario";
 
 
 /* Components */
@@ -112,6 +113,9 @@ function App() {
         }
         <BrowserRouter>
         <Switch>
+            <Route path="/editarusuario">
+               <EditarUsuario  exact component={EditarUsuario}/>
+            </Route>
             <Route path="/registrarse">
                <Registrarse  exact component={Registrarse}/>
             </Route>

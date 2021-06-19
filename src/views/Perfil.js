@@ -1,8 +1,8 @@
-import React, {useState, useContext, useEffect} from 'react';
-import {AuthContext} from "../services/auth";
+import React, { useState, useContext, useEffect } from 'react';
+import { AuthContext } from "../services/auth";
 import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
-import {format} from 'date-fns';
+import { format } from 'date-fns';
 
 function Perfil() {
 
@@ -16,62 +16,65 @@ function Perfil() {
             setReservas(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
-    
-    const lista = reservas && reservas.map(reserva => ( <div key={reserva.id}>
-       
 
-       <Table  variant="warning" striped bordered hover   >
-                <thead>
-                    <tr className="row">
+    const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
+
+
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
                     <th className="col-4 text-center colorth">Nombre</th>
                     <th className="col-4 text-center colorth">Fecha salida</th>
                     <th className="col-4 text-center colorth">Fecha llegada</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="row"> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.user.name}</td>
                     <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
                     <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
-                    </tr>
-                </tbody>
-            </Table>
+                </tr>
+            </tbody>
+        </Table>
 
-            <Table  variant="warning" striped bordered hover   >
-                <thead>
-                    <tr className="row">
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
                     <th className="col-4 text-center colorth">Precio</th>
                     <th className="col-4 text-center colorth">Salida</th>
                     <th className="col-4 text-center colorth">Destino</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="row"> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.viaje.precio}</td>
                     <td className="col-4 text-center colortd">{reserva.viaje.salida.nombre}</td>
                     <td className="col-4 text-center colortd">{reserva.viaje.destino.nombre}</td>
-                    </tr>
-                </tbody>
-            </Table>
+                </tr>
+            </tbody>
+        </Table>
 
-            <hr className="perfileshr" />
-        
-            </div> ));
+        <hr className="perfileshr" />
 
-        
+    </div>));
+
+
 
     const authData = useContext(AuthContext);
     console.log(authData);
 
-    return (<div className='container pt-3 '>
-        <h1 className="viajes mb-5">Perfil</h1>
+    return (<div className='fondopantalla p-5'>
+        
+        <h1 className="viajes">Perfil</h1>
+        <a className="btn btn-success" href="/editarusuario">Editar perfil</a>
         <div className="caja-perfil">
-        <img className="imagen"  src={urlbase + authData.user.logo} alt={authData.user.nombre} /> 
-        <p className="text-center mb-5 mt-4 email"><b>Nombre :</b>  {authData.user.name}</p>
+            <img className="imagen" src={urlbase + authData.user.logo} alt={authData.user.name} />
+            <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
         </div>
-        <h3 className="text-center mb-5 pasajes"><b>Pasajes Reservados</b></h3>
-            {lista}
-        </div>);
+        <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
+
+        {lista}
+    </div>);
 }
 
 export default Perfil;
