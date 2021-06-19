@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { fallDown as Menu } from "react-burger-menu";
 import bus from '../img/bus.png';
 import authService, { AuthContext } from "../services/auth";
-import { GiExitDoor } from 'react-icons/gi';
 
 
 
