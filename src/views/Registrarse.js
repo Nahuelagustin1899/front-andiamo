@@ -156,7 +156,7 @@ function Registrarse(props) {
 
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando /> : 'Grabar'}</button>
+                        <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando /> : 'Registrarse'}</button>
                     </fieldset>
                 </form>
            

@@ -112,8 +112,8 @@ function App() {
         }
         <BrowserRouter>
         <Switch>
-            <Route path="/editarusuario">
-               <EditarUsuario  exact component={EditarUsuario}/>
+            <Route path="/registrarse">
+               <Registrarse  exact component={Registrarse}/>
             </Route>
             <AuthRoute path="/checkout" >
                <Pago  exact component={Pago}/>
