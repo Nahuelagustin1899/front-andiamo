@@ -97,7 +97,7 @@ function Viajes(props) {
                 <Button variant="primary" onClick={handleShow} className="btn btn-danger boton-eliminar-perfil" >
                     Eliminar
                 </Button>
-                <a className="btn btn-success boton-editar-perfil" onClick={() => editarViaje(item)}>Editar Viaje</a>
+                <Button className="btn btn-success boton-editar-perfil" onClick={() => editarViaje(item)}>Editar Viaje</Button>
             </div>              
             <hr className="hr" />
 
