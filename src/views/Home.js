@@ -15,7 +15,7 @@ function Home() {
     setIndex(selectedIndex);
   };
 
-  return (<div className="fondopantalla">
+  return (<div className="fondopantalla p-5">
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item interval={1000}>
         <img
