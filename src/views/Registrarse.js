@@ -125,7 +125,9 @@ function Registrarse(props) {
     };
 
 
-    return (<form className="form-alta-viajes" onSubmit={handleSubmit}>
+    return (
+    <div className="fondopantalla p-5">
+    <form className="form-registrarse" onSubmit={handleSubmit}>
         <fieldset disabled={cargando}>
             
             <div className="form-group">
@@ -200,6 +202,8 @@ function Registrarse(props) {
             </div>
             <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Grabar'}</button>
         </fieldset>
-    </form>);
+    </form>
+    </div>
+    );
 }
 export default Registrarse;
