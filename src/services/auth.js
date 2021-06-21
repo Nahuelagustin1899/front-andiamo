@@ -51,8 +51,9 @@ const authService = {
         });
         const fetchData = await response.json();
         if(!fetchData.success) {
-            return {...fetchData};
+            return {...fetchData};        
         }
+        
         return {...fetchData.data};
     },
 
