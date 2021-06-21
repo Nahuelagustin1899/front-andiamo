@@ -48,7 +48,8 @@ const authService = {
             method: 'POST',
             body: JSON.stringify(data),
             headers: FETCH_HEADERS,
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'no-cors'
         });
      } ,
 
