@@ -202,107 +202,171 @@ img {
 }
 
 
-@media screen and (min-width: 768px) {
-
-   /*  Informacion de la home */
-
-   .img-card-informacion{
-       width: 50%;
-       margin: auto;
-       display: block;
-   }
-
-   .card-informacion{
-       width: 50%;
-       margin: auto;
-       display: block;
-   }
-
-   .h1-informacion{
-       text-align: center;
-       width: 50%;
-       margin: auto;
-       display: block;
-   }
-
-   /* Menu hamburguesa */
-
-   .imagenperfil{
-    width: 100px;
-    display: block;
-    margin: auto;
-    height: 100px;
-    border-radius: 150px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: 1px solid #ddd;
-    padding: 5px;
-    }
-
-    .iniciar-sesion{
-        text-align: center;
-        margin: auto;
-        font-weight: bold;
-    }
-
-  /*  Blog */
-
-    .h1-blog{
-    font-size: 2.2em;
-    background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-    }
-
-   /*  Termina aca */
-
-    .nombreviaje {
-        justify-content: space-between;
-        flex-direction: row;
-    }
-
-}
-
-.Cargando,
-.Cargando:after {
-    border-radius: 50%;
-    width: 10em;
-    height: 10em;
-}
-.Cargando {
-    margin: 60px auto;
-    font-size: 10px;
-    position: relative;
-    text-indent: -9999em;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid yellow;
-    border-bottom: 16px solid blue;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-}
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-
-
-
-
 
 /*CELULARES*/
 
-@media (min-width: 360px) and (max-width: 740px) {
+@media (min-width: 360px) and (max-width: 812px) {
+
+    /* Login */
+
+    .div-sesion {
+        width: 100%;
+        margin: auto;
+        display: block;
+        background-color: #ffd24a;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        border-radius: 1em;
+    }
+
+    .boton-ingresar{
+        display: inline-block;
+        width: 40%;
+        margin-left: 8%;
+        margin-top: 1em;
+    }
+
+    .boton-registrar{
+        display: inline-block;
+        width: 42%;
+        margin-left: 2%;
+        margin-top: 1em;
+    }
+
+    /* Registrarse */
+
+    .form-registrarse{
+        width: 100%;
+        background-color: #ffd24a;
+        padding: 2em;
+        border-radius: 1em;
+        margin: auto;
+        display: block;
+    }
+
+    .img-registro{
+        width: 10em;
+        display: block;
+        margin: auto;
+    }
+
     .iniciar-sesion {
         text-align: center;
         margin: auto;
         font-weight: bold;
     }
+
+    /* Blog */
+
+    .h1-informacion{
+        text-align: center;
+        width:100%;
+        margin: auto;
+        display: block;
+    }
+
+    /* Empresas usuarios */
+
+    .imagen-empresa {
+        width: 200px;
+        height: 200px;
+        border-radius: 150px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+        border: 1px solid #ddd;
+        padding: 5px;
+        margin: auto;
+        display: block;
+    }
+
+    .informacion-empresa {
+        text-align: center;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        background-color: #f9f6db;
+        padding: 1em;
+        border-radius: 1em;
+        width: 100%;
+        border: 2px solid #ffd24a;
+    }
+
+    /* Viajes usuarios */
+
+    .listadoviajes{
+        border-radius: 5px;
+        border: 2px solid black;
+        box-shadow: var(--shadow);
+        background-color: #eee;
+        background: url("img/agua.jpg") no-repeat ;	
+        background-size: cover;
+        list-style: none;
+        margin-bottom: 2em;
+        margin-left: 2px;
+        width: 99%;
+        
+    }
+
+    .nombreviaje {
+        display: flex;
+        flex-direction: column;
+        padding: var(--padding-box);
+        text-align: center;
+        font-size: 20px;
+    }
+
+    /* Reservar */
+    
+    .asientos-borde{
+        border: 2px solid #c1ab33;;
+        padding: 1.9em;
+        width: 95%;
+        display: block;
+        margin: auto;
+        box-shadow: 5px 2px 5px 2px #c1ab33;
+    }
+
+    /* Perfil */
+
+   .nombre-perfil{
+    padding: 1em;
+    margin: auto;
+    display: table;
+   } 
+
+   .colorth {
+    background-color: #ffb300;
+    }
+
+   .imagen{
+    width: 200px;
+    display: block;
+    margin: auto;
+    height: 200px;
+    border-radius: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 1em;
+    }
+
+    /* Crear empresas */
+    .crear-empresas{
+        margin-right: 2em;
+    }
+
+    .img-empresa{
+        width:80px;
+        height:80px;
+        border-radius:150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 1px solid #ddd;
+        padding: 5px;
+        margin: auto;
+        display: block;
+    }
+
+    /* Hasta aca */
+   
 
     .salida{
         width: 60%;
@@ -359,11 +423,7 @@ img {
         padding: 1em;
     }
 
-    .qr{
-        box-shadow: 5px 5px 5px 5px #888888;
-        margin-top: 1em;
-    }
-
+ 
 
     .asientos{
         width: 60%;
@@ -419,15 +479,6 @@ img {
 
     input:required:invalid {
         border: 2px solid red;
-    }
-
-    .asientos-borde{
-        border: 2px solid #c1ab33;;
-        padding: 2.2em;
-        width: 95%;
-        display: block;
-        margin: auto;
-        box-shadow: 5px 2px 5px 2px #c1ab33;
     }
 
     .check{
@@ -516,19 +567,7 @@ img {
     }
    
 
-    .listadoviajes{
-        border-radius: 5px;
-        border: 2px solid black;
-        box-shadow: var(--shadow);
-        background-color: #eee;
-        background: url("img/agua.jpg") no-repeat ;	
-        background-size: cover;
-        list-style: none;
-        margin-bottom: 2em;
-        margin-left: 2px;
-        width: 95%;
-        
-    }
+
 
     .divs{
         background-color: #ffd146;;
@@ -588,15 +627,7 @@ img {
     }
 
 
-    
-    .listadoviajes {
-        border-radius: 5px;
-        border: var(--border);
-        box-shadow: var(--shadow);
-        margin: auto;
-        margin-top: 4em;
-        margin-bottom: 2em;
-    }
+
     .labelcolor {
         color: black;
     }
@@ -606,28 +637,13 @@ img {
         display: block;
         margin: auto; }
     
-    .nombreviaje {
-        display: flex;
-        flex-direction: column;
-        padding: var(--padding-box);
-    }
     
    
     .font{
         text-align: center;
         font-weight: bold;
     }
-    .imagen{
-        width: 200px;
-        display: block;
-        margin: auto;
-        height: 200px;
-        border-radius: 150px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border: 1px solid #ddd;
-        padding: 5px;
-    }
-
+    
     .imagenperfil{
         width: 100px;
         display: block;
@@ -643,195 +659,7 @@ img {
     }
 }
 
-@media (max-width: 480px){
 
-  
-    .listadoviajes {
-        border-radius: 5px;
-        border: var(--border);
-        box-shadow: var(--shadow);
-    }
-    
-    .nombreviaje {
-        display: flex;
-        flex-direction: column;
-        padding: var(--padding-box);
-        text-align: center;
-    }
-    
-    
-    .bordes{
-    border: 2px solid black;
-    }
-    
-    
-
-    .card{
-        margin: auto;
-        display: block;
-        margin-top: 2em;
-        margin-bottom: 2em;
-    
-    }
-
-    .iniciar-sesion{
-        text-align: center;
-        margin: auto;
-        font-weight: bold;
-    }
-
- 
-    .boton-buscador{
-        width:70%;
-        margin: auto;
-        display: block;
-    }
-
-    .panel{
-        width: 70%;
-    }
-
-    .box{
-        width: 90%;
-        margin: auto;
-        display: block;
-        background-color: #ffd146;
-        padding-top: 3em;
-        padding-bottom: 3em;
-        border-radius: 7px;
-        
-    }
-
-    .imgs{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border: 1px solid #ddd;
-    }
-   
-    .viajes{
-        font-size: 2.2em;
-        font-weight: bold;
-        text-align: center;
-        background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-    }
-    
-
-    .listadoviajes {
-        border-radius: 5px;
-        
-        border: 2px solid black;
-        box-shadow: var(--shadow);
-        background-color: #eee;
-        background: url("img/agua.jpg") no-repeat ;	
-        background-size: cover;
-        list-style: none;
-        margin-bottom: 2em;
-        margin-left: 0.3em;
-        width: 95%;
-       
-    }
-    .blogs{
-        display: block;
-        margin: auto;
-    }
-
-    .boton-empresa{
-        display: block;
-        margin: auto;
-        width: 50%;
-        margin-top: 1em;
-    }
-    .li-empresas{
-        list-style: none;
-    }
-
-    .imagen{
-        display: block;
-        margin: auto;
-    }
-
-    .imagen-panel{
-        width: 100px;
-        height: 100px;
-    }
-    .busqueda{
-        width: 95%;
-        background-color: #ecdb72;;
-        padding: 2em;
-        border-radius: 7px;
-        margin-left:0.4em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        
-    }
-
-    .h1-blog{
-        
-        background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-    }
-
-    .hr{
-        border: 2px solid black;
-    }
-
-    .viajes-empresa{
-        text-align: center;
-        font-weight: bold;
-        background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-        font-size: 2.2em;
-    }
-
-
-  
-    .font{
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .labelcolor{
-        color: black;
-    }
-
-
- 
-
-    .colortd{
-        background-color: #ffeeba;
-    }
-
-    .table-warning th, .table-warning thead th {
-        border-color: #f9bb00;
-    }
-
-    .colorth{
-        background-color: #ffb300;
-    }
-
-    .table-warning th, .table-warning thead th {
-        border-color: #fffbee;
-    }
-    .nuevo{
-        text-align: center;
-        font-weight: bold;
-        font-size: 2.2em;
-        
-        background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-    }
-    .button-grabar{
-        width: 50%;
-        display: block;
-        margin: auto;
-    }
-    .imagen{
-        width:200px;
-        height:200px;
-        border-radius:150px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border: 1px solid #ddd;
-        padding: 5px;
-    }
-
-   
-    }
 
     /*tablets*/
 
@@ -1039,6 +867,11 @@ img {
          .h1-blog{
          font-size: 2.2em;
          background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+         }
+
+         .card-columns{
+             margin-left: 4px;
+             margin-right: 4px;
          }
 
         /* Empresas usuarios */
@@ -1250,6 +1083,18 @@ img {
             display: block;
         }
 
+        #botones{
+            margin-left: 89%;
+            margin-bottom: 2em;
+            margin-right: 1em;
+        }
+        #botones1{
+            margin-bottom: 2em;
+        
+        }
+
+   
+
         .box{
             width: 50%;
             margin: auto;
@@ -1272,14 +1117,14 @@ img {
         .boton-ingresar{
             display: inline-block;
             width: 30%;
-            margin-left: 5%;
+            margin-left: 17%;
             margin-top: 3em;
         }
 
         .boton-registrar{
             display: inline-block;
             width: 30%;
-            margin-left: 17%;
+            margin-left: 5%;
             margin-top: 3em;
         }
 
@@ -1311,6 +1156,10 @@ img {
             font-weight: bold;
             font-size: 3.2em;
          background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .crear-empresas{
+            margin-right: 2.5em;
         }
 
       

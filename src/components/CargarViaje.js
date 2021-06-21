@@ -207,7 +207,7 @@ function CargarViaje(props) {
                  <label htmlFor="fecha_salida"><b>Fecha de salida</b></label>
                     <TextField
                             id="fecha_salida"
-                            type="date"
+                            type="datetime-local"
                             name="fecha_salida"
                             value={viaje.fecha_salida}
                             className="form-control"
@@ -224,7 +224,7 @@ function CargarViaje(props) {
                  <label htmlFor="fecha_llegada"><b>Fecha de llegada</b></label>
                     <TextField
                             id="fecha_llegada"
-                            type="date"
+                            type="datetime-local"
                             name="fecha_llegada"
                             value={viaje.fecha_llegada}
                             className="form-control"
