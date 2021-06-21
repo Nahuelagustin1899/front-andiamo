@@ -1,5 +1,5 @@
 import React from 'react';
-import {API, FETCH_HEADERS} from "../constants";
+import {API, FETCH_HEADERS, FETCH_HEADERS} from "../constants";
 
 let userData = {
     id: null,
@@ -46,7 +46,7 @@ const authService = {
         const response = await fetch(API + '/auth/registrarse', {
             method: 'POST',
             body: JSON.stringify(data),
-            headers: FETCH_HEADERS,
+            headers: FETCH_HEADERSS,
             credentials: 'include'
         });
         const fetchData = await response.json();
