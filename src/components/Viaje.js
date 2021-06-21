@@ -16,7 +16,7 @@ export default function Viaje(props) {
     return (
         <div>
             <li className="listadoviajes bordes mb-4" key={viaje.id}>
-                <h2 className="nombreviaje white">{viaje.salida.nombre} a {viaje.destino.nombre}
+                <h2 className="nombreviaje">{viaje.salida.nombre} <br/> a <br/> {viaje.destino.nombre}
                 </h2>
                 <span className="salida"> <b className="mr-1">Empresa:</b> {viaje.empresa.nombre}</span>
                 <span className="llegada"> <b className="mr-1">Fecha salida:</b> {format(new Date(viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</span>
