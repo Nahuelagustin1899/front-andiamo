@@ -1,5 +1,5 @@
 import React from 'react';
-import {API, FETCH_HEADERS, FETCH_HEADERS} from "../constants";
+import {API, FETCH_HEADERS, FETCH_HEADERSS} from "../constants";
 
 let userData = {
     id: null,
