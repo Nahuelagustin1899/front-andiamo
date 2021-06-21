@@ -365,6 +365,19 @@ img {
         display: block;
     }
 
+    /* Panel viajes */
+
+    #botones{
+        margin-left: 49%;
+        margin-bottom: 2em;
+        margin-right: 1em;
+    }
+    #botones1{
+        margin-bottom: 2em;
+    
+    }
+
+
     /* Hasta aca */
    
 
