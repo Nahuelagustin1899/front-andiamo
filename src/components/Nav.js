@@ -33,8 +33,9 @@ const Nav = (props) => {
             props.notExitosa({
               ...rta.data
             });
+            history.push('/iniciar-sesion')
           }
-          history.push('/iniciar-sesion')
+          
         }
       })
       .catch(e => console.log('Error: ', e));
