@@ -36,7 +36,8 @@ function FormularioLogin(props) {
             .catch(e => console.log("Error: ", e));
     };
 
-    return (<form
+    return (<div>
+    <form
         action="#"
         method="post"
         onSubmit={handleSubmit}
@@ -50,12 +51,10 @@ function FormularioLogin(props) {
             <input type="password" name="password" id="password" className="form-control" value={user.password} onChange={handleChange} />
         </div>
 
-        
+        <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
 
         <a className="btn btn-success boton-registrar" href="/registrarse">Registrarse</a>
-
-        <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
-    </form>);
+    </form></div>);
 }
 
 export default FormularioLogin;

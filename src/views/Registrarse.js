@@ -126,7 +126,7 @@ function Registrarse(props) {
 
 
     return (
-    <div className="fondopantalla p-5">
+    <div className="fondopantalla p-4">
     <form className="form-registrarse" onSubmit={handleSubmit}>
         <fieldset disabled={cargando}>
             
@@ -197,13 +197,11 @@ function Registrarse(props) {
                 </div>
                 <div className="col-md-6">
                     <p>Previsualización de la imagen</p>
-                    {registrar.logo ? <img src={registrar.logo} alt="Imagen seleccionada ."/> : 'No hay imagen'}
+                    {registrar.logo ? <img className="img-registro" src={registrar.logo} alt="Imagen seleccionada ."/> : 'No hay imagen'}
                 </div>
             </div>
             <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Grabar'}</button>
         </fieldset>
-    </form>
-    </div>
-    );
+    </form></div>);
 }
 export default Registrarse;
