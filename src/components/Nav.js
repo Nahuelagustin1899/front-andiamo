@@ -66,7 +66,7 @@ const Nav = (props) => {
                 <img className="imagenperfil" src={urlbase + authData.user.logo} alt={authData.user.nombre} />
               </a>
             </>) :
-            authData.user.id === 3 ?
+            authData.user.id >= 3 ?
               (<>
 
                 <a className="menu-item bm-item" href="/perfil">
