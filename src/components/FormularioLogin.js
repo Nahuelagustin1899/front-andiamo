@@ -50,9 +50,11 @@ function FormularioLogin(props) {
             <input type="password" name="password" id="password" className="form-control" value={user.password} onChange={handleChange} />
         </div>
 
-        <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
+        
 
         <a className="btn btn-success boton-registrar" href="/registrarse">Registrarse</a>
+
+        <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
     </form>);
 }
 
