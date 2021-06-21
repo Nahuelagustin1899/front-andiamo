@@ -1272,14 +1272,14 @@ img {
         .boton-ingresar{
             display: inline-block;
             width: 30%;
-            margin-left: 17%;
+            margin-left: 5%;
             margin-top: 3em;
         }
 
         .boton-registrar{
             display: inline-block;
             width: 30%;
-            margin-left: 5%;
+            margin-left: 17%;
             margin-top: 3em;
         }
 
