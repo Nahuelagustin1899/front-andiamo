@@ -3,12 +3,14 @@ import { AuthContext } from "../services/auth";
 import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
 import { format } from 'date-fns';
+import { Link } from "react-router-dom";
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit.js';
 
 function Perfil() {
 
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/" ;
-
 
     useEffect(() => {
         (async () => {
@@ -66,7 +68,12 @@ function Perfil() {
     return (<div className='fondopantalla p-5'>
         
         <h1 className="viajes">Perfil</h1>
-        <a className="btn btn-success" href="/editarusuario">Editar perfil</a>
+        <Link to="/editarusuario">
+        <Fab color="primary" aria-label="edit">
+             <EditIcon />
+        </Fab>
+        </Link>
+
         <div className="caja-perfil">
             <img className="imagen" src={urlbase + authData.user.logo} alt={authData.user.name} />
             <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
