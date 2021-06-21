@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { fallDown as Menu } from "react-burger-menu";
 import bus from '../img/bus.png';
 import authService, { AuthContext } from "../services/auth";
-
+import { useHistory } from "react-router-dom";
 
 
 const toggleMenu = ({ isOpen }) => {
@@ -15,6 +15,7 @@ const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/" ;
 const Nav = (props) => {
 
   const authData = useContext(AuthContext);
+  const history = useHistory();
 
   const handleLogout = () => {
     authService
@@ -33,6 +34,7 @@ const Nav = (props) => {
               ...rta.data
             });
           }
+          history.push('/iniciar-sesion')
         }
       })
       .catch(e => console.log('Error: ', e));
