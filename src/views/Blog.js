@@ -11,14 +11,14 @@ function Blog() {
   return (
     <div className="fondopantalla p-5">
       <h1 className="mt-3 mb-5 text-center h1-blog">Datos útiles</h1>
-      <div className="containter">
-        <CardColumns className="ml-4 mr-4">
-          <Card className=" blogs">
+      
+        <CardColumns className="card-columns">
+          <Card>
             <Card.Img variant="top" src={familia} alt="Familia" />
             <Card.Body>
               <Card.Title><b>Traslado de MENORES en transportes de Larga Distancia</b></Card.Title>
               <Card.Text>
-              ¡Hola! ¿Estás preparándote para viajar? Bueno, acordate que hace más de un año cambió la legislación sobre el traslado de menores de edad en transporte de larga distancia (Resolución 43 ... 
+              ¡Hola! ¿Estás preparándote para viajar? Bueno, acordate que hace más de un año cambió la legislación sobre el traslado de menores de edad en transporte de larga distancia (Resolución 43 – E/2016 de la Secretaría... 
               <NavLink type="button" className="nav-link " to="/menores" disabled="true" >Ver más</NavLink>
             </Card.Text>
             </Card.Body>
@@ -26,7 +26,7 @@ function Blog() {
               <small className="text-muted">2020/10/01</small>
             </Card.Footer>
           </Card>
-          <Card className=" blogs">
+          <Card>
             <Card.Img variant="top" src={doc} alt="Documentos" />
             <Card.Body>
               <Card.Title><b>¿Querés viajar? ¡Llevá los documentos!</b></Card.Title>
@@ -39,7 +39,7 @@ function Blog() {
               <small className="text-muted">2020/10/01</small>
             </Card.Footer>
           </Card>
-          <Card className="blogs">
+          <Card>
             <Card.Img variant="top" src={terminal} alt="Terminal" />
             <Card.Body>
               <Card.Title><b>Terminales de micro en todas las provincias</b></Card.Title>
@@ -55,7 +55,7 @@ function Blog() {
         </CardColumns>
 
       </div>
-    </div>);
+   );
 }
 
 export default Blog;
