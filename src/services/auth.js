@@ -43,15 +43,18 @@ const authService = {
     },
 
     async registrarse(data) {
-
-        return await fetch(API + '/auth/registrarse', {
+        const response = await fetch(API + '/auth/registrarse', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: FETCH_HEADERS,
-            credentials: 'include',
-            mode: 'no-cors'
+            credentials: 'include'
         });
-     } ,
+        const fetchData = await response.json();
+        if(!fetchData.success) {
+            return {...fetchData};
+        }
+        return {...fetchData.data};
+    },
 
     async logout() {
         var token = localStorage.getItem('user');
