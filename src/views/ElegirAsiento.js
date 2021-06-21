@@ -25,7 +25,7 @@ function ElegirAsiento() {
 
 
   return (
-    <Fragment>{location && location.state && <div className="fondopantalla p-5">
+    <Fragment>{location && location.state && <div className="fondopantalla p-1">
       <h1 className="text-center mt-5 mb-5 nuevo"><b>Elegí tu asiento para viajar</b></h1>
       <div className="div-ocup-disp">
         <span className="disp">Disponible</span>
