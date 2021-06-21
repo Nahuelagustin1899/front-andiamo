@@ -47,7 +47,8 @@ const authService = {
             method: 'POST',
             body: JSON.stringify(data),
             headers: FETCH_HEADERS,
-            credentials: 'include'
+            credentials: 'include',
+            mode: 'cors'
         });
         const fetchData = await response.json();
         if(!fetchData.success) {
