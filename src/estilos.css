@@ -703,6 +703,34 @@ img {
 
 /*CELULARES*/
 
+@media (min-width: 411px) and (max-width: 731px) {
+
+    .asientos-borde{
+        border: 2px solid #c1ab33;;
+        padding: 3em;
+        width: 95%;
+        display: block;
+        margin: auto;
+        box-shadow: inset 0px 0px 10px 10px #c1ab33;
+    }
+    
+}
+
+@media (min-width: 411px) and (max-width: 731px) {
+
+    .asientos-borde{
+        border: 2px solid #c1ab33;;
+        padding: 3em;
+        width: 95%;
+        display: block;
+        margin: auto;
+        box-shadow: inset 0px 0px 10px 10px #c1ab33;
+    }
+    
+}
+
+/*CELULARES*/
+
 @media (min-width: 414px) and (max-width: 736px) {
 
     .asientos-borde{
