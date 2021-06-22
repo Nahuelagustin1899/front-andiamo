@@ -205,6 +205,19 @@ img {
 
 /*CELULARES*/
 
+@media (min-width: 481px) and (max-width: 731px) {
+
+    .asientos-borde {
+        border: 2px solid #c1ab33;
+        padding: 2.7em;
+        width: 95%;
+        display: block;
+        margin: auto;
+        box-shadow: 5px 2px 5px 2px #c1ab33;
+    }
+
+}
+
 @media (min-width: 360px) and (max-width: 812px) {
 
     /* Login */
