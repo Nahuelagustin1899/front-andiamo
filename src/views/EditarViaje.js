@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { API, FETCH_HEADERS } from "../constants";
 import { useHistory } from "react-router-dom";
