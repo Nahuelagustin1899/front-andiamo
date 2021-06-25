@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { API, FETCH_HEADERS } from "../constants";
 import { useHistory } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import TextField from '@material-ui/core/TextField';
 
-function EditarViaje(props) {
+function EditarViaje() {
 
     const history = useHistory();
     const location = useLocation()
-    var viaje;
+    let viaje;
     console.log(location);
     if (location.state) {
         viaje = location.state.item;
@@ -16,7 +19,16 @@ function EditarViaje(props) {
         history.push('/viajes')
     }
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const SignupSchema = yup.object().shape({
+        precio: yup.string().required('El campo precio no puede estar vacío'),
+        fecha_salida: yup.string().required('El campo fecha de salida no puede estar vacío'),
+        fecha_llegada: yup.string().required('El campo fecha de llegada no puede estar vacío'),
+    });
+
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(SignupSchema)
+    });
 
 
     const onSubmit = async data => {
@@ -36,10 +48,11 @@ function EditarViaje(props) {
 
     return (
         <div className="fondopantalla p-5">
-            <h1 className="editar-perfil">Editar viaje</h1>
-            <form className="form-editar-viajes"
+            <h1 className="viajes-empresa">Editar viaje</h1>
+            <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
+
                 <div className="form-group">
                     <label htmlFor="precio"><b>Precio</b></label>
                     <input
@@ -48,7 +61,29 @@ function EditarViaje(props) {
                         className="form-control"
                         {...register("precio")}
                     />
-                    {errors.name && <span className="alert alert-danger">El campo no puede estar vacio</span>}
+                    {errors.precio && <span className="form-control alert alert-danger errores">{errors.precio.message}</span>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="fecha_salida"><b>Fecha de salida</b></label>
+                    <TextField
+                        type="datetime-local"
+                        defaultValue={viaje ? viaje.fecha_salida : ''}
+                        className="form-control"
+                        {...register("fecha_salida")}
+                    />
+                    {errors.fecha_salida && <span className="form-control alert alert-danger errores">{errors.fecha_salida.message}</span>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="fecha_llegada"><b>Fecha de llegada</b></label>
+                    <TextField
+                        type="datetime-local"
+                        defaultValue={viaje ? viaje.fecha_llegada : ''}
+                        className="form-control"
+                        {...register("fecha_llegada")}
+                    />
+                    {errors.fecha_llegada && <span className="form-control alert alert-danger errores">{errors.fecha_llegada.message}</span>}
                 </div>
 
                 <button type="submit" className="btn btn-primary boton-terminar-edit" >Terminar de editar</button>

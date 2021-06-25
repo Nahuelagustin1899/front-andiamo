@@ -5,12 +5,21 @@ import { GiSteeringWheel } from 'react-icons/gi';
 import reservasService from '../services/reservas';
 import Asientos from "./../components/Asientos";
 import { Fragment } from 'react';
-
+import { useHistory } from "react-router-dom";
 
 
 function ElegirAsiento() {
   const location = useLocation()
   const [reservados, setReservados] = useState([]);
+  const history = useHistory();
+
+  let viaje;
+    console.log(location);
+    if (location.state) {
+        viaje = location.state.viaje;
+    } else {
+        history.push('/viajesusuarios')
+    }
 
   useEffect(() => {
     console.log(location);

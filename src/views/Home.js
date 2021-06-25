@@ -34,7 +34,7 @@ function Home() {
           alt="Playa Mar Del Plata"
         />
         <Carousel.Caption>
-          <h4 className="badge badge-warning">Mar del plata</h4>
+          <h4 className="badge badge-warning">Mar del Plata</h4>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={1000}>
@@ -44,7 +44,7 @@ function Home() {
           alt="Playa las Toninas"
         />
         <Carousel.Caption>
-          <h4 className="badge badge-warning">Las toninas</h4>
+          <h4 className="badge badge-warning">Las Toninas</h4>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -51,8 +51,8 @@ function Viajes(props) {
         <div >
 
             <form className="busqueda mb-5">
-                <div class="form-group ">
-                    <label for="destino" className="labelcolor"><i className="mr-2 "><ImOffice style={{ fontSize: 28 }} /></i>Empresa</label>
+                <div className="form-group ">
+                    <label htmlFor="destino" className="labelcolor"><i className="mr-2 "><ImOffice style={{ fontSize: 28 }} /></i>Empresa</label>
                     <input
                         className="ml-2"
                         type="text"
