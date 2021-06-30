@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Fab from '@material-ui/core/Fab';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import EditIcon from '@material-ui/icons/Edit.js';
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +31,11 @@ function Empresas(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const history = useHistory();
+    
+    const editarEmpresa = (item) => {
+        history.push({ pathname: "/editarempresa", state: { item: item } })
+    }
 
     useEffect(() => {
         (async () => {
@@ -57,6 +64,9 @@ function Empresas(props) {
 
                             <Fab color="secondary" onClick={handleShow} aria-label="delete">
                                 <DeleteIcon />
+                            </Fab>
+                            <Fab id="botones1" onClick={() => editarEmpresa(item)} color="primary" aria-label="edit">
+                                <EditIcon />
                             </Fab>
                         </td>
                     </tr>
