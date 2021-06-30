@@ -1,49 +1,84 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../services/auth";
-import {API, FETCH_HEADERS} from "../constants";
+import { API} from "../constants";
+import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 function EditarUsuario() {
 
 
     const authData = useContext(AuthContext);
-    console.log(authData);
-    const { register, handleSubmit, formState: { errors } } = useForm();
     const history = useHistory();
+    console.log(authData);
 
-    const onSubmit = async data => {   
-         const response = await fetch(API + '/auth/editar/' + authData.user.id, {
-            method: 'PUT',
-            headers: FETCH_HEADERS,
-            body: JSON.stringify(data),
-            credentials: 'include'
-        }); 
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-        const fetchData = await response.json();
-        localStorage.setItem('user', JSON.stringify(fetchData.data));
-        history.push('/');
+    const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
+    
+
+    const [file, setFile] = React.useState();
+
+    const handleFile = React.useCallback((event) => {
+        const files = event?.target?.files
+        if (files?.length) {
+            setFile(files[0])
+        }
+    }, []);
+
+    const onSubmit = async data => {
        
-        return { ...fetchData.data}; 
+            console.log(data);
+            const fd = new FormData();
+            fd.append('name', data.name);
+            fd.append('logo', file);
+            console.log(fd);
+            return axios.post(API + '/auth/editar/' + authData.user.id, fd, {
+                headers: {
+                    credentials: 'include'
+                }
+            }
+            ).then(({ data }) => {
+                localStorage.setItem('user', JSON.stringify(data?.data));
+                authData.updateAuthData(data?.data)
+                history.push('/perfil')
+            });
 
+      
     };
-
 
     return (
         <div className="fondopantalla p-5">
-            <h1 className="editar-perfil">Editar Perfil</h1>
+            <h1 className="viajes">Editar Perfil</h1>
             <form className="form-editar-viajes"
                 onSubmit={handleSubmit(onSubmit)}>
-   
+
                 <div className="form-group">
                     <label htmlFor="nombre">Nombre</label>
+
                     <input
                         defaultValue={authData.user.name}
-                        type="nombre"
+                        type="text"
                         className="form-control"
-                        {...register("name")}
+                        {...register("name", { required: true })}
                     />
-                    {errors.name && <span className="alert alert-danger">El campo no puede estar vacio</span>}
+                    {errors.name && errors.name.type === "required" && <span className="alert alert-danger">This is required</span>}
+                </div>
+
+                <div className="form-row">
+                    <div className="form-group col-md-6">
+                        <label htmlFor="logo"><b>Logo</b></label>
+                        <input
+                            type="file"
+                            className="form-control"
+                            onChange={handleFile}
+                        />
+                    </div>
+                    <div className="col-md-6">
+                        <p>Previsualización de la imagen</p>
+                        {authData.user.logo ? <img defaultValue={authData.user.logo} className="img-registro" src={urlbase + authData.user.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
+                    </div>
+
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block" >Terminar de editar</button>
