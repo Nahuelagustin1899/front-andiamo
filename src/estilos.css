@@ -365,6 +365,8 @@ img {
 
     /* Panel viajes */
 
+    
+
     #botones{
         margin-left: 49%;
         margin-bottom: 2em;
@@ -373,6 +375,18 @@ img {
     #botones1{
         margin-bottom: 2em;
     
+    }
+
+    .errores{
+    margin-top: 1px;
+    height: fit-content;
+    }
+
+    .boton-terminar-edit{
+        width: 70%;
+        margin: auto;
+        display: block;
+        margin-top: 2em;
     }
 
 
@@ -603,6 +617,7 @@ img {
     .h1-blog{
         font-size: 2.2em;
          background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+         font-weight: bold;
     }
 
     .card-home{
@@ -668,6 +683,8 @@ img {
     .li-empresas{
         list-style: none;
     }
+
+
 }
 
 /*CELULARES*/
@@ -1415,13 +1432,6 @@ img {
   background: #000;
 }
 
-/* .bm-menu-wrap {
-  visibility: hidden;
-}
-
-.bm-menu-wrap.open {
-  visibility: visible;
-} */
 
 .bm-cross-button {
   height: 24px;
@@ -1449,6 +1459,24 @@ img {
   padding-bottom: 1em;
   font-weight: bold;
 }
+
+.bot{
+     font-size:3em; 
+     color: white;
+}
+
+
+
+.div-bot{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 1em;
+    z-index: 1050;
+    background-color: rgb(12 58 255);
+    border-radius: 300px;
+}
+
 
 
 

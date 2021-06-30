@@ -31,6 +31,7 @@ import Nav from "./components/Nav";
 import authService, {AuthContext} from "./services/auth";
 import AuthRoute from "./components/AuthRoute";
 import Footer from "./components/Footer";
+import Bot from "./components/Bot";
 
 /* Hooks */
 import {useNotification} from "./hooks";
@@ -122,6 +123,7 @@ function App() {
         <Nav
           notExitosa={handleLogOut}
         />
+        <Bot />
         {
          (Notification)
         }
