@@ -20,6 +20,7 @@ import Miramar from "./views/Miramar";
 import SanBernardo from "./views/SanBernardo";
 import EditarUsuario from "./views/EditarUsuario";
 import EditarViaje from "./views/EditarViaje";
+import EditarEmpresas from "./views/EditarEmpresas";
 import Registrarse from "./views/Registrarse";
 import Documentos from "./views/Documentos";
 import Menores from "./views/Menores";
@@ -128,6 +129,9 @@ function App() {
         <Switch>
             <AuthRoute path="/checkout" >
                <Pago  exact component={Pago}/>
+            </AuthRoute>
+            <AuthRoute path="/editarempresa">
+               <EditarEmpresas  exact component={EditarEmpresas}/>
             </AuthRoute>
             <AuthRoute path="/editarusuario">
                <EditarUsuario  exact component={EditarUsuario}/>
