@@ -17,7 +17,7 @@ function Bot() {
     return (
         <div className="div-bot">
             <Button>
-                <IoChatbubbleEllipsesSharp className="bot" aria-controls="simple-menu" aria-haspopup="2" onClick={handleClick}>
+                <IoChatbubbleEllipsesSharp className="bot" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 </IoChatbubbleEllipsesSharp>
             </Button>
             <Menu
