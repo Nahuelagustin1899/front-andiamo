@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useHistory } from "react-router";
 
 
-const ValidateLoginCheckout = () => {
+const ValidateLoginCheckout = (props) => {
 
   const history = useHistory();
 
@@ -22,7 +22,7 @@ const ValidateLoginCheckout = () => {
 
     onSubmit={(values, { setSubmitting }) => {
 
-      history.push("/");
+      history.push("/reservaexitosa");
       setTimeout(() => {
 
         console.log("Formulario enviado con éxito", values);
@@ -78,7 +78,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className="form-control"
-                required
+                
               />
               {errors.nombre && touched.nombre && (
                 <div className="alert alert-danger mt-1">{errors.nombre}</div>
@@ -94,7 +94,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.apellido && touched.apellido && (
                 <div className="alert alert-danger mt-1">{errors.apellido}</div>
@@ -110,7 +110,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.email && touched.email && (
                 <div className="alert alert-danger mt-1">{errors.email}</div>
@@ -126,7 +126,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.dni && touched.dni && (
                 <div className="alert alert-danger mt-1">{errors.dni}</div>
@@ -157,7 +157,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.numTarj && touched.numTarj && (
                 <div className="alert alert-danger mt-1">{errors.numTarj}</div>
@@ -173,7 +173,7 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.expiracion && touched.expiracion && (
                 <div className="alert alert-danger mt-1">{errors.expiracion}</div>
@@ -189,14 +189,14 @@ const ValidateLoginCheckout = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className='form-control'
-                required
+                
               />
               {errors.codigo && touched.codigo && (
                 <div className="alert alert-danger mt-1">{errors.codigo}</div>
               )}
             </div>
           </div>
-          <button className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Continuar</button>
+          <a className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</a>
 
         </form>
       );

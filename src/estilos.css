@@ -205,6 +205,29 @@ img {
 
 @media (min-width: 360px) and (max-width: 640px){
 
+    .estrellas{
+        margin-left: 25%;
+        margin-top: 6px;
+        
+    }
+
+    .link-stars{
+        margin-left: 18%;
+        width: 30%;
+    }
+
+    .link-stars2{
+        margin-left: 1em;
+        width: 30%;
+    }
+
+
+    .box-stars{
+        background-color: #14529a;
+        padding: 2em;
+        border-radius: 3px;
+    }
+
     /* Login */
 
     .div-sesion {
