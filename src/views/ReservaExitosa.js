@@ -1,69 +1,211 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Alert from '@material-ui/lab/Alert';
-import AlertTitle from '@material-ui/lab/AlertTitle';
-import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
-
-function ReservaExitosa() {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            width: '100%',
-            '& > * + *': {
-                marginTop: theme.spacing(2),
-            },
-        },
-    }));
+import React from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import { useHistory } from "react-router";
 
 
+const ValidateLoginCheckout = (props) => {
 
-    const classes = useStyles();
-    return (
-        <div className="fondopantalla p-4">
-            <div className={classes.root}>
-                <Alert variant="filled" severity="success">
-                    <AlertTitle>Éxito</AlertTitle>
-                    <strong>La reserva fue realizada exitosamente</strong>
-                </Alert>
-                <div className="box-stars mb-5">
-                    <h3 className="text-center text-white h4">Por último, nos va a servir para mejorar la app : </h3>
-                    <Box className="mt-5" component="fieldset" mb={3} borderColor="transparent">
-                        <Typography className="font-weight-bold text-center text-white" component="legend">¿Qué tan satisfecho estuviste con la app?</Typography>
-                        <Rating className="estrellas" size="large" name="size-large"  defaultValue={3} max={5} />
-                    </Box>
-                </div>
-                <>
-                    <Link className="btn btn-danger link-stars" to="/">
-                        No calificar
-                    </Link>
-                    <Button className="link-stars2" variant="primary" onClick={handleShow}>
-                        Calificar
-                    </Button>
+  const history = useHistory();
 
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title className="text-success h5 text-weight-bold">¡La calificación fue exitosa!</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body className="text-weight-bold">¡Muchas gracias, Andiamo!</Modal.Body>
-                        <Modal.Footer>
-                            <a type="button" className="btn btn-primary" href="/">
-                                Terminar
-                            </a>
-                        </Modal.Footer>
-                    </Modal>
-                </>
+  return <Formik
+    initialValues={{
+      nombre: "",
+      apellido: "",
+      email: "",
+      dni: "",
+      provincia: "",
+      expiracion: "",
+      numTarj: "",
+      codigo: ""
+    }}
+
+    onSubmit={(values, { setSubmitting }) => {
+
+      history.push("/reservaexitosa");
+      setTimeout(() => {
+
+        console.log("Formulario enviado con éxito", values);
+        setSubmitting(false);
+
+      }, 500);
+
+    }}
+
+
+    validationSchema={Yup.object().shape({
+      nombre: Yup.string()
+        .required("El campo nombre no puede estar vacío"),
+      apellido: Yup.string()
+        .required("El campo apellido no puede estar vacío"),
+      email: Yup.string()
+        .email("El email no es válido")
+        .required("El campo email no puede estar vacío"),
+      dni: Yup.number()
+        .required("El campo DNI no puede estar vacío"),
+      numTarj: Yup.number()
+        .required("El campo número de tarjeta no puede estar vacío"),
+      expiracion: Yup.date()
+        .required("El campo fecha de expiración no puede estar vacío"),
+      codigo: Yup.number()
+        .required("El campo fecha de expiración no puede estar vacío")
+    })}
+  >
+
+    {props => {
+      const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit
+      } = props;
+
+
+
+      return (
+
+        <form onSubmit={handleSubmit}>
+          <div className="row global">
+            <div className="col-md-12 mb-3">
+              <label htmlFor="nombre">Nombre</label>
+              <input
+                name="nombre"
+                type="text"
+                placeholder="Nahuel"
+                value={values.nombre}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="form-control"
+                
+              />
+              {errors.nombre && touched.nombre && (
+                <div className="alert alert-danger mt-1">{errors.nombre}</div>
+              )}
             </div>
-        </div >
-    );
-}
+            <div className="col-md-12 mb-3">
+              <label htmlFor="apellido">Apellido</label>
+              <input
+                name="apellido"
+                type="text"
+                placeholder="Lopez"
+                value={values.apellido}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.apellido && touched.apellido && (
+                <div className="alert alert-danger mt-1">{errors.apellido}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="email">Email</label>
+              <input
+                name="email"
+                type="email"
+                placeholder="nahuel@davinci.edu.ar"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.email && touched.email && (
+                <div className="alert alert-danger mt-1">{errors.email}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="dni">DNI</label>
+              <input
+                name="dni"
+                type="text"
+                placeholder="11.222.333"
+                value={values.dni}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.dni && touched.dni && (
+                <div className="alert alert-danger mt-1">{errors.dni}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="provincia">Provincia</label>
+              <select className="custom-select d-block w-100" id="provincia" placeholder="Elegi una provincia">
+                <option>Buenos Aires</option>
+                <option>Chaco</option>
+                <option>Formosa</option>
+                <option>Mendoza</option>
+                <option>San Luis</option>
+                <option>Salta</option>
+                <option>Entre Ríos</option>
+              </select>
+              {errors.provincia && touched.provincia && (
+                <div className="alert alert-danger mt-1">{errors.provincia}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="numTarj">Número de tarjeta</label>
+              <input
+                name="numTarj"
+                type="text"
+                placeholder="1111 2222 3333 4444"
+                value={values.numTarj}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.numTarj && touched.numTarj && (
+                <div className="alert alert-danger mt-1">{errors.numTarj}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="expiracion">Fecha de expiración</label>
+              <input
+                name="expiracion"
+                type="month"
+                placeholder="Fecha"
+                value={values.expiracion}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.expiracion && touched.expiracion && (
+                <div className="alert alert-danger mt-1">{errors.expiracion}</div>
+              )}
+            </div>
+            <div className="col-md-12 mb-3">
+              <label htmlFor="codigo">Código de seguridad</label>
+              <input
+                name="codigo"
+                type="text"
+                placeholder="123"
+                value={values.codigo}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+                
+              />
+              {errors.codigo && touched.codigo && (
+                <div className="alert alert-danger mt-1">{errors.codigo}</div>
+              )}
+            </div>
+          </div>
+          <a className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</a>
 
-export default ReservaExitosa;
+        </form>
+      );
+    }}
+  </Formik>
+
+
+
+
+};
+
+export default ValidateLoginCheckout;
