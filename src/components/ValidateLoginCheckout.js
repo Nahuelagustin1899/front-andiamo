@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 
 const ValidateLoginCheckout = (props) => {
@@ -196,7 +197,7 @@ const ValidateLoginCheckout = (props) => {
               )}
             </div>
           </div>
-          <a className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</a>
+          <Link className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</Link>
 
         </form>
       );
