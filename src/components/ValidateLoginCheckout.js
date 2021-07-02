@@ -197,7 +197,7 @@ const ValidateLoginCheckout = (props) => {
               )}
             </div>
           </div>
-          <Link className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</Link>
+          <Link to="/reservaexitosa" className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</Link>
 
         </form>
       );
