@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
-import { ImOffice } from "react-icons/im";
 import Table from 'react-bootstrap/Table';
 import { format } from 'date-fns';
 import Fab from '@material-ui/core/Fab';
