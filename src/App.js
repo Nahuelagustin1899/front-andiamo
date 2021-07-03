@@ -26,6 +26,7 @@ import Documentos from "./views/Documentos";
 import Menores from "./views/Menores";
 import Terminales from "./views/Terminales";
 import ReservaExitosa from "./views/ReservaExitosa";
+import PanelAdmin from "./views/PanelAdmin";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -162,6 +163,12 @@ function App() {
                   notExitosaEliminar={handleEmpresaEliminada}
                   notDenegadaEliminar={handleEmpresaErrorEliminar}
                 />
+              </AuthRoute>
+              <AuthRoute path="/paneladmin" component={PanelAdmin}> 
+              <PanelAdmin exact
+                notExitosaEliminar={handleEmpresaEliminada}
+                notDenegadaEliminar={handleEmpresaErrorEliminar}
+              /> 
               </AuthRoute>
               <Route exact path="/viajesusuarios" component={ViajesUsuarios} />
               <AuthRoute path="/empresaspanel">

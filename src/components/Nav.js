@@ -120,6 +120,17 @@ const Nav = (props) => {
           </>)
       }
       {
+        authData.user.id === 1 ?
+          (<>
+            <a className="menu-item bm-item" href="/paneladmin">
+              Panel viajes
+            </a>
+          </>) :
+          (<>
+
+          </>)
+      }
+      {
         authData.user.id === null ?
           (<>
             <a className="menu-item bm-item" href="/iniciar-sesion">Iniciar Sesión</a>
