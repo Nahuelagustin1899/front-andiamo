@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import viajesService from "./../services/viajes";
-import { Link } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useHistory } from "react-router-dom";
@@ -9,7 +8,6 @@ import { format } from 'date-fns';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
 import DeleteIcon from '@material-ui/icons/Delete.js';
-import AddIcon from '@material-ui/icons/Add.js';
 import { makeStyles } from "@material-ui/core/styles";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
@@ -203,17 +201,6 @@ function PanelAdmin(props) {
                 <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
             </div>
             <div className="p-4">
-                <Link to="/viajes/nueva">
-                    <Fab variant="extended"
-                        size="medium"
-                        color="primary"
-                        aria-label="add"
-                        className={classes.margin}>
-                        <AddIcon className={classes.extendedIcon} />
-                        Crear viaje
-                    </Fab>
-                </Link>
-               
                     {lista}  
                 </div>       
             </div>
