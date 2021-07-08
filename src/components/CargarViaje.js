@@ -7,7 +7,7 @@ import * as yup from "yup";
 
 const validateSchema = yup.object().shape({
     
-   /*  empresa_id: yup.number().typeError('La empresa no puede estar vacia'), */
+    empresa_id: yup.number().typeError('La empresa no puede estar vacia'),
     salida_id: yup.number().typeError('La salida no puede estar vacia'),
     destino_id: yup.number().typeError('El destino no puede estar vacio'),
     fecha_salida: yup.date().typeError('La fecha de salida no puede estar vacia'),
@@ -150,7 +150,7 @@ function CargarViaje(props) {
                     className="form-control"
                     
                     onChange={handleChange}>
-
+                <option>Elegi tu empresa</option> 
                 {empresas && empresas.map((empresa, key) => (
                 <option value={empresa.id}>{empresa.nombre}</option>
                 ))}
