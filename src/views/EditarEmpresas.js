@@ -37,13 +37,14 @@ function EditarEmpresas() {
             fd.append('nombre', data.nombre);
             fd.append('logo', file);
             console.log(fd);
-            return axios.post(API + '/empresa/editar/' + empresa.id, fd, {
+             axios.post(API + '/empresa/editar/' + empresa.id, fd, {
                 headers: {
                     credentials: 'include'
                 }
-            },
-            history.push('/empresaspanel')
-            )   
+            }
+            ).then(() => {
+                history.push('/empresaspanel')
+            }); 
         
     };
 
