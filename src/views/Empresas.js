@@ -38,9 +38,9 @@ function Empresas(props) {
     }
 
     useEffect(() => {
-        console.log('Hola');
         (async () => {
             const data = await empresasService.index();
+            console.log('Hola');
             setEmpresas(data);
             setCargando(false);
         })().catch(err => console.error('Error al traer las empresas: ', err));
