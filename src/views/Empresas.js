@@ -40,7 +40,7 @@ function Empresas(props) {
     useEffect(() => {
         (async () => {
             const data = await empresasService.index();
-            console.log('Hola');
+            console.log(data);
             setEmpresas(data);
             setCargando(false);
         })().catch(err => console.error('Error al traer las empresas: ', err));
