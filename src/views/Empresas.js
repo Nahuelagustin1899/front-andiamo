@@ -37,13 +37,13 @@ function Empresas(props) {
         history.push({ pathname: "/editarempresa", state: { item: item } })
     }
 
-    useEffect((props) => {
+    useEffect(() => {
         (async () => {
             const data = await empresasService.index();
             setEmpresas(data);
             setCargando(false);
         })().catch(err => console.error('Error al traer las empresas: ', err));
-    }, []);
+    }, [props]);
 
     const lista = empresas.map(item => (
         <div key={item.id}>
