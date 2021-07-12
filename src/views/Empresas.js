@@ -38,6 +38,7 @@ function Empresas(props) {
     }
 
     useEffect(() => {
+        console.log('Hola');
         (async () => {
             const data = await empresasService.index();
             setEmpresas(data);
