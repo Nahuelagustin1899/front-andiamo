@@ -43,13 +43,9 @@ function EditarEmpresas() {
                 }
             },
             history.push('/empresaspanel')
-            )
-             
-       
+            )   
         
     };
-
-
 
 
     return (

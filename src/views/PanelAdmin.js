@@ -8,20 +8,12 @@ import { format } from 'date-fns';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
 import DeleteIcon from '@material-ui/icons/Delete.js';
-import { makeStyles } from "@material-ui/core/styles";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
 import TextField from '@material-ui/core/TextField';
 import { BsFillBriefcaseFill } from "react-icons/bs";
 
-const useStyles = makeStyles((theme) => ({
-    margin: {
-        marginBottom: theme.spacing(3)
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1)
-    }
-}));
+
 
 function PanelAdmin(props) {
     const history = useHistory();
@@ -33,7 +25,6 @@ function PanelAdmin(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const classes = useStyles();
 
     const editarViaje = (item) => {
         history.push({ pathname: "/editarviaje", state: { item: item } })

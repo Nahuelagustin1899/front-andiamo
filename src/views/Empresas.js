@@ -37,7 +37,7 @@ function Empresas(props) {
         history.push({ pathname: "/editarempresa", state: { item: item } })
     }
 
-    useEffect(() => {
+    useEffect((props) => {
         (async () => {
             const data = await empresasService.index();
             setEmpresas(data);
@@ -65,6 +65,7 @@ function Empresas(props) {
                             <Fab color="secondary" onClick={handleShow} aria-label="delete">
                                 <DeleteIcon />
                             </Fab>
+
                             <Fab id="botones1" onClick={() => editarEmpresa(item)} color="primary" aria-label="edit">
                                 <EditIcon />
                             </Fab>
