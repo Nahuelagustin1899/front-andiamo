@@ -11,7 +11,7 @@ function SantaTeresita() {
             <Card  className="card-informacion">
                 <Card.Body>Santa Teresita es una ciudad turística argentina, en el partido de La Costa, provincia de Buenos Aires. La localidad ha nacido y crecido con un fin turístico entorno al <b className="text-info">clima templado oceánico y a sus playas</b>. Limita al norte con Costa Chica, al sur con Mar del Tuyú, al oeste con la RP 11, y al este con la costa del mar Argentino, en el Océano Atlántico.</Card.Body>
                 <Card.Body>Fue fundada el 3 de marzo de 1946 por el abogado Y contador Lázaro Freidenberg. Se puede considerar que la característica más identificatoria de la ciudad es su <b className="text-info">costanera arbolada con pasarelas de madera</b>, entre la Avenida Costanera y la playa propiamente dicha. </Card.Body>
-                <Card.Body><b className="text-info">En esta ciudad se puede disfrutar</b> del mar, la arena, practicar deportes como el kitesurf o el surf, pasear por sus espacios verdes o sus calles arboladas, realizar compras en el centro, o disfrutar de la gastronomía local.</Card.Body>
+                <Card.Body>En esta ciudad se puede disfrutar del mar, la arena, practicar deportes como el kitesurf o el surf, pasear por sus espacios verdes o sus calles arboladas, realizar compras en el centro, o disfrutar de la gastronomía local.</Card.Body>
             </Card>
         </div>
     );
