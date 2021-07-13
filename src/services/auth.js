@@ -36,6 +36,7 @@ const authService = {
 
         if(respuesta.success) {
             userData = respuesta.user;
+            console.log(userData);
             localStorage.setItem('user', JSON.stringify(userData));
             return {...userData}; 
         }

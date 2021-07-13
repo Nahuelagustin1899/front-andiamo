@@ -33,6 +33,7 @@ function EditarUsuario() {
             fd.append('name', data.name);
             fd.append('logo', file);
             console.log(fd);
+            
             return axios.post(API + '/auth/editar/' + authData.user.id, fd, {
                 headers: {
                     credentials: 'include'
