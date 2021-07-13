@@ -11,9 +11,10 @@ function Terminales() {
             <Card className="card-informacion">
                 <Card.Body><b className="text-info">Si estás en Buenos Aires</b> no sólo no tenés que ir hasta la terminal de Retiro a comprarte tus pasajes sino que lo podés tomar desde cualquier lado del conurbano.
                 </Card.Body>
-                <Card.Body>Por ejemplo <b className="text-info">si vas a la costa la empresa Rutatlántica </b>no sale de Retiro pero sí de la terminal de Liniers. Además sale desde otros puntos como Villa Ballester, San Miguel, Jose C. Paz, Don Torcuato, Pilar, Del Viso, Caseros, Ituzaingó, San Justo, Tapiales, San Martín, Morón, Florencio Varela, Caseros, San Isidro
+                <Card.Body>
+                Por ejemplo, si vas a la costa, la empresa Rutatlántica, no sale de Retiro pero sí de la terminal de Liniers. Además sale desde otros puntos como Villa Ballester, San Miguel, Jose C. Paz, Don Torcuato, Pilar, Del Viso, Caseros, Ituzaingó, San Justo, Tapiales, San Martín, Morón, Florencio Varela, Caseros, San Isidro.
                 </Card.Body>
-                <Card.Body><b className="text-info"> Con la empresa Plusmar </b>tenés otros puntos de ascenso y descenso también como pueden ser: Avellaneda, Sarandi, Quilmes, Wilde, Bernal, Berazategui, Banfield, Lomas de Zamora, Olivos.
+                <Card.Body>Con la empresa Plusmar, tenés otros puntos de ascenso y descenso, como pueden ser: Avellaneda, Sarandi, Quilmes, Wilde, Bernal, Berazategui, Banfield, Lomas de Zamora, Olivos.
                 </Card.Body>
             </Card>
         </div>
