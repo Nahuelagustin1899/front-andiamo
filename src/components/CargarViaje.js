@@ -168,7 +168,7 @@ function CargarViaje(props) {
                 <label htmlFor="salida_id"><b>Estacion de salida</b></label>
                 <select id="salida_id"
                     name="salida_id"
-                    className="form-control"
+                    className="form-control overflow-auto"
                     onChange={handleChange}>
                 <option>Elegi destino de salida</option>        
                 {estaciones && estaciones.map((estacion, key) => (
