@@ -36,6 +36,8 @@ const authService = {
 
         if(respuesta.success) {
             userData = respuesta.user;
+            const {token} = userData;
+            localStorage.setItem('token', JSON.stringify(token));
             console.log(userData);
             localStorage.setItem('user', JSON.stringify(userData));
             return {...userData}; 
@@ -58,9 +60,9 @@ const authService = {
     },
 
     async logout() {
-        var token = localStorage.getItem('user');
+        var token = localStorage.getItem('token');
         if(token !== null){
-            FETCH_HEADERS.Authorization  =  'Bearer ' + JSON.parse(localStorage.getItem('user')).token ;
+            FETCH_HEADERS.Authorization  =  'Bearer ' + JSON.parse(localStorage.getItem('token'));
         }
 
         const rta = await fetch(API + '/auth/logout', {
@@ -78,6 +80,7 @@ const authService = {
                 logo:null,
             };
             localStorage.removeItem('user');
+            localStorage.removeItem('token');
             return true; 
         }
         return false;
