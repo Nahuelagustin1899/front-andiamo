@@ -38,7 +38,6 @@ const authService = {
             userData = respuesta.user;
             const {token} = userData;
             localStorage.setItem('token', JSON.stringify(token));
-            console.log(userData);
             localStorage.setItem('user', JSON.stringify(userData));
             return {...userData}; 
         }
