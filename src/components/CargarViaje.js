@@ -150,7 +150,7 @@ function CargarViaje(props) {
                     className="form-control"
                     
                     onChange={handleChange}>
-                <option disabled>Elegi tu empresa</option> 
+                <option>Elegi tu empresa</option> 
                 {empresas && empresas.map((empresa, key) => (
                 <option value={empresa.id}>{empresa.nombre}</option>
                 ))}
@@ -170,7 +170,7 @@ function CargarViaje(props) {
                     name="salida_id"
                     className="form-control"
                     onChange={handleChange}>
-                <option disabled>Elegi destino de salida</option>        
+                <option>Elegi destino de salida</option>        
                 {estaciones && estaciones.map((estacion, key) => (
                 <option value={estacion.id}>{estacion.nombre}</option>
                 ))}
@@ -189,7 +189,7 @@ function CargarViaje(props) {
                     name="destino_id"
                     className="form-control"
                     onChange={handleChange}>
-                <option disabled>Elegi destino de llegada</option>         
+                <option>Elegi destino de llegada</option>         
                 {estaciones && estaciones.map((estacion, key) => (
                 <option value={estacion.id}>{estacion.nombre}</option>
                 ))}
