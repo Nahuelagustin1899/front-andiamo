@@ -34,7 +34,7 @@ function ReservaExitosa() {
                     <AlertTitle>Éxito</AlertTitle>
                     <strong>La reserva fue realizada exitosamente</strong>
                 </Alert>
-                <div className="box-stars mb-5">
+                <div className="box-stars mb-5 mt-5">
                     <h3 className="text-center text-white h4">Por último, nos va a servir para mejorar la app : </h3>
                     <Box className="mt-5" component="fieldset" mb={3} borderColor="transparent">
                         <Typography className="font-weight-bold text-center text-white" component="legend">¿Qué tan satisfecho estuviste con la app?</Typography>
