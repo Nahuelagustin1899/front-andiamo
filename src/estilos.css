@@ -1167,10 +1167,15 @@ img {
         }
 
         .checkout{
+            background-color: #ffd146;
             width: 70%;
+            padding: 1em;
             display: block;
             margin: auto;
+            border-radius: 7px;
+            margin-bottom: 2em;
         }
+
 
         /* Panel viajes */
 
