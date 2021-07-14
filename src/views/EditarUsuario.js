@@ -75,7 +75,7 @@ function EditarUsuario() {
                             onChange={handleFile}
                         />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <p>Previsualización de la imagen</p>
                         {authData.user.logo ? <img defaultValue={authData.user.logo} className="img-registro" src={urlbase + authData.user.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
                     </div>
