@@ -1174,6 +1174,13 @@ img {
             margin: auto;
             border-radius: 7px;
             margin-bottom: 2em;
+            margin-top: 2em;
+        }
+
+        .box-stars {
+            background-color: #14529a;
+            padding: 2em;
+            border-radius: 3px;
         }
 
 
