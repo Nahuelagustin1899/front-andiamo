@@ -1137,11 +1137,11 @@ img {
 
         .asientos-borde{
             border: 2px solid #c1ab33;;
-            padding: 1.9em;
-            width: 25%;
+            padding: 3.2em;
+            width: 27%;
             display: block;
             margin: auto;
-            box-shadow: 5px 2px 5px 2px #c1ab33;
+            box-shadow: inset 0px 0px 10px 10px #c1ab33;
         }
 
         .amarillos{
