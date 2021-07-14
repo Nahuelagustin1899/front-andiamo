@@ -1058,6 +1058,7 @@ img {
             padding: 1em;
             border-radius: 1em;
             width: 60%;
+            border: 2px solid #ffd24a;
         }
 
         /* Viajes usuarios */
