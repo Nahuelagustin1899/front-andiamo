@@ -1184,11 +1184,22 @@ img {
             width: 45%;
             display: block;
             margin: auto;
+            margin-top: 2em;
         }
 
         .MuiRating-sizeLarge {
             margin-left: 35%;
             margin-top: 1em;
+        }
+
+        .link-stars{
+            margin-left: 18%;
+            width: 30%;
+        }
+    
+        .link-stars2{
+            margin-left: 1em;
+            width: 30%;
         }
 
 
