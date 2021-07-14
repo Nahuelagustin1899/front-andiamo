@@ -1061,6 +1061,11 @@ img {
             border: 2px solid #ffd24a;
         }
 
+        .img-registro{
+            margin: auto;
+            display: block;
+        }
+
         /* Viajes usuarios */
 
         .viajes-us-p{
