@@ -38,7 +38,7 @@ function ReservaExitosa() {
                     <h3 className="text-center text-white h4">Por último, nos va a servir para mejorar la app : </h3>
                     <Box className="mt-5" component="fieldset" mb={3} borderColor="transparent">
                         <Typography className="font-weight-bold text-center text-white" component="legend">¿Qué tan satisfecho estuviste con la app?</Typography>
-                        <Rating className="estrellas" defaultValue={2} max={5} />
+                        <Rating className="estrellas" size="large" name="size-large" defaultValue={2} max={5} />
                     </Box>
                 </div>
                 <>
