@@ -1526,6 +1526,12 @@ img {
                 margin-bottom: 1em;
                 padding: 1em;
             }
+
+            .img-registro{
+                width: 10em;
+                display: block;
+                margin: auto;
+            }
            
      }
 
