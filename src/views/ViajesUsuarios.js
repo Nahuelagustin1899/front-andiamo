@@ -75,11 +75,11 @@ function ViajesUsuarios() {
 
             <div className="video">
 
-                <h2 className='text-center h3 font-weight-bold m-3'>¿Cómo Comprar Online?</h2>
+                <h2 className='text-center h3 font-weight-bold m-3'>¿Cómo Reservar Online?</h2>
 
                 <hr />
 
-                <p className="text-center">Te dejamos un <b>VIDEO con instrucciones</b> para aprender cómo comprar tu pasaje on-line.</p>
+                <p className="text-center">Te dejamos un <b>VIDEO con instrucciones</b> para aprender cómo reservar tu pasaje on-line.</p>
 
                 <ReactPlayer
                     url='https://youtu.be/NznFi-Y7ZuE'
