@@ -8,6 +8,7 @@ import { BsFillBriefcaseFill } from "react-icons/bs";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
 import TextField from '@material-ui/core/TextField';
+import ReactPlayer from 'react-player';
 
 function ViajesUsuarios() {
     const [viajesAux, setViajesAux] = useState([]);
@@ -72,9 +73,25 @@ function ViajesUsuarios() {
             <h1 className="mb-5 viajes">Viajes</h1>
             <p className="alert alert-danger font-weight-bold viajes-us-p">Para reservar un pasajes tendrás que pagar un 25% del mismo</p>
 
+            <div className="video">
+
+                <h2 className='text-center h3 font-weight-bold m-3'>¿Cómo Comprar Online?</h2>
+
+                <hr />
+
+                <p className="text-center">Te dejamos un <b>VIDEO con instrucciones</b> para aprender cómo comprar tu pasaje on-line.</p>
+
+                <ReactPlayer
+                    url='https://youtu.be/NznFi-Y7ZuE'
+                    className='react-player '
+                    playing
+                    width='100%'
+                    height='100%' />
+            </div>
+
             <div className="filtros">
                 <div className="form-group ">
-                    <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }}/></label>    
+                    <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
                     <input
                         className="form-control inputs-filtros"
                         type="text"
@@ -86,18 +103,18 @@ function ViajesUsuarios() {
                 </div>
 
                 <div className="form-group ">
-                    <label className="d-block " htmlFor="date">Fecha salida <SiGooglecalendar className="ml-2" style={{ fontSize: 23 }}/></label>  
+                    <label className="d-block " htmlFor="date">Fecha salida <SiGooglecalendar className="ml-2" style={{ fontSize: 23 }} /></label>
                     <TextField
-                            className="form-control inputs-filtros"
-                            type="date"
-                            value={salida}
-                            onChange={(e) => setSalida(e.target.value)}
-                        /> 
+                        className="form-control inputs-filtros"
+                        type="date"
+                        value={salida}
+                        onChange={(e) => setSalida(e.target.value)}
+                    />
                     <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
                 </div>
 
                 <div className="form-group ">
-                    <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }}/></label>        
+                    <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }} /></label>
                     <input
                         className="form-control inputs-filtros"
                         type="text"
@@ -105,7 +122,7 @@ function ViajesUsuarios() {
                         placeholder="Buscar por precio"
                         onChange={(e) => setPrecio(e.target.value)}
                     />
-                     <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                    <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
                 </div>
 
 

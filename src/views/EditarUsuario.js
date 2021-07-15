@@ -55,7 +55,7 @@ function EditarUsuario() {
                 onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
+                    <label htmlFor="nombre"><b>Nombre</b></label>
 
                     <input
                         defaultValue={authData.user.name}

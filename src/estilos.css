@@ -738,6 +738,14 @@ img {
         list-style: none;
     }
 
+    .video{
+        padding: 1em;  
+    }
+
+    .video-borde{
+        box-shadow: inset 0px 0px 10px 10px #c1ab33;
+    }
+
 
 }
 
@@ -746,7 +754,7 @@ img {
 @media (min-width: 411px) and (max-width: 823px) {
 
     .asientos-borde{
-        border: 2px solid #c1ab33;;
+        border: 2px solid #c1ab33;
         padding: 3em;
         width: 95%;
         display: block;
@@ -762,7 +770,7 @@ img {
 @media (min-width: 375px) and (max-width: 667px) {
 
     .asientos-borde{
-        border: 2px solid #c1ab33;;
+        border: 2px solid #c1ab33;
         padding: 1.9em;
         width: 95%;
         display: block;
@@ -1058,10 +1066,7 @@ img {
             padding: 1em;
             border-radius: 1em;
             width: 60%;
-            border: 2px solid #ffd24a;
         }
-
-       
 
         /* Viajes usuarios */
 
@@ -1153,6 +1158,13 @@ img {
             margin:3px;
         }
 
+        .video{
+            display: block;
+            margin: auto;
+            margin-top: 2em;
+            margin-bottom:2em ;
+        }
+
         .carrito-boton{
             display: block;
             margin: auto;
@@ -1170,40 +1182,10 @@ img {
         }
 
         .checkout{
-            background-color: #ffd146;
             width: 70%;
-            padding: 1em;
-            display: block;
-            margin: auto;
-            border-radius: 7px;
-            margin-bottom: 2em;
-            margin-top: 2em;
-        }
-
-        .box-stars {
-            background-color: #14529a;
-            padding: 2em;
-            border-radius: 3px;
-            width: 45%;
             display: block;
             margin: auto;
         }
-
-        .MuiRating-sizeLarge {
-            margin-left: 35%;
-            margin-top: 1em;
-        }
-
-        .link-stars{
-            margin-left: 30%;
-            width: 20%;
-        }
-    
-        .link-stars2{
-            margin-left: 1em;
-            width: 20%;
-        }
-
 
         /* Panel viajes */
 
@@ -1525,13 +1507,6 @@ img {
                 margin-top: 1em;
                 margin-bottom: 1em;
                 padding: 1em;
-            }
-
-            .img-registro{
-                width: 10em;
-                display: block;
-                margin: auto;
-                margin-bottom: 1em;
             }
            
      }
