@@ -9,16 +9,16 @@ import EditIcon from '@material-ui/icons/Edit.js';
 
 function Perfil() {
 
-   /*  const [reservas, setReservas] = useState([]); */
+    /*  const [reservas, setReservas] = useState([]); */
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
 
-   /*  useEffect(() => {
-        (async () => {
-            const data = await reservasService.index();
-            setReservas(data);
-        })().catch(err => console.log("Error al traer las reservas: ", err));
-    }, []); */
+    /*  useEffect(() => {
+         (async () => {
+             const data = await reservasService.index();
+             setReservas(data);
+         })().catch(err => console.log("Error al traer las reservas: ", err));
+     }, []); */
 
     useEffect(() => {
         (async () => {
@@ -26,15 +26,15 @@ function Perfil() {
             setEmpresasReservas(data);
             console.log(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
-        
+
     }, []);
 
-  /*   useEffect(() => {
-        (async () => {
-            const data = await reservasService.indexEmpresa();
-            setReservas(data);
-        })().catch(err => console.log("Error al traer las reservas: ", err));
-    }, []); */
+    /*   useEffect(() => {
+          (async () => {
+              const data = await reservasService.indexEmpresa();
+              setReservas(data);
+          })().catch(err => console.log("Error al traer las reservas: ", err));
+      }, []); */
 
     /* const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
@@ -123,8 +123,29 @@ function Perfil() {
             <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
         </div>
         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
-        {/*   {lista} */}
-        {listaEmpresa}
+
+        {
+            authData.user.id === 1 ?
+                (<>
+                    <p>No hay viajes</p>
+                </>) :
+
+                authData.user.id === 2 ?
+
+                    (<>
+                        {listaEmpresa}
+                    </>) :
+                    authData.user.id >= 3 ?
+                        (<>
+
+
+
+                        </>) :
+
+                        { lista }
+
+        }
+
     </div>);
 }
 
