@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from "../services/auth";
 import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
-import { format } from 'date-fns';
+/* import { format } from 'date-fns'; */
 import { Link } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
