@@ -27,7 +27,7 @@ const reservasService = {
                 'X-Requested-With': 'XMLHttpRequest'
                 
             },
-            mode: 'no-cors',
+            
             credentials: 'include'
         });
         const response = await fetchRes.json();
