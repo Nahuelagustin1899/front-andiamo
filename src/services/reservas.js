@@ -25,7 +25,9 @@ const reservasService = {
             headers: {
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
+                
             },
+            mode: 'no-cors',
             credentials: 'include'
         });
         const response = await fetchRes.json();
