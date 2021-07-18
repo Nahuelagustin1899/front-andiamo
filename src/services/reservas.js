@@ -1,5 +1,5 @@
 
-import {API} from "./../constants";
+import {API, FETCH_HEADERS} from "./../constants";
 
 let reservas = [];
 
@@ -22,12 +22,8 @@ const reservasService = {
     async index() {
       
         const fetchRes = await fetch(API + '/reserva/index', {
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-            },
-            
-            credentials: 'include'
+            headers: FETCH_HEADERS,
+            method: 'post',
         });
         const response = await fetchRes.json();
         reservas = response.data;
