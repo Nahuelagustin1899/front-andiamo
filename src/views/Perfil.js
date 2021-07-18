@@ -9,16 +9,26 @@ import EditIcon from '@material-ui/icons/Edit.js';
 
 function Perfil() {
 
-    const [reservas, setReservas] = useState([]);
+   /*  const [reservas, setReservas] = useState([]); */
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
+    const [empresasReservas, setEmpresasReservas] = useState([]);
 
-    useEffect(() => {
+   /*  useEffect(() => {
         (async () => {
             const data = await reservasService.index();
             setReservas(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
-    }, []);
+    }, []); */
 
+    useEffect(() => {
+        (async () => {
+            const data = await reservasService.indexEmpresa();
+            setEmpresasReservas(data);
+            console.log(data);
+        })().catch(err => console.log("Error al traer las reservas: ", err));
+        
+    }, []);
+    
     useEffect(() => {
         (async () => {
             const data = await reservasService.indexEmpresa();
@@ -70,7 +80,7 @@ function Perfil() {
     </div>));
  */
 
-    const listaEmpresa = reservas && reservas.map(reserva => (<div key={reserva.id}>
+    const listaEmpresa = empresasReservas && empresasReservas.map(reserva => (<div key={reserva.id}>
 
 
         <Table variant="warning" striped bordered hover   >
