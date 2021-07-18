@@ -93,7 +93,7 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.reservas[0].asiento_reservado}</td>
+                    {/* <td className="col-4 text-center colortd">{reserva.reservas[0].asiento_reservado}</td> */}
                 </tr>
             </tbody>
         </Table>
