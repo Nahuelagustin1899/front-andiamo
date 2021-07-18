@@ -2,23 +2,23 @@ import React, { useState, useContext, useEffect } from 'react';
 import { AuthContext } from "../services/auth";
 import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
-/* import { format } from 'date-fns'; */
+import { format } from 'date-fns';
 import { Link } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
 
 function Perfil() {
 
-    /*  const [reservas, setReservas] = useState([]); */
+     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
 
-    /*  useEffect(() => {
+     useEffect(() => {
          (async () => {
              const data = await reservasService.index();
              setReservas(data);
          })().catch(err => console.log("Error al traer las reservas: ", err));
-     }, []); */
+     }, []);
 
     useEffect(() => {
         (async () => {
@@ -29,14 +29,9 @@ function Perfil() {
 
     }, []);
 
-    /*   useEffect(() => {
-          (async () => {
-              const data = await reservasService.indexEmpresa();
-              setReservas(data);
-          })().catch(err => console.log("Error al traer las reservas: ", err));
-      }, []); */
+    
 
-    /* const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
+    const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
 
         <Table variant="warning" striped bordered hover   >
@@ -78,7 +73,7 @@ function Perfil() {
         <hr className="perfileshr" />
 
     </div>));
- */
+
 
     const listaEmpresa = empresasReservas && empresasReservas.map(reserva => (<div key={reserva.id}>
 
