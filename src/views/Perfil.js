@@ -19,14 +19,14 @@ function Perfil() {
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
 
-   /*  useEffect(() => {
+    useEffect(() => {
         (async () => {
             const data = await reservasService.indexEmpresa();
             setReservas(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
-    }, []); */
+    }, []);
 
-    const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
+    /* const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
 
         <Table variant="warning" striped bordered hover   >
@@ -68,9 +68,9 @@ function Perfil() {
         <hr className="perfileshr" />
 
     </div>));
+ */
 
-
- /*    const listaEmpresa = reservas && reservas.map(reserva => (<div key={reserva.id}>
+ const listaEmpresa = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
 
         <Table variant="warning" striped bordered hover   >
@@ -111,8 +111,7 @@ function Perfil() {
 
         <hr className="perfileshr" />
 
-    </div>)); */
-
+    </div>)); 
 
 
     const authData = useContext(AuthContext);
@@ -132,8 +131,8 @@ function Perfil() {
             <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
         </div>
         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
-        {lista}
-      {/*   {listaEmpresa} */}
+      {/*   {lista} */}
+        {listaEmpresa}
     </div>);
 }
 
