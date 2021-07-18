@@ -24,7 +24,8 @@ const reservasService = {
         const fetchRes = await fetch(API + '/reserva/index', {
             headers: {
                 'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'
+                'X-Requested-With': 'XMLHttpRequest',
+                'Access-Control-Allow-Origin' : '*',
             },
             
             credentials: 'include'
