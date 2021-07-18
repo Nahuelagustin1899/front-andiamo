@@ -23,7 +23,7 @@ const reservasService = {
       
         const fetchRes = await fetch(API + '/reserva/index', {
             headers: FETCH_HEADERS,
-            method: 'post',
+            method: 'get',
         });
         const response = await fetchRes.json();
         reservas = response.data;
