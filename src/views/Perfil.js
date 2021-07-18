@@ -28,13 +28,13 @@ function Perfil() {
         })().catch(err => console.log("Error al traer las reservas: ", err));
         
     }, []);
-    
-    useEffect(() => {
+
+  /*   useEffect(() => {
         (async () => {
             const data = await reservasService.indexEmpresa();
             setReservas(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
-    }, []);
+    }, []); */
 
     /* const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
