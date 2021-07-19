@@ -12,6 +12,7 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
+    const { viajes } = reservas;
 
     useEffect(() => {
         (async () => {
@@ -91,7 +92,7 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.viajes.precio}</td>
+                    <td className="col-4 text-center colortd">{viajes.precio}</td>
                 </tr>
             </tbody>
         </Table>
