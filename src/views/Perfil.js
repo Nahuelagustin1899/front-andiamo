@@ -9,14 +9,14 @@ import EditIcon from '@material-ui/icons/Edit.js';
 
 function Perfil() {
 
-     const [reservas, setReservas] = useState([]);
+    const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
 
      useEffect(() => {
          (async () => {
              const data = await reservasService.index();
-             setReservas(data);
+             setReservas(data.data);
              console.log(data);
          })().catch(err => console.log("Error al traer las reservas: ", err));
      }, []);
