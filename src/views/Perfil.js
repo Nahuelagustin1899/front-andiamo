@@ -12,7 +12,7 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
-    const { viajes } = reservas;
+    const { viajes } = empresasReservas;
 
     useEffect(() => {
         (async () => {
