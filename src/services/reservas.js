@@ -1,5 +1,5 @@
 
-import {API} from "./../constants";
+import {API, FETCH_HEADERS} from "./../constants";
 
 let reservas = [];
 
