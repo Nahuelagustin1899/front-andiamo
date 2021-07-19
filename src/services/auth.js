@@ -61,7 +61,7 @@ const authService = {
     async logout() {
         var token = localStorage.getItem('token');
         if(token !== null){
-            FETCH_HEADERS.Authorization  =  'Bearer ' + JSON.parse(localStorage.getItem('token'));
+            FETCH_HEADERS.Authorization  =  'Bearer ' + localStorage.getItem('token');
         }
 
         const rta = await fetch(API + '/auth/logout', {
