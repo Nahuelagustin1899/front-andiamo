@@ -17,9 +17,11 @@ function Perfil() {
          (async () => {
              const data = await reservasService.index();
              setReservas(data.data);
-             console.log(reservas);
+             
          })().catch(err => console.log("Error al traer las reservas: ", err));
      }, []);
+
+     console.log(reservas);
 
     useEffect(() => {
         (async () => {
