@@ -91,7 +91,7 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.reservas.asiento_reservado}</td>
+                    <td className="col-4 text-center colortd">{reserva.viajes.precio}</td>
                 </tr>
             </tbody>
         </Table>
