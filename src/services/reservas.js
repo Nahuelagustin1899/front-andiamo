@@ -20,13 +20,14 @@ const reservasService = {
     },
 
     async index() {
-      
+
+        var token = localStorage.getItem('token');
+        if(token !== null){
+            FETCH_HEADERS.Authorization  =  'Bearer ' + localStorage.getItem('token');
+        }
+        
         const fetchRes = await fetch(API + '/reserva/index', {
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-            },
-            
+            headers: FETCH_HEADERS,
             credentials: 'include'
         });
         const response = await fetchRes.json();
