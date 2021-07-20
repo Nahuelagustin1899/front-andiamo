@@ -87,12 +87,13 @@ function Perfil() {
                 </tr>
             </thead>
             <tbody>
-                <tr className="row">
-                    <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    {reserva.reservas.map(espacio => 
-                    <td className="col-4 text-center colortd">{espacio.asiento_reservardo}</td>
-                     ) }
-                </tr>
+
+                {reserva.reservas.map(espacio =>
+                    <tr className="row">
+                        <td className="col-4 text-center colortd">{espacio.asiento_reservardo}</td>
+
+                    </tr>
+                )}
             </tbody>
         </Table>
 
