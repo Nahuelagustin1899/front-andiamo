@@ -89,7 +89,7 @@ function Perfil() {
             <tbody>
 
                 {reserva.reservas.map(espacio =>
-                    <tr className="row">
+                    <tr key={espacio.id} className="row">
                         <td className="col-4 text-center colortd">{espacio.asiento_reservardo}</td>
 
                     </tr>
