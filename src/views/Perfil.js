@@ -78,7 +78,7 @@ function Perfil() {
 
     const listaEmpresa = empresasReservas && empresasReservas.map(reserva => (<div key={reserva.id}>
 
-
+        <h1></h1>
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
@@ -89,8 +89,9 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.reservas.map(espacio => espacio.asiento_reservado )}
-                       {/*  {reserva.reservas[0].asiento_reservado} */}</td>
+                    {reserva.reservas.map(espacio => 
+                    <td className="col-4 text-center colortd">{espacio.asiento_reservardo}</td>
+                     ) }
                 </tr>
             </tbody>
         </Table>
