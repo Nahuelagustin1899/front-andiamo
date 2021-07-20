@@ -89,7 +89,7 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.reservas.map((espacio)=>{espacio.asiento_reservado})}
+                    <td className="col-4 text-center colortd">{reserva.reservas.map(espacio => espacio.asiento_reservado )}
                        {/*  {reserva.reservas[0].asiento_reservado} */}</td>
                 </tr>
             </tbody>
