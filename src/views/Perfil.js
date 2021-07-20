@@ -12,8 +12,6 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
-    const { viajes } = empresasReservas;
-
     useEffect(() => {
         (async () => {
             const data = await reservasService.index();
@@ -22,7 +20,6 @@ function Perfil() {
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
 
-    console.log(reservas);
 
     useEffect(() => {
         (async () => {
@@ -92,7 +89,7 @@ function Perfil() {
             <tbody>
                 <tr className="row">
                     <td className="col-4 text-center colortd">{reserva.nombre}</td>
-                    <td className="col-4 text-center colortd">{viajes.precio}</td>
+                    <td className="col-4 text-center colortd">{reserva.reservas[0].asiento_reservado}</td>
                 </tr>
             </tbody>
         </Table>
