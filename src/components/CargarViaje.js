@@ -150,7 +150,7 @@ function CargarViaje(props) {
                     className="form-control"
                     
                     onChange={handleChange}>
-                <option>Elegi tu empresa</option> 
+                <option>Elegí tu empresa</option> 
                 {empresas && empresas.map((empresa, key) => (
                 <option value={empresa.id}>{empresa.nombre}</option>
                 ))}
@@ -165,7 +165,7 @@ function CargarViaje(props) {
             </div>
 
             <div className="form-group">
-                <label htmlFor="salida_id"><b>Estacion de salida</b></label>
+                <label htmlFor="salida_id"><b>Estación de salida</b></label>
                 <select id="salida_id"
                     name="salida_id"
                     className="form-control"
@@ -184,12 +184,12 @@ function CargarViaje(props) {
             </div>
 
             <div className="form-group">
-                <label htmlFor="destino_id"><b>Estacion de destino</b></label>
+                <label htmlFor="destino_id"><b>Estación de destino</b></label>
                 <select id="destino_id"
                     name="destino_id"
                     className="form-control"
                     onChange={handleChange}>
-                <option>Elegi destino de llegada</option>         
+                <option>Elegí destino de llegada</option>         
                 {estaciones && estaciones.map((estacion, key) => (
                 <option value={estacion.id}>{estacion.nombre}</option>
                 ))}
@@ -270,7 +270,7 @@ function CargarViaje(props) {
                 
             </div>
 
-            <button type="submit" className="btn btn-primary button-grabar"  disabled={cargando}>{cargando ? <Cargando/> : 'Grabar'}</button>
+            <button type="submit" className="btn btn-primary button-grabar"  disabled={cargando}>{cargando ? <Cargando/> : 'Crear viaje'}</button>
 
     </form>);
 }
