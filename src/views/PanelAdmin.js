@@ -111,7 +111,7 @@ function PanelAdmin(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton><b className="text-center">
-                    {" " + item.salida.nombre}  <br/> a <br/>{item.destino.nombre}</b>
+                    De {" " + item.salida.nombre}  <hr/> <br/> A {item.destino.nombre}</b>
                 </Modal.Header>
                 <Modal.Body>¿Estás seguro que deseas eliminar este viaje?</Modal.Body>
                 <Modal.Footer>
