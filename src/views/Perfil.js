@@ -101,7 +101,7 @@ function Perfil() {
                                 {espacio.asiento_reservado}
                             </td>
                             <td className="col-4 text-center colortd">
-                                {viaje.salida.nombre} {viaje.destino.nombre}       
+                                {viaje.salida.nombre} <br/>a <br/>{viaje.destino.nombre}       
                             </td>
                         </tr>
                         )}
