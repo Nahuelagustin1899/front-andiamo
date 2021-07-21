@@ -62,7 +62,7 @@ function Empresas(props) {
                         <td className="col-4 text-center colortd">
 
 
-                            <Fab className="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
+                            <Fab id="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
                                 <DeleteIcon  />
                             </Fab>
 
