@@ -165,7 +165,7 @@ function Registrarse(props) {
             </div>
 
             <div className="form-group">
-                <label htmlFor="password"><b>Password</b></label>
+                <label htmlFor="password"><b>Contraseña</b></label>
                 <input
                     type="password"
                     id="password"
@@ -185,7 +185,7 @@ function Registrarse(props) {
 
             <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label htmlFor="logo"><b>Logo</b></label>
+                    <label htmlFor="logo"><b>Avatar</b></label>
                     <input
                         type="file"
                         id="logo"
