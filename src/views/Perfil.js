@@ -78,33 +78,42 @@ function Perfil() {
 
     const listaEmpresa = empresasReservas && empresasReservas.map(reserva => (<div key={reserva.id}>
 
+        {reserva.viajes.map(viaje =>
 
-        <Table variant="warning" striped bordered hover   >
-            <thead>
-                <tr className="row">
-                    <th className="col-4 text-center colorth">ID viaje</th>
-                    <th className="col-4 text-center colorth">asiento_reservado</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                {reserva.reservas.map(espacio =>
+
+            <Table variant="warning" striped bordered hover   >
+                <thead>
                     <tr className="row">
-                        <td className="col-4 text-center colortd">
-                            {espacio.viaje_id}
-                        </td>
-                        <td className="col-4 text-center colortd">
-                            {espacio.asiento_reservado}
-                        </td>
-                        <td className="col-4 text-center colortd">
-                            {reserva.nombre}
-                        </td>
-                    </tr>)}
-            </tbody>
-        </Table>
+                        <th className="col-4 text-center colorth">ID viaje</th>
+                        <th className="col-4 text-center colorth">Asiento reservado</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    {reserva.reservas.map(espacio =>
+                        <tr className="row">
+                            <td className="col-4 text-center colortd">
+                                {espacio.viaje_id}
+                            </td>
+                            <td className="col-4 text-center colortd">
+                                {espacio.asiento_reservado}
+                            </td>
+                            <td className="col-4 text-center colortd">
+                                {reserva.nombre}
+                                
+                            </td>
+                            <td className="col-4 text-center colortd">
+                                {viaje.precio}
+                                
+                            </td>
 
+                        </tr>)}
 
+                </tbody>
+
+            </Table>
+        )}
 
         <hr className="perfileshr" />
 
