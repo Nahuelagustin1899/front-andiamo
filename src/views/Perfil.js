@@ -83,26 +83,19 @@ function Perfil() {
             <thead>
                 <tr className="row">
                     <th className="col-4 text-center colorth">ID viaje</th>
-                    <th className="col-4 text-center colorth">Asiento reservado</th>
-                    <th className="col-4 text-center colorth">Precio</th>
+                    <th className="col-4 text-center colorth">asiento_reservado</th>
                 </tr>
             </thead>
 
             <tbody>
-                {reserva.viajes.map(viaje =>
+                {reserva.reservas.map(espacio =>
                     <tr className="row">
                         <td className="col-4 text-center colortd">
-                            {viaje.id}
+                            {espacio.viaje_id}
                         </td>
                         <td className="col-4 text-center colortd">
-                            {viaje.precio}
+                            {espacio.asiento_reservado}
                         </td>
-                        {reserva.reservas.map(espacio =>
-
-                            <td className="col-4 text-center colortd">
-                                {espacio.asiento_reservado}
-                            </td>
-                        )}
                     </tr>)}
             </tbody>
         </Table>
