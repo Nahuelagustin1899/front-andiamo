@@ -96,6 +96,9 @@ function Perfil() {
                         <td className="col-4 text-center colortd">
                             {espacio.asiento_reservado}
                         </td>
+                        <td className="col-4 text-center colortd">
+                            {reserva.nombre}
+                        </td>
                     </tr>)}
             </tbody>
         </Table>
