@@ -82,7 +82,7 @@ function EditarUsuario() {
 
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block" >Terminar de editar</button>
+                <button type="submit" className="btn btn-primary btn-block mt-5" >Terminar de editar</button>
             </form>
 
         </div>);

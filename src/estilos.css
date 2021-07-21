@@ -446,6 +446,7 @@ img {
     .form-editar-viajes {
         background-color: #ffb300;
         padding: 2em;
+        border-radius: 4px;
     }    
 
 
