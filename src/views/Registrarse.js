@@ -200,7 +200,7 @@ function Registrarse(props) {
                     {registrar.logo ? <img className="img-registro" src={registrar.logo} alt="Imagen seleccionada ."/> : 'No hay imagen'}
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Grabar'}</button>
+            <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Registrarse'}</button>
         </fieldset>
     </form></div>);
 }
