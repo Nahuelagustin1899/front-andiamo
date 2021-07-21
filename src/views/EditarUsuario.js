@@ -68,7 +68,7 @@ function EditarUsuario() {
 
                 <div className="form-row">
                     <div className="form-group col-md-12">
-                        <label htmlFor="logo"><b>Logo</b></label>
+                        <label htmlFor="logo"><b>Avatar</b></label>
                         <input
                             type="file"
                             className="form-control"
