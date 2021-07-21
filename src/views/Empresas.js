@@ -62,8 +62,8 @@ function Empresas(props) {
                         <td className="col-4 text-center colortd">
 
 
-                            <Fab color="secondary" onClick={handleShow} aria-label="delete">
-                                <DeleteIcon className="icon-elim" />
+                            <Fab className="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
+                                <DeleteIcon  />
                             </Fab>
 
                             <Fab id="botones1" onClick={() => editarEmpresa(item)} color="primary" aria-label="edit">
