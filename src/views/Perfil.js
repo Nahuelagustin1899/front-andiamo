@@ -87,6 +87,10 @@ function Perfil() {
                     <tr className="row">
                         <th className="col-4 text-center colorth">ID viaje</th>
                         <th className="col-4 text-center colorth">Asiento reservado</th>
+                        <th className="col-4 text-center colorth">Precio</th>
+                        <th className="col-4 text-center colorth">ID viaje</th>
+                        <th className="col-4 text-center colorth">Asiento reservado</th>
+                        <th className="col-4 text-center colorth">Precio</th>
                     </tr>
                 </thead>
 
@@ -100,15 +104,10 @@ function Perfil() {
                                 {espacio.asiento_reservado}
                             </td>
                             <td className="col-4 text-center colortd">
-                                {reserva.nombre}
-                                
+                                {viaje.precio}       
                             </td>
-                            <td className="col-4 text-center colortd">
-                                {viaje.precio}
-                                
-                            </td>
-
-                        </tr>)}
+                        </tr>
+                        )}
 
                 </tbody>
 
