@@ -77,8 +77,6 @@ const ValidateLoginCheckout = (props) => {
                   value={values.nombre}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className="form-control"
-
                 />
                 {errors.nombre && touched.nombre && (
                   <div className="alert alert-danger mt-1">{errors.nombre}</div>
