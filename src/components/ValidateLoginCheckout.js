@@ -134,7 +134,7 @@ const ValidateLoginCheckout = (props) => {
 
             <div className="col-md-12 mb-3">
               <label htmlFor="dni">Tipo de tarjeta</label>
-              <select className="form-select" >
+              <select className="form-control" >
                 <option selected disabled>Elegi tu tarjeta</option>
                 <option value="mastercard">Mastercard</option>
                 <option value="visa">Visa</option>
