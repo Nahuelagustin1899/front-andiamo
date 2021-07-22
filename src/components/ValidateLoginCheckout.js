@@ -70,7 +70,7 @@ const ValidateLoginCheckout = (props) => {
         handleBlur,
         handleSubmit
       } = props;
-
+      
         const classes = useStyles();
 
         return (
@@ -177,3 +177,4 @@ const ValidateLoginCheckout = (props) => {
 };
 
 export default ValidateLoginCheckout;
+export default function BasicTextFields();
