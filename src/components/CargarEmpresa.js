@@ -178,7 +178,7 @@ function CargarEmpresa(props) {
                     {empresa.logo ? <img src={empresa.logo} alt="Imagen seleccionada ."/> : 'No hay imagen'}
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Grabar'}</button>
+            <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Crear empresa'}</button>
         </fieldset>
     </form>);
 }
