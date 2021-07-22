@@ -55,7 +55,7 @@ function App() {
 
   const handleEmpresaErrorEliminar = data => {
     setNotification({
-      type: 'success',
+      type: 'danger',
       text: 'La empresa no pudo ser eliminada',
       title: 'Error'
     });
