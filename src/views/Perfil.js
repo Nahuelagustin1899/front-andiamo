@@ -87,9 +87,9 @@ function Perfil() {
                         <th className="col-4 text-center colorth">Salida y Destino</th>
                     </tr>
                 </thead>
-
-                <tbody>
                 {empresa.viajes.map(viaje =>
+                <tbody>
+               
                     {empresa.reservas.map(espacio =>
                         <tr className="row">
                             <td className="col-4 text-center colortd">
@@ -104,8 +104,9 @@ function Perfil() {
                             </td>
                         </tr>
                         )}
-                        )}
+                        
                 </tbody>
+                )}
             </Table>
                    
 
