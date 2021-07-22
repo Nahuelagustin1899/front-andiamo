@@ -77,12 +77,13 @@ const ValidateLoginCheckout = (props) => {
 
           <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
             <div className="row global">
-              <TextField id="standard-basic" label="Standard" />
+              <TextField />
               <div className="col-md-12 mb-3">
-                <input
+                <inTextFieldput
                   name="nombre"
                   type="text"
-                  placeholder="Nombre del titular de la tarjeta"
+                  id="standard-basic" 
+                  label="Nombre del titular de la tarjeta"
                   value={values.nombre}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -177,4 +178,3 @@ const ValidateLoginCheckout = (props) => {
 };
 
 export default ValidateLoginCheckout;
-export default function BasicTextFields();
