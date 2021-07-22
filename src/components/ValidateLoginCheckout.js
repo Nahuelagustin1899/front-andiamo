@@ -38,9 +38,11 @@ const ValidateLoginCheckout = (props) => {
         .email("El email no es válido")
         .required("El campo email no puede estar vacío"),
       dni: Yup.number()
-        .required("El campo DNI no puede estar vacío"),
+        .required("El campo DNI no puede estar vacío")
+        .min(8,"El campo DNI no puede estar vacío"),
       numTarj: Yup.number()
-        .required("El campo número de tarjeta no puede estar vacío"),
+        .required("El campo número de tarjeta no puede estar vacío")
+        .min(16,"El campo DNI no puede estar vacío"),
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
@@ -63,6 +65,7 @@ const ValidateLoginCheckout = (props) => {
         <form onSubmit={handleSubmit}>
           <div className="row global">
             <div className="col-md-12 mb-3">
+            <label htmlFor="nombre">Nombre</label>
               <input
                 name="nombre"
                 type="text"
@@ -79,6 +82,7 @@ const ValidateLoginCheckout = (props) => {
             </div>
             
             <div className="col-md-12 mb-3">
+            <label htmlFor="email">Email</label>
               <input
                 name="email"
                 type="email"
@@ -95,12 +99,12 @@ const ValidateLoginCheckout = (props) => {
             </div>
 
             <div className="col-md-12 mb-3">
+            <label htmlFor="dni">Dni</label>
               <input
                 name="dni"
                 type="text"
                 placeholder="Dni del titular de la tarjeta"
                 maxlength="8"
-                minlength="8"
                 value={values.dni}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -114,9 +118,11 @@ const ValidateLoginCheckout = (props) => {
             
 
             <div className="col-md-12 mb-3">
+            <label htmlFor="numTarj">Número de tarjeta</label>
               <input
                 name="numTarj"
                 type="text"
+                maxlength="8"
                 placeholder="Número de tarjeta"
                 value={values.numTarj}
                 onChange={handleChange}
@@ -131,11 +137,11 @@ const ValidateLoginCheckout = (props) => {
    
 
             <div className="col-md-12 mb-3">
-              <label htmlFor="expiracion">Fecha de vencimiento</label>
+              <label htmlFor="expiracion">Fecha</label>
               <input
                 name="expiracion"
                 type="month"
-                placeholder="Fecha"
+                placeholder="Fecha de vencimiento"
                 value={values.expiracion}
                 onChange={handleChange}
                 onBlur={handleBlur}
