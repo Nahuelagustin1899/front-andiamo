@@ -3,21 +3,13 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 const ValidateLoginCheckout = (props) => {
 
   const history = useHistory();
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }));
+  
 
   return <Formik
     initialValues={{
@@ -74,7 +66,7 @@ const ValidateLoginCheckout = (props) => {
 
       return (
 
-        <form className={classes.root} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="row global">
           <TextField id="standard-basic" label="Standard" />
             <div className="col-md-12 mb-3">
