@@ -205,6 +205,11 @@ const ValidateLoginCheckout = (props) => {
           </div>
           <Link onClick={handleSubmit} className="btn btn-primary btn-lg btn-block mb-5 mt-5" type="submit">Finalizar reserva</Link>
 
+          <script
+             src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+             data-preference-id="{{ $preference->id }}">
+            </script>
+
         </form>
       );
     }}
