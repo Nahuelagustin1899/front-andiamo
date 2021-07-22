@@ -78,7 +78,7 @@ function Perfil() {
 
     const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
 
-        
+       
             <Table variant="warning" striped bordered hover   >
                 <thead>
                     <tr className="row">
@@ -90,7 +90,6 @@ function Perfil() {
 
                 <tbody>
                     {empresa.reservas.map(espacio =>
-                    {empresa.viajes.map(viaje =>
                         <tr className="row">
                             <td className="col-4 text-center colortd">
                                 {espacio.viaje_id}
@@ -98,17 +97,14 @@ function Perfil() {
                             <td className="col-4 text-center colortd">
                                 {espacio.asiento_reservado}
                             </td>
-                            <td className="col-4 text-center colortd">
+                           {/*  <td className="col-4 text-center colortd">
                                 {viaje.salida.nombre} <br/>a <br/>{viaje.destino.nombre}       
-                            </td>
+                            </td> */}
                         </tr>
                         )}
-                        )}
                 </tbody>
-                
             </Table>
-            
-        
+                   
 
         <hr className="perfileshr" />
 
