@@ -4,18 +4,9 @@ import * as Yup from "yup";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 
 const ValidateLoginCheckout = (props) => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }));
-
+ 
   const history = useHistory();
 
 
@@ -71,11 +62,10 @@ const ValidateLoginCheckout = (props) => {
         handleSubmit
       } = props;
       
-        const classes = useStyles();
 
         return (
 
-          <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+          <form onSubmit={handleSubmit}>
             <div className="row global">
               <TextField />
               <div className="col-md-12 mb-3">
