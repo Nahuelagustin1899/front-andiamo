@@ -56,15 +56,15 @@ function App() {
   const handleEmpresaErrorEliminar = data => {
     setNotification({
       type: 'success',
-      text: 'La empresa fue eliminada exitosamente',
-      title: 'Éxito'
+      text: 'La empresa no pudo ser eliminada',
+      title: 'Error'
     });
   };
 
   const handleEmpresaCreada = data => {
     setNotification({
       type: 'success',
-      text: 'La empresa fue cargada exitosamente',
+      text: 'La empresa fue creada exitosamente',
       title: 'Éxito'
     });
   };
@@ -88,7 +88,7 @@ function App() {
   const handleViajeCreada = data => {
     setNotification({
       type: 'success',
-      text: 'El viaje fue publicado exitosamente',
+      text: 'El viaje fue creado exitosamente',
       title: 'Éxito'
     });
   };
@@ -173,8 +173,8 @@ function App() {
               <Route exact path="/viajesusuarios" component={ViajesUsuarios} />
               <AuthRoute path="/empresaspanel">
                 <Empresas exact
-                  notExitosaEliminar={handleViajeEliminado}
-                  notDenegadaEliminar={handleViajeErrorEliminar}
+                  notExitosaEliminar={handleEmpresaEliminada}
+                  notDenegadaEliminar={handleEmpresaErrorEliminar}
                 />
               </AuthRoute>
               <AuthRoute path="/empresas/nueva">
