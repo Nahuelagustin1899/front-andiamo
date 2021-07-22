@@ -72,7 +72,7 @@ const ValidateLoginCheckout = (props) => {
                 <TextField
                   name="nombre"
                   type="text"
-                  id="standard-basic" 
+                  variant="outlined"
                   label="Nombre del titular de la tarjeta"
                   value={values.nombre}
                   onChange={handleChange}
