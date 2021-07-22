@@ -12,6 +12,7 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
+
     useEffect(() => {
         (async () => {
             const data = await reservasService.index();
@@ -68,9 +69,6 @@ function Perfil() {
                 </tr>
             </tbody>
         </Table>
-
-
-
         <hr className="perfileshr" />
 
     </div>));
@@ -78,37 +76,37 @@ function Perfil() {
 
     const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
 
-       
-            <Table variant="warning" striped bordered hover   >
-                <thead>
+
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth">ID viaje</th>
+                    <th className="col-4 text-center colorth">Asiento reservado</th>
+                    <th className="col-4 text-center colorth">Estado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {empresa.reservas.map(espacio =>
                     <tr className="row">
-                        <th className="col-4 text-center colorth">ID viaje</th>
-                        <th className="col-4 text-center colorth">Asiento reservado</th>
-                        <th className="col-4 text-center colorth">Estado</th>
+                        <td className="col-4 text-center colortd">
+                            {espacio.viaje_id}
+                        </td>
+                        <td className="col-4 text-center colortd">
+                            {espacio.asiento_reservado}
+                        </td>
+
+                        <td className="col-4 text-center colortd">
+                            Reservado
+                        </td>
                     </tr>
-                </thead>
-                
-                <tbody>
-               
-                    {empresa.reservas.map(espacio =>
-                        <tr className="row">
-                            <td className="col-4 text-center colortd">
-                                {espacio.viaje_id}
-                            </td>
-                            <td className="col-4 text-center colortd">
-                                {espacio.asiento_reservado}
-                            </td>
-                            
-                            <td className="col-4 text-center colortd">
-                                Reservado   
-                            </td>
-                        </tr>
-                        )}
-                        
-                </tbody>
-              
-            </Table>
-                   
+                )}
+
+            </tbody>
+
+        </Table>
+
 
         <hr className="perfileshr" />
 
@@ -152,10 +150,7 @@ function Perfil() {
                         </>) :
 
                         (<>
-
-
                         </>)
-
         }
 
     </div>);

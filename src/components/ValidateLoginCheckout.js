@@ -43,7 +43,8 @@ const ValidateLoginCheckout = (props) => {
         .email("El email no es válido")
         .required("El campo email no puede estar vacío"),
       dni: Yup.number()
-        .required("El campo DNI no puede estar vacío"),
+        .required("El campo DNI no puede estar vacío")
+        .max(8),
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío"),
       expiracion: Yup.date()

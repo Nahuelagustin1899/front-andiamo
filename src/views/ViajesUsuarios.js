@@ -37,15 +37,7 @@ function ViajesUsuarios() {
 
 
     const filtro = () => {
-
-        /* const newData = viajes.filter( (item) => {
-            const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
-            const itemPrecio = item.precio ? item.precio.toUpperCase() : ''.toUpperCase();
-            const textData = empresa.toUpperCase();
-            const textPrecio = precio.toUpperCase();
-            return itemEmpresa.indexOf(textData) > -1 && itemPrecio.indexOf(textPrecio) > -1  ;
-        }); */
-
+        
         const newData = viajes.filter((item) => {
             const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
             const itemPrecio = item.precio;
