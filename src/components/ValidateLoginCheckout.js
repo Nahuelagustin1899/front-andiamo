@@ -67,9 +67,9 @@ const ValidateLoginCheckout = (props) => {
 
           <form onSubmit={handleSubmit}>
             <div className="row global">
-              <TextField />
+              
               <div className="col-md-12 mb-3">
-                <inTextFieldput
+                <TextField
                   name="nombre"
                   type="text"
                   id="standard-basic" 
