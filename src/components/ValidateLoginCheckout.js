@@ -38,11 +38,9 @@ const ValidateLoginCheckout = (props) => {
         .email("El email no es válido")
         .required("El campo email no puede estar vacío"),
       dni: Yup.number()
-        .required("El campo DNI no puede estar vacío")
-        .max(9,'No podes poner más de 9 números'),
+        .required("El campo DNI no puede estar vacío"),
       numTarj: Yup.number()
-        .required("El campo número de tarjeta no puede estar vacío")
-        .min(16,'No podes poner menos de 16 números'),
+        .required("El campo número de tarjeta no puede estar vacío"),
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
@@ -101,6 +99,8 @@ const ValidateLoginCheckout = (props) => {
                 name="dni"
                 type="text"
                 placeholder="Dni del titular de la tarjeta"
+                maxlength="8"
+                minlength="8"
                 value={values.dni}
                 onChange={handleChange}
                 onBlur={handleBlur}
