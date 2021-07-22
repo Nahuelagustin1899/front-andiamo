@@ -422,6 +422,10 @@ img {
     #icon-elim{
         margin-bottom: 1em;
     }
+
+    .MuiOutlinedInput-input {
+        padding: 18.5px 70px;
+    }
     
 
     #botones{
