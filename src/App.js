@@ -160,8 +160,8 @@ function App() {
               </AuthRoute>
               <AuthRoute path="/viajes" component={Viajes}>
                 <Viajes exact
-                  notExitosaEliminar={handleEmpresaEliminada}
-                  notDenegadaEliminar={handleEmpresaErrorEliminar}
+                  notExitosaEliminar={handleViajeEliminado}
+                  notDenegadaEliminar={handleViajeErrorEliminar}
                 />
               </AuthRoute>
               <AuthRoute path="/paneladmin" component={PanelAdmin}> 
