@@ -89,6 +89,7 @@ function Perfil() {
                 </thead>
 
                 <tbody>
+                {empresa.viajes.map(viaje =>
                     {empresa.reservas.map(espacio =>
                         <tr className="row">
                             <td className="col-4 text-center colortd">
@@ -97,12 +98,12 @@ function Perfil() {
                             <td className="col-4 text-center colortd">
                                 {espacio.asiento_reservado}
                             </td>
-                            {empresa.viajes.map(viaje =>
-                             <td className="col-4 text-center colortd">
+                            
+                            <td className="col-4 text-center colortd">
                                 {viaje.salida.nombre} <br/>a <br/>{viaje.destino.nombre}       
-                            </td> 
-                            )}
+                            </td>
                         </tr>
+                        )}
                         )}
                 </tbody>
             </Table>
