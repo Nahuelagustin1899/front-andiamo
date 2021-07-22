@@ -76,12 +76,9 @@ function Perfil() {
     </div>));
 
 
-    const listaEmpresa = empresasReservas && empresasReservas.map(reserva => (<div key={reserva.id}>
+    const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
 
-        {reserva.viajes.map(viaje =>
-
-
-
+        
             <Table variant="warning" striped bordered hover   >
                 <thead>
                     <tr className="row">
@@ -92,7 +89,8 @@ function Perfil() {
                 </thead>
 
                 <tbody>
-                    {reserva.reservas.map(espacio =>
+                    {empresa.reservas.map(espacio =>
+                    {empresa.viajes.map(viaje =>
                         <tr className="row">
                             <td className="col-4 text-center colortd">
                                 {espacio.viaje_id}
@@ -105,12 +103,12 @@ function Perfil() {
                             </td>
                         </tr>
                         )}
-
+                        )}
                 </tbody>
-
+                
             </Table>
             
-        )}
+        
 
         <hr className="perfileshr" />
 
