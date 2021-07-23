@@ -5,7 +5,7 @@ import { API} from "../constants";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
-function EditarUsuario() {
+function EditarUsuario(props) {
 
 
     const authData = useContext(AuthContext);
@@ -40,9 +40,16 @@ function EditarUsuario() {
                 }
             }
             ).then(({ data }) => {
+                
                 localStorage.setItem('user', JSON.stringify(data?.data));
-                authData.updateAuthData(data?.data)
+                authData.updateAuthData(data?.data)                
                 history.push('/perfil')
+                
+                if (typeof props.notExitosa === "function") {
+                    props.notExitosa({
+                        ...rta.data
+                    });
+                }
             });
 
       
