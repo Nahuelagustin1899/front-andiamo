@@ -47,7 +47,7 @@ function EditarUsuario(props) {
                 
                 if (typeof props.notExitosa === "function") {
                     props.notExitosa({
-                        ...rta.data
+                        ...data.data
                     });
                 }
             });
