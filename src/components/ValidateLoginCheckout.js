@@ -118,27 +118,13 @@ const ValidateLoginCheckout = (props) => {
             </div>
 
             <div className="col-md-12 mb-3">
-              <label htmlFor="dni">Dni</label>
-              <input
-                name="dni"
-                type="text"
-                placeholder="Dni del titular de la tarjeta"
-                maxlength="8"
-                value={values.dni}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className='form-control'
-
-              />
-            </div>
-
-            <div className="col-md-12 mb-3">
               <label htmlFor="dni">Tipo de tarjeta</label>
               <select className="form-control" >
                 <option selected disabled>Elegí tu tarjeta</option>
                 <option value="mastercard">Mastercard</option>
                 <option value="visa">Visa</option>
-                <option value="santander">Santander Río</option>
+                <option value="santander">American Express</option>
+                <option value="santander">Cabal</option>
               </select>
             </div>
 
@@ -163,7 +149,7 @@ const ValidateLoginCheckout = (props) => {
 
 
             <div className="col-md-12 mb-3">
-              <label htmlFor="expiracion">Fecha</label>
+              <label htmlFor="expiracion">Fecha de vencimiento</label>
               <input
                 name="expiracion"
                 type="month"
