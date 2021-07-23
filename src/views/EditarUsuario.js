@@ -43,12 +43,12 @@ function EditarUsuario(props) {
                 
                 localStorage.setItem('user', JSON.stringify(data?.data));
                 authData.updateAuthData(data?.data)                
-                history.push('/perfil')
                 
                 if (typeof props.notExitosa === "function") {
                     props.notExitosa({
                         ...data.data
                     });
+                    history.push('/perfil')
                 }
             });
 
