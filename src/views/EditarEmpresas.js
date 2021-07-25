@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 
-function EditarEmpresas() {
+function EditarEmpresas(props) {
 
 
     const history = useHistory();
