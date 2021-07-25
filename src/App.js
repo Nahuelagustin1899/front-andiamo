@@ -109,6 +109,14 @@ function App() {
     });
   };
 
+  const handleEditarPerfil = data => {
+    setNotification({
+      type: 'success',
+      text: 'El perfil se editó exitosamente',
+      title: 'Éxito'
+    });
+  };
+
 
 
 
@@ -143,9 +151,8 @@ function App() {
               </AuthRoute>
               <AuthRoute path="/editarusuario">
                 <EditarUsuario exact component={EditarUsuario} 
-                 notExitosa={handleViajeCreada}
-                />
-                
+                 notExitosa={handleEditarPerfil}
+                />          
               </AuthRoute>
               <Route path="/registrarse">
                 <Registrarse exact component={Registrarse} />
