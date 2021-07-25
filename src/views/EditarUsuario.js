@@ -46,10 +46,13 @@ function EditarUsuario(props) {
                 
                 if (typeof props.notExitosa === "function") {
                     props.notExitosa({
-                        ...data.data
+                      data
                     });
                     history.push('/perfil')
-                }
+                  }
+             
+                   /*  history.push('/perfil') */
+                
             });
 
       
