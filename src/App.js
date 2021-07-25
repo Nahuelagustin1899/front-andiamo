@@ -142,7 +142,10 @@ function App() {
                 <EditarEmpresas exact component={EditarEmpresas} />
               </AuthRoute>
               <AuthRoute path="/editarusuario">
-                <EditarUsuario exact component={EditarUsuario} />
+                <EditarUsuario exact component={EditarUsuario} 
+                 notExitosa={handleViajeCreada}
+                />
+                
               </AuthRoute>
               <Route path="/registrarse">
                 <Registrarse exact component={Registrarse} />
