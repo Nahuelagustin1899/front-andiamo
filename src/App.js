@@ -125,6 +125,14 @@ function App() {
     });
   };
 
+  const handleEditarEmpresa = data => {
+    setNotification({
+      type: 'success',
+      text: 'La empresa se editó exitosamente',
+      title: 'Éxito'
+    });
+  };
+
 
 
 
@@ -155,7 +163,9 @@ function App() {
                 <Pago exact component={Pago} />
               </AuthRoute>
               <AuthRoute path="/editarempresa">
-                <EditarEmpresas exact component={EditarEmpresas} />
+                <EditarEmpresas exact component={EditarEmpresas} 
+                notExitosa={handleEditarEmpresa}
+                />
               </AuthRoute>
               <AuthRoute path="/editarusuario">
                 <EditarUsuario exact component={EditarUsuario} 
