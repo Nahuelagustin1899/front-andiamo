@@ -12,7 +12,7 @@ function EditarEmpresas() {
     const history = useHistory();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/";
-    const [file, setFile] = React.useState(); 
+    const [file, setFile] = React.useState();
     const location = useLocation()
 
     let empresa;
@@ -31,21 +31,27 @@ function EditarEmpresas() {
     }, []);
 
     const onSubmit = async data => {
-        
-            console.log(data);
-            const fd = new FormData();
-            fd.append('nombre', data.nombre);
-            fd.append('logo', file);
-            console.log(fd);
-             return axios.post(API + '/empresa/editar/' + empresa.id, fd, {
-                headers: {
-                    credentials: 'include'
-                }
+
+        console.log(data);
+        const fd = new FormData();
+        fd.append('nombre', data.nombre);
+        fd.append('logo', file);
+        console.log(fd);
+        return axios.post(API + '/empresa/editar/' + empresa.id, fd, {
+            headers: {
+                credentials: 'include'
             }
-            ).then(() => {
+        }
+        ).then((data) => {
+            if (typeof props.notExitosa === "function") {
+                props.notExitosa({
+                    data
+                });
                 history.push('/empresaspanel')
-            }); 
-        
+            }
+            /* history.push('/empresaspanel') */
+        });
+
     };
 
 
