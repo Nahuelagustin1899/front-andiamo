@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useCallback } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../services/auth";
 import { API} from "../constants";
@@ -17,9 +17,9 @@ function EditarUsuario(props) {
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     
 
-    const [file, setFile] = React.useState();
+    const [file, setFile] = useState();
 
-    const handleFile = React.useCallback((event) => {
+    const handleFile = useCallback((event) => {
         const files = event?.target?.files
         if (files?.length) {
             setFile(files[0])
