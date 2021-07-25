@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import TextField from '@material-ui/core/TextField';
 
-function EditarViaje() {
+function EditarViaje(props) {
 
     const history = useHistory();
     const location = useLocation()
