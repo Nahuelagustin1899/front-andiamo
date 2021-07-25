@@ -40,7 +40,15 @@ function EditarViaje() {
         });
 
         const fetchData = await response.json();
-        history.push('/viajes')
+
+        if (typeof props.notExitosa === "function") {
+            props.notExitosa({
+                ...fetchData.data
+            });
+            history.push('/viajes')
+        }
+
+        /* history.push('/viajes') */
         return { ...fetchData.data };
 
     };

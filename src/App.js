@@ -117,6 +117,14 @@ function App() {
     });
   };
 
+  const handleEditarViaje = data => {
+    setNotification({
+      type: 'success',
+      text: 'El viaje se editó exitosamente',
+      title: 'Éxito'
+    });
+  };
+
 
 
 
@@ -158,7 +166,9 @@ function App() {
                 <Registrarse exact component={Registrarse} />
               </Route>
               <AuthRoute path="/editarviaje">
-                <EditarViaje exact component={EditarViaje} />
+                <EditarViaje exact component={EditarViaje} 
+                notExitosa={handleEditarViaje}
+                />
               </AuthRoute>
               <AuthRoute path="/carrito">
                 <ElegirAsiento exact component={ElegirAsiento} />
