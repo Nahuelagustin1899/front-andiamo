@@ -42,7 +42,7 @@ function EditarEmpresas(props) {
                 credentials: 'include'
             }
         }
-        ).then((data) => {
+        ).then(({ data }) => {
             if (typeof props.notExitosa === "function") {
                 props.notExitosa({
                     data
