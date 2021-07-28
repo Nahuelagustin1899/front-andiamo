@@ -32,7 +32,7 @@ export default function Viaje(props) {
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>De: {viaje.salida.nombre} <hr/> Hasta: {viaje.destino.nombre}</Modal.Title>
+                                <Modal.Title className="h6">De: {viaje.salida.nombre} <hr/> Hasta: {viaje.destino.nombre}</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 <b>Salida:</b> {format(new Date(viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}
