@@ -45,8 +45,7 @@ function Perfil() {
     }
 
     const clear = () => {
-        setPrecio('');
-        setSalida('');
+        setId('');
         setEmpresasReservas(viajesAux);
     }
 
