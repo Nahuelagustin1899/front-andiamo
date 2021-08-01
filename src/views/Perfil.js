@@ -38,7 +38,7 @@ function Perfil() {
 
         const newData = empresasReservas.filter((empresa) => {
             const itemId = empresa.reservas.viaje_id;
-            return itemId.indexOf(empresa.reservas.viaje_id) > -1;
+            return itemId.indexOf(reservas.viaje_id) > -1;
             
         });
         setEmpresasReservas(newData);
