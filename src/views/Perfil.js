@@ -165,7 +165,7 @@ function Perfil() {
                 authData.user.id === 2 ?
 
                     (<>
-                   {/*  <div className="filtros"> */}
+                    <div className="filtros">
                         <div className="form-group ">
                             <label className="d-block " htmlFor="viajeid">ID Viaje </label>
                             <input
@@ -178,7 +178,7 @@ function Perfil() {
 
                             <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                         </div>
-                   {/*  </div> */}
+                    </div>
                         {listaEmpresa}
                     </>) :
                     authData.user.id >= 3 ?
