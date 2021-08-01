@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 Yup.addMethod(Yup.number, 'validarVisa', function (value) {
 
-  return /^4[0-9]{12}(?:[0-9]{3})?$/.test(value,expRegex)
+  return /^4[0-9]{12}(?:[0-9]{3})?$/.test(value)
 
 });
 
@@ -35,7 +35,8 @@ const ValidateLoginCheckout = (props) => {
       }, 500);
 
     }}
-
+    
+   
 
     validationSchema={Yup.object().shape({
       nombre: Yup.string()
@@ -48,7 +49,6 @@ const ValidateLoginCheckout = (props) => {
         .min(8, "El campo debe contener al menos 8 digitos"),
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío")
-        .validarVisa()
         .min(16, "El campo debe contener al menos 16 digitos"),
 
         
