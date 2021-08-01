@@ -165,7 +165,7 @@ function Perfil() {
                 authData.user.id === 2 ?
 
                     (<>
-                    <div className="filtros">
+                    <div className="filtros-perfil">
                         <div className="form-group ">
                             <label className="d-block " htmlFor="viajeid">ID Viaje </label>
                             <input
