@@ -37,8 +37,9 @@ function Perfil() {
     const filtro = () => {
 
         const newData = empresasReservas.filter((empresa) => {
-            const itemId = empresa.reservas.viaje_id;
-            return itemId.indexOf(reservas.viaje_id) > -1;
+            console.log(empresa);
+            /* const itemId = empresa.reservas.viaje_id;
+            return itemId.indexOf(reservas.viaje_id) > -1; */
             
         });
         setEmpresasReservas(newData);
@@ -93,8 +94,6 @@ function Perfil() {
 
 
     const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
-
-
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
