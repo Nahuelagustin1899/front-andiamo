@@ -1,207 +1,196 @@
-import React, { useState, useEffect } from 'react';
-import viajesService from "./../services/viajes";
-import { Link } from "react-router-dom";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext, useEffect } from 'react';
+import { AuthContext } from "../services/auth";
+import reservasService from "./../services/reservas";
 import Table from 'react-bootstrap/Table';
 import { format } from 'date-fns';
+import { Link } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
-import DeleteIcon from '@material-ui/icons/Delete.js';
-import AddIcon from '@material-ui/icons/Add.js';
-import { makeStyles } from "@material-ui/core/styles";
-import { FaMoneyBillAlt } from "react-icons/fa";
-import { SiGooglecalendar } from "react-icons/si";
-import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles((theme) => ({
-    margin: {
-        marginBottom: theme.spacing(3)
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1)
-    }
-}));
+function Perfil() {
 
-function Viajes(props) {
-    const history = useHistory();
+    const [reservas, setReservas] = useState([]);
+    const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
+    const [empresasReservas, setEmpresasReservas] = useState([]);
+    const [viajeId, setViajeId] = useState("");
     const [viajesAux, setViajesAux] = useState([]);
-    const [precio, setPrecio] = useState("");
-    const [salida, setSalida] = useState("");
-    const [viajes, setViajes] = useState([]);
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const classes = useStyles();
+    const [todasReservas, setTodasReservas] = useState([]);
+    
+    useEffect(() => {
+        (async () => {
+            const data = await reservasService.index();
+            setReservas(data);
 
-    const editarViaje = (item) => {
-        history.push({ pathname: "/editarviaje", state: { item: item } })
-    }
+        })().catch(err => console.log("Error al traer las reservas: ", err));
+    }, []);
+
 
     useEffect(() => {
         (async () => {
-            const data = await viajesService.indexEmpresa();
-            setViajes(data);
+            const data = await reservasService.indexEmpresa();
+            setEmpresasReservas(data);
             setViajesAux(data);
-        })().catch(err => console.log("Error al traer los viajes: ", err));
+            setTodasReservas(data[0].reservas)
+            console.log(data);
+        })().catch(err => console.log("Error al traer las reservas: ", err));
+
     }, []);
 
     const filtro = () => {
-        
-        const newData = viajes.filter((item) => {
-            const itemPrecio = item.precio;
-            const itemSalida = item.fecha_salida;
-            return itemPrecio.indexOf(precio) > -1 && itemSalida.indexOf(salida) > -1;
+
+        const newData = empresasReservas && empresasReservas.map((empresa) => {
+            console.log(empresasReservas);
+            const reservasBuscar = Array.from(empresa.reservas);
+            
+            const resultados = reservasBuscar.filter((e) => e.viaje_id === parseInt(viajeId));
+            var nuevaEmpresa = empresa;
+            nuevaEmpresa.reservas = resultados;
+
+            return nuevaEmpresa
+           
         });
 
-        console.log(newData);
-        setViajes(newData);
+        setEmpresasReservas(newData);
     }
 
     const clear = () => {
-        setPrecio('');
-        setSalida('');
-        setViajes(viajesAux);
+        setViajeId('');
+        var misViajes = viajesAux;
+        misViajes[0].reservas = todasReservas;
+        console.log(misViajes);
+        setEmpresasReservas(misViajes);
     }
 
+    const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth">ID viaje</th>
+                    <th className="col-4 text-center colorth">Asiento reservado</th>
+                    <th className="col-4 text-center colorth">Estado</th>
+                </tr>
+            </thead>
 
-    const lista = viajes.map(item => (
-        <div key={item.id}>
-            <Table variant="warning" striped bordered hover   >
-                <thead>
+            <tbody>
+
+                {empresa.reservas.map(espacio =>
                     <tr className="row">
-                        <th className="col-4 text-center colorth">Salida</th>
-                        <th className="col-4 text-center colorth">Llegada</th>
-                        <th className="col-4 text-center colorth">Precio</th>
+                        <td className="col-4 text-center colortd">
+                            {espacio.viaje_id}
+                        </td>
+                        <td className="col-4 text-center colortd">
+                            {espacio.asiento_reservado}
+                        </td>
+
+                        <td className="col-4 text-center colortd">
+                            Reservado
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr className="row">
-                        <td className="col-4 text-center colortd">{item.salida.nombre}</td>
-                        <td className="col-4 text-center colortd">{item.destino.nombre}</td>
-                        <td className="col-4 text-center colortd">$ {item.precio}</td>
-                    </tr>
-                </tbody>
-            </Table>
+                )}
 
-            <Table variant="warning" striped bordered hover >
-                <thead>
-                    <tr className="row">
-                        <th className="col-4 text-center colorth">Empresa</th>
-                        <th className="col-4 text-center colorth">Fecha salida</th>
-                        <th className="col-4 text-center colorth">Fecha llegada</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="row">
-                        <td className="col-4 text-center colortd">{item.empresa.nombre}</td>
-                        <td className="col-4 text-center colortd">{format(new Date
-                            (item.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
-                        <td className="col-4 text-center colortd ">{format(new Date
-                            (item.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
+            </tbody>
 
-                    </tr>
-                </tbody>
-            </Table>
-            <div>
-                <Fab id="botones" color="secondary" onClick={handleShow} aria-label="delete">
-                    <DeleteIcon />
-                </Fab>
+        </Table>
 
-                <Fab id="botones1" onClick={() => editarViaje(item)} color="primary" aria-label="edit">
-                    <EditIcon />
-                </Fab>
 
-            </div>
-            <hr className="hr" />
+        <hr className="perfileshr" />
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton><b>De:
-                    {" " + item.salida.nombre} <hr/> Hasta: {item.destino.nombre}</b>
-                </Modal.Header>
-                <Modal.Body>¿Estás seguro que deseas eliminar este viaje?</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        <button className="btn btn-secondary">
-                            Cerrar
-                        </button>
-                    </Button>
-                    <Button onClick={handleClose}>
-                        <button className="btn btn-primary"
-                            onClick={() => {
-                                viajesService.delete(item.id)
-                                    .then(data => {
-                                        setViajes(viajes.filter(viaje => viaje.id !== item.id));
-                                        if (typeof props.notExitosaEliminar === 'function') {
-                                            props.notExitosaEliminar(data);
+    </div >));
 
-                                        }
-                                        history.push('/viajes');
-                                    })
+    const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
-                                    .catch(err => {
-                                        if (typeof props.notDenegadaEliminar === 'function') {
-                                            props.notDenegadaEliminar(item);
-                                        }
-                                    });
-                            }}>Eliminar</button>
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth">Nombre</th>
+                    <th className="col-4 text-center colorth">Fecha salida</th>
+                    <th className="col-4 text-center colorth">Fecha llegada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="row">
+                    <td className="col-4 text-center colortd">{reserva.user.name}</td>
+                    <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
+                    <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
+                </tr>
+            </tbody>
+        </Table>
+
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth">Precio</th>
+                    <th className="col-4 text-center colorth">Salida</th>
+                    <th className="col-4 text-center colorth">Destino</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr className="row">
+                    <td className="col-4 text-center colortd">{reserva.viaje.precio}</td>
+                    <td className="col-4 text-center colortd">{reserva.viaje.salida.nombre}</td>
+                    <td className="col-4 text-center colortd">{reserva.viaje.destino.nombre}</td>
+                </tr>
+            </tbody>
+        </Table>
+        <hr className="perfileshr" />
+
+    </div>));
+
+
+    const authData = useContext(AuthContext);
+    console.log(authData);
+
+    return (<div className='fondopantalla p-5'>
+
+        <h1 className="viajes">Perfil</h1>
+        <Link to="/editarusuario">
+            <Fab color="primary" aria-label="edit">
+                <EditIcon />
+            </Fab>
+        </Link>
+
+        <div className="caja-perfil">
+            <img className="imagen" src={urlbase + authData.user.logo} alt={authData.user.name} />
+            <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
         </div>
+        <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
 
-    ))
+        {
+            authData.user.id === 1 ?
+                (<>
 
-    return (
-        <div className="fondopantalla" >
-            <h1 className="mb-5 viajes-empresa">Panel de viajes</h1>
-            <div>
+                </>) :
 
-            <div className="filtros">
-                <div className="form-group ">
-                    <label className="d-block " htmlFor="date">Fecha salida <SiGooglecalendar className="ml-2" style={{ fontSize: 23 }}/></label>  
-                    <TextField
-                            className="form-control inputs-filtros"
-                            type="date"
-                            value={salida}
-                            onChange={(e) => setSalida(e.target.value)}
-                        /> 
-                    <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
-                </div>
+                authData.user.id === 2 ?
 
-                <div className="form-group ">
-                    <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }}/></label>        
-                    <input
-                        className="form-control inputs-filtros"
-                        type="text"
-                        value={precio}
-                        placeholder="Buscar por precio"
-                        onChange={(e) => setPrecio(e.target.value)}
-                    />
-                     <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
-                </div>
+                    (<>
+                        <div className="form-group ">
+                            <label className="d-block " htmlFor="viajeid">ID Viaje </label>
+                            <input
+                                className="form-control inputs-filtros"
+                                type="text"
+                                value={viajeId}
+                                onChange={(e) => setViajeId(e.target.value)}
+                            />
+                            <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
 
+                            <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
+                        </div>
+                        {listaEmpresa}
+                    </>) :
+                    authData.user.id >= 3 ?
+                        (<>
 
-                <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
-            </div>
-            <div className="p-4">
-                <Link to="/viajes/nueva">
-                    <Fab variant="extended"
-                        size="medium"
-                        color="primary"
-                        aria-label="add"
-                        className={classes.margin}>
-                        <AddIcon className={classes.extendedIcon} />
-                        Crear viaje
-                    </Fab>
-                </Link>
-               
-                    {lista}  
-                </div>       
-            </div>
-        </div>
-    )
+                            {lista}
+
+                        </>) :
+
+                        (<>
+                        </>)
+        }
+
+    </div>);
 }
 
-export default Viajes;
+export default Perfil;
