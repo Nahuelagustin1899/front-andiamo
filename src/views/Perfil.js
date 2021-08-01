@@ -12,6 +12,8 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
+    const [viajesAux, setViajesAux] = useState([]);
+    const [id, setId] = useState("");
 
     useEffect(() => {
         (async () => {
@@ -26,10 +28,22 @@ function Perfil() {
         (async () => {
             const data = await reservasService.indexEmpresa();
             setEmpresasReservas(data);
+            setViajesAux(data);
             console.log(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
 
     }, []);
+
+    const filtro = () => {
+
+        const newData = reservas.filter((espacio) => {
+            const itemId = espacio.viaje_id;
+            return itemId.indexOf(viaje_id) > -1;
+        });
+
+        console.log(newData);
+        setEmpresasReservas(newData);
+    }
 
 
 
@@ -134,12 +148,26 @@ function Perfil() {
         {
             authData.user.id === 1 ?
                 (<>
-                    <p>No hay viajes</p>
+
                 </>) :
 
                 authData.user.id === 2 ?
 
                     (<>
+                        <div className="filtros">
+
+                            <div className="form-group ">
+                                <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                                <input
+                                    className="form-control inputs-filtros"
+                                    type="text"
+                                    value={id}
+                                    placeholder="Buscar por precio"
+                                    onChange={(e) => setId(e.target.value)}
+                                />
+                                <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                            </div>
+                        </div>
                         {listaEmpresa}
                     </>) :
                     authData.user.id >= 3 ?
