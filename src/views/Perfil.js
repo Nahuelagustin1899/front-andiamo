@@ -16,7 +16,7 @@ function Perfil() {
     const [viajeId, setViajeId] = useState("");
     const [viajesAux, setViajesAux] = useState([]);
     const [todasReservas, setTodasReservas] = useState([]);
-    
+
     useEffect(() => {
         (async () => {
             const data = await reservasService.index();
@@ -42,13 +42,13 @@ function Perfil() {
         const newData = empresasReservas && empresasReservas.map((empresa) => {
             console.log(empresasReservas);
             const reservasBuscar = Array.from(empresa.reservas);
-            
+
             const resultados = reservasBuscar.filter((e) => e.viaje_id === parseInt(viajeId));
             var nuevaEmpresa = empresa;
             nuevaEmpresa.reservas = resultados;
 
             return nuevaEmpresa
-           
+
         });
 
         setEmpresasReservas(newData);
@@ -155,36 +155,37 @@ function Perfil() {
             <img className="imagen" src={urlbase + authData.user.logo} alt={authData.user.name} />
             <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
         </div>
-        <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
 
         {
             authData.user.id === 1 ?
                 (<>
-
+                    <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                 </>) :
 
                 authData.user.id === 2 ?
 
                     (<>
-                    <div className="filtros-perfil">
-                        <div className="form-group ">
-                            <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }}/></label>
-                            <input
-                                className="form-control inputs-filtros-perfil"
-                                type="text"
-                                value={viajeId}
-                                onChange={(e) => setViajeId(e.target.value)}
-                            />
-                            <button className="btn btn-success d-inline-block" onClick={filtro}>Buscar</button>
 
-                            <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
+                        <div className="filtros-perfil">
+                            <div className="form-group ">
+                                <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                                <input
+                                    className="form-control inputs-filtros-perfil"
+                                    type="text"
+                                    value={viajeId}
+                                    onChange={(e) => setViajeId(e.target.value)}
+                                />
+                                <button className="btn btn-success d-inline-block" onClick={filtro}>Buscar</button>
+
+                                <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
+                            </div>
                         </div>
-                    </div>
+                        <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                         {listaEmpresa}
                     </>) :
                     authData.user.id >= 3 ?
                         (<>
-
+                            <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                             {lista}
 
                         </>) :
