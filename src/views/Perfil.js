@@ -36,12 +36,11 @@ function Perfil() {
 
     const filtro = () => {
 
-        const newData = empresasReservas.filter((espacio) => {
-            const itemId = espacio.viaje_id;
+        const newData = empresasReservas.filter((empresa) => {
+            const itemId = empresa.reservas.viaje_id;
             return itemId.indexOf(viaje_id) > -1;
+            
         });
-
-        console.log(newData);
         setEmpresasReservas(newData);
     }
 
