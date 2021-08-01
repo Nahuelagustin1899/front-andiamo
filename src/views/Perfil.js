@@ -12,9 +12,10 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
+    const [viajeId, setViajeId] = useState("");
     const [viajesAux, setViajesAux] = useState([]);
-    const [id, setId] = useState("");
-
+    const [todasReservas, setTodasReservas] = useState([]);
+    
     useEffect(() => {
         (async () => {
             const data = await reservasService.index();
@@ -29,6 +30,7 @@ function Perfil() {
             const data = await reservasService.indexEmpresa();
             setEmpresasReservas(data);
             setViajesAux(data);
+            setTodasReservas(data[0].reservas)
             console.log(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
 
@@ -36,22 +38,64 @@ function Perfil() {
 
     const filtro = () => {
 
-        const newData = empresasReservas.filter((empresa) => {
-            /* const itemId = empresa.reservas.viaje_id; */
+        const newData = empresasReservas && empresasReservas.map((empresa) => {
+            console.log(empresasReservas);
+            const reservasBuscar = Array.from(empresa.reservas);
             
-            
-            return console.log(empresa);
-            
+            const resultados = reservasBuscar.filter((e) => e.viaje_id === parseInt(viajeId));
+            var nuevaEmpresa = empresa;
+            nuevaEmpresa.reservas = resultados;
+
+            return nuevaEmpresa
+           
         });
+
         setEmpresasReservas(newData);
     }
 
     const clear = () => {
-        setId('');
-        setEmpresasReservas(viajesAux);
+        setViajeId('');
+        var misViajes = viajesAux;
+        misViajes[0].reservas = todasReservas;
+        console.log(misViajes);
+        setEmpresasReservas(misViajes);
     }
 
+    const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth">ID viaje</th>
+                    <th className="col-4 text-center colorth">Asiento reservado</th>
+                    <th className="col-4 text-center colorth">Estado</th>
+                </tr>
+            </thead>
 
+            <tbody>
+
+                {empresa.reservas.map(espacio =>
+                    <tr className="row">
+                        <td className="col-4 text-center colortd">
+                            {espacio.viaje_id}
+                        </td>
+                        <td className="col-4 text-center colortd">
+                            {espacio.asiento_reservado}
+                        </td>
+
+                        <td className="col-4 text-center colortd">
+                            Reservado
+                        </td>
+                    </tr>
+                )}
+
+            </tbody>
+
+        </Table>
+
+
+        <hr className="perfileshr" />
+
+    </div >));
 
     const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
@@ -94,43 +138,6 @@ function Perfil() {
     </div>));
 
 
-    const listaEmpresa = empresasReservas && empresasReservas.map(empresa => (<div key={empresa.id}>
-        <Table variant="warning" striped bordered hover   >
-            <thead>
-                <tr className="row">
-                    <th className="col-4 text-center colorth">ID viaje</th>
-                    <th className="col-4 text-center colorth">Asiento reservado</th>
-                    <th className="col-4 text-center colorth">Estado</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                {empresa.reservas.map(espacio =>
-                    <tr className="row">
-                        <td className="col-4 text-center colortd">
-                            {espacio.viaje_id}
-                        </td>
-                        <td className="col-4 text-center colortd">
-                            {espacio.asiento_reservado}
-                        </td>
-
-                        <td className="col-4 text-center colortd">
-                            Reservado
-                        </td>
-                    </tr>
-                )}
-
-            </tbody>
-
-        </Table>
-
-
-        <hr className="perfileshr" />
-
-    </div >));
-
-
     const authData = useContext(AuthContext);
     console.log(authData);
 
@@ -158,21 +165,15 @@ function Perfil() {
                 authData.user.id === 2 ?
 
                     (<>
-                        <div className="filtros">
-
-                            <div className="form-group ">
-                                <label className="d-block" htmlFor="empresa">Precio</label>
-                                <input
-                                    className="form-control inputs-filtros"
-                                    type="text"
-                                    value={id}
-                                    placeholder="Buscar por precio"
-                                    onChange={(e) => setId(e.target.value)}
-                                />
-                                <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
-
-                                
-                            </div>
+                        <div className="form-group ">
+                            <label className="d-block " htmlFor="viajeid">ID Viaje </label>
+                            <input
+                                className="form-control inputs-filtros"
+                                type="text"
+                                value={viajeId}
+                                onChange={(e) => setViajeId(e.target.value)}
+                            />
+                            <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
 
                             <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                         </div>
