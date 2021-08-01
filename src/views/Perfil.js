@@ -169,7 +169,7 @@ function Perfil() {
                         <div className="form-group ">
                             <label className="d-block " htmlFor="viajeid">ID Viaje </label>
                             <input
-                                className="form-control"
+                                className="form-control inputs-filtros"
                                 type="text"
                                 value={viajeId}
                                 onChange={(e) => setViajeId(e.target.value)}
