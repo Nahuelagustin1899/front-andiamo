@@ -36,7 +36,7 @@ function Perfil() {
 
     const filtro = () => {
 
-        const newData = reservas.filter((espacio) => {
+        const newData = empresasReservas.filter((espacio) => {
             const itemId = espacio.viaje_id;
             return itemId.indexOf(viaje_id) > -1;
         });
@@ -157,7 +157,7 @@ function Perfil() {
                         <div className="filtros">
 
                             <div className="form-group ">
-                                <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                                <label className="d-block" htmlFor="empresa">Precio</label>
                                 <input
                                     className="form-control inputs-filtros"
                                     type="text"
