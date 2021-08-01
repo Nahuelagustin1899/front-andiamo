@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 import { Link } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
+import { FaBusAlt } from "react-icons/fa";
 
 function Perfil() {
 
@@ -167,7 +168,7 @@ function Perfil() {
                     (<>
                     <div className="filtros-perfil">
                         <div className="form-group ">
-                            <label className="d-block " htmlFor="viajeid">ID Viaje </label>
+                            <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }}/></label>
                             <input
                                 className="form-control inputs-filtros-perfil"
                                 type="text"
