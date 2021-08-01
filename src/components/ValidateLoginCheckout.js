@@ -49,9 +49,8 @@ const ValidateLoginCheckout = (props) => {
         .min(8, "El campo debe contener al menos 8 digitos"),
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío")
-        .min(16, "El campo debe contener al menos 16 digitos"),
-
-        
+        .validarVisa()
+        .min(16, "El campo debe contener al menos 16 digitos"),  
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
