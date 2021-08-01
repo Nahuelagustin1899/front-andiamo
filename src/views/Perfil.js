@@ -174,7 +174,7 @@ function Perfil() {
                                 value={viajeId}
                                 onChange={(e) => setViajeId(e.target.value)}
                             />
-                            <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
+                            <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
 
                             <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                         </div>
