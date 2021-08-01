@@ -4,10 +4,10 @@ import * as Yup from "yup";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
-yup.addMethod(yup.number, 'validarVisa', function (value) {
+Yup.addMethod(yup.number, 'validarVisa', function (value) {
 
   return /^4[0-9]{12}(?:[0-9]{3})?$/.test(value,expRegex)
-  
+
 });
 
 const ValidateLoginCheckout = (props) => {
