@@ -173,7 +173,7 @@ function Viajes(props) {
                 <div className="form-group ">
                     <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }}/></label>        
                     <input
-                        className="form-control inputs-filtros"
+                        className="form-control inputs-filtros-perfil"
                         type="text"
                         value={precio}
                         placeholder="Buscar por precio"
