@@ -169,12 +169,12 @@ function Perfil() {
                         <div className="form-group ">
                             <label className="d-block " htmlFor="viajeid">ID Viaje </label>
                             <input
-                                className="form-control inputs-filtros"
+                                className="form-control inputs-filtros-perfil"
                                 type="text"
                                 value={viajeId}
                                 onChange={(e) => setViajeId(e.target.value)}
                             />
-                            <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                            <button className="btn btn-success d-inline-block" onClick={filtro}>Buscar</button>
 
                             <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                         </div>
