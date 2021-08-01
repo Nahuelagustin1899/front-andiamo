@@ -44,6 +44,12 @@ function Perfil() {
         setEmpresasReservas(newData);
     }
 
+    const clear = () => {
+        setPrecio('');
+        setSalida('');
+        setEmpresasReservas(viajesAux);
+    }
+
 
 
     const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
@@ -165,7 +171,11 @@ function Perfil() {
                                     onChange={(e) => setId(e.target.value)}
                                 />
                                 <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+
+                                
                             </div>
+
+                            <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                         </div>
                         {listaEmpresa}
                     </>) :
