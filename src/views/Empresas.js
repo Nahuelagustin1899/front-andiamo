@@ -50,16 +50,16 @@ function Empresas(props) {
             <Table variant="warning" striped bordered hover>
                 <thead>
                     <tr className="row">
-                        <th className="col-4 text-center colorth">Nombre</th>
+                        <th className="col-4 text-center colorth radius-top-izq">Nombre</th>
                         <th className="col-4 text-center colorth">Logo</th>
-                        <th className="col-4 text-center colorth">Acciones</th>
+                        <th className="col-4 text-center colorth radius-top-der">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="row">
-                        <td className="col-4 text-center colortd font-weight-bold">{item.nombre}</td>
+                        <td className="col-4 text-center colortd font-weight-bold radius-bottom-izq">{item.nombre}</td>
                         <td className="col-4 text-center colortd font-weight-bold"><img className="img-empresa" src={urlbase + item.logo} alt={item.id} /></td>
-                        <td className="col-4 text-center colortd">
+                        <td className="col-4 text-center colortd radius-bottom-der">
 
 
                             <Fab id="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
