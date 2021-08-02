@@ -64,16 +64,16 @@ function PanelAdmin(props) {
             <Table variant="warning" striped bordered hover   >
                 <thead>
                     <tr className="row">
-                        <th className="col-4 text-center colorth">Salida</th>
+                        <th className="col-4 text-center colorth radius-top-izq">Salida</th>
                         <th className="col-4 text-center colorth">Llegada</th>
-                        <th className="col-4 text-center colorth">Precio</th>
+                        <th className="col-4 text-center colorth radius-top-der">Precio</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="row">
-                        <td className="col-4 text-center colortd">{item.salida.nombre}</td>
+                        <td className="col-4 text-center colortd radius-bottom-izq">{item.salida.nombre}</td>
                         <td className="col-4 text-center colortd">{item.destino.nombre}</td>
-                        <td className="col-4 text-center colortd">$ {item.precio}</td>
+                        <td className="col-4 text-center colortd radius-bottom-der">$ {item.precio}</td>
                     </tr>
                 </tbody>
             </Table>
@@ -81,17 +81,17 @@ function PanelAdmin(props) {
             <Table variant="warning" striped bordered hover >
                 <thead>
                     <tr className="row">
-                        <th className="col-4 text-center colorth">Empresa</th>
+                        <th className="col-4 text-center colorth radius-top-izq">Empresa</th>
                         <th className="col-4 text-center colorth">Fecha salida</th>
-                        <th className="col-4 text-center colorth">Fecha llegada</th>
+                        <th className="col-4 text-center colorth radius-top-der">Fecha llegada</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="row">
-                        <td className="col-4 text-center colortd">{item.empresa.nombre}</td>
+                        <td className="col-4 text-center colortd radius-bottom-izq">{item.empresa.nombre}</td>
                         <td className="col-4 text-center colortd">{format(new Date
                             (item.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
-                        <td className="col-4 text-center colortd ">{format(new Date
+                        <td className="col-4 text-center colortd radius-bottom-der">{format(new Date
                             (item.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
 
                     </tr>
