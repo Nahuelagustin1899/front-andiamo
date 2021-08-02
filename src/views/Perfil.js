@@ -103,16 +103,16 @@ function Perfil() {
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
-                    <th className="col-4 text-center colorth">Nombre</th>
+                    <th className="col-4 text-center colorth radius-top-izq">Nombre</th>
                     <th className="col-4 text-center colorth">Fecha salida</th>
-                    <th className="col-4 text-center colorth">Fecha llegada</th>
+                    <th className="col-4 text-center colorth radius-top-der">Fecha llegada</th>
                 </tr>
             </thead>
             <tbody>
                 <tr className="row">
-                    <td className="col-4 text-center colortd">{reserva.user.name}</td>
+                    <td className="col-4 text-center colortd radius-bottom-izq">{reserva.user.name}</td>
                     <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
-                    <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
+                    <td className="col-4 text-center colortd radius-bottom-izq">{format(new Date(reserva.viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
                 </tr>
             </tbody>
         </Table>
@@ -120,16 +120,16 @@ function Perfil() {
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
-                    <th className="col-4 text-center colorth">Precio</th>
+                    <th className="col-4 text-center colorth radius-bottom-izq">Precio</th>
                     <th className="col-4 text-center colorth">Salida</th>
-                    <th className="col-4 text-center colorth">Destino</th>
+                    <th className="col-4 text-center colorth radius-bottom-der">Destino</th>
                 </tr>
             </thead>
             <tbody>
                 <tr className="row">
-                    <td className="col-4 text-center colortd">{reserva.viaje.precio}</td>
+                    <td className="col-4 text-center colortd radius-bottom-izq">{reserva.viaje.precio}</td>
                     <td className="col-4 text-center colortd">{reserva.viaje.salida.nombre}</td>
-                    <td className="col-4 text-center colortd">{reserva.viaje.destino.nombre}</td>
+                    <td className="col-4 text-center colortd radius-bottom-der">{reserva.viaje.destino.nombre}</td>
                 </tr>
             </tbody>
         </Table>
