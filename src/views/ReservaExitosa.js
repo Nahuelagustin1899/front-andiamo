@@ -31,7 +31,6 @@ function ReservaExitosa() {
         <div className="fondopantalla p-4">
             <div className={classes.root}>
                 <Alert variant="filled" severity="success">
-                    <AlertTitle>Éxito</AlertTitle>
                     <strong>La reserva fue realizada exitosamente</strong>
                 </Alert>
                 <div className="box-stars mb-5 mt-5">
