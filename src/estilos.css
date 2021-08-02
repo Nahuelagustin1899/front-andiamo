@@ -273,8 +273,12 @@ img {
         margin-top: 2em;
     }
 
-    .radius{
+    .radius-der{
         border-top-right-radius: 7px;
+    }
+
+    .radius-izq{
+        border-top-left-radius: 7px;
     }
 
     /* Login */
