@@ -66,9 +66,9 @@ function Perfil() {
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
-                    <th className="col-4 text-center colorth">ID viaje</th>
+                    <th className="col-4 text-center colorth radius-top-izq">ID viaje</th>
                     <th className="col-4 text-center colorth">Asiento reservado</th>
-                    <th className="col-4 text-center colorth">Estado</th>
+                    <th className="col-4 text-center colorth radius-top-der">Estado</th>
                 </tr>
             </thead>
 
@@ -76,14 +76,13 @@ function Perfil() {
 
                 {empresa.reservas.map(espacio =>
                     <tr className="row">
-                        <td className="col-4 text-center colortd">
+                        <td className="col-4 text-center colortd radius-bottom-izq">
                             {espacio.viaje_id}
                         </td>
                         <td className="col-4 text-center colortd">
                             {espacio.asiento_reservado}
                         </td>
-
-                        <td className="col-4 text-center colortd">
+                        <td className="col-4 text-center colortd radius-bottom-der">
                             Reservado
                         </td>
                     </tr>
