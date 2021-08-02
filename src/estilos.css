@@ -273,13 +273,21 @@ img {
         margin-top: 2em;
     }
 
-    .radius-der{
+    .radius-top-der{
         border-top-right-radius: 7px;
         border-bottom-right-radius: 7px;
     }
 
-    .radius-izq{
+    .radius-top-izq{
         border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+    }
+
+    .radius-bottom-der{
+        border-bottom-right-radius: 7px;
+    }
+
+    .radius-bottom-izq{
         border-bottom-left-radius: 7px;
     }
 
