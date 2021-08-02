@@ -35,7 +35,7 @@ function ReservaExitosa() {
                     <strong>La reserva fue realizada exitosamente</strong>
                 </Alert>
                 <div className="box-stars mb-5 mt-5">
-                    <h3 className="text-center text-white h4">Por último, tu calificación nos va a servir para seguir mejorando</h3>
+                    <h3 className="text-center text-white h6">Por último, tu calificación nos va a servir para seguir mejorando</h3>
                     <Box className="mt-5" component="fieldset" mb={3} borderColor="transparent">
                         <Typography className="font-weight-bold text-center text-white" component="legend">¿Qué tan satisfecho estuviste con la app?</Typography>
                         <Rating className="estrellas" size="large" name="size-large" defaultValue={2} max={5} />
