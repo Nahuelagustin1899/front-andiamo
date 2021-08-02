@@ -49,7 +49,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'La empresa fue eliminada exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -65,7 +65,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'La empresa fue creada exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -73,7 +73,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'El viaje fue eliminado exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -89,7 +89,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'El viaje fue creado exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -97,7 +97,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'Iniciaste sesión con éxito',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -105,7 +105,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'Se cerro sesión con éxito.',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -113,7 +113,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'El perfil se editó exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -121,7 +121,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'El viaje se editó exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
@@ -129,7 +129,7 @@ function App() {
     setNotification({
       type: 'success',
       text: 'La empresa se editó exitosamente',
-      title: 'Éxito'
+      title: 'Felicidades'
     });
   };
 
