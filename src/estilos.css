@@ -273,6 +273,10 @@ img {
         margin-top: 2em;
     }
 
+    .radius{
+        border-top-right-radius: 7px;
+    }
+
     /* Login */
 
     .div-sesion {
