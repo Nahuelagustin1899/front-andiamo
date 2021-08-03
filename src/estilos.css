@@ -1289,9 +1289,7 @@ img {
         .img-registro{
             width: 10em;
             display: block;
-            margin: auto;
-        }
-        
+            margin: auto;     
         }
 
         .boton-terminar-edit{
