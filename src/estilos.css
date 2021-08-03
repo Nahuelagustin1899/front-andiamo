@@ -1283,6 +1283,15 @@ img {
             padding: 2em;
             display: block;
             margin: auto;
+            border-radius: 4px;
+        }
+
+        .img-registro{
+            width: 10em;
+            display: block;
+            margin: auto;
+        }
+        
         }
 
         .boton-terminar-edit{
