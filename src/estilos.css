@@ -901,10 +901,8 @@ img {
         }
 
         .card-home{
-            margin:auto;
-            display:inline-block; 
-            margin-top:2em;
-            margin-left: 7.5em;
+            display: block;
+            margin: auto
         
         }
 
