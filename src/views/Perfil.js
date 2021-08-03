@@ -13,6 +13,7 @@ function Perfil() {
     const [reservas, setReservas] = useState([]);
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     const [empresasReservas, setEmpresasReservas] = useState([]);
+    const [adminReservas, setAdminReservas] = useState([]);
     const [viajeId, setViajeId] = useState("");
     const [viajesAux, setViajesAux] = useState([]);
     const [todasReservas, setTodasReservas] = useState([]);
@@ -21,6 +22,14 @@ function Perfil() {
         (async () => {
             const data = await reservasService.index();
             setReservas(data);
+
+        })().catch(err => console.log("Error al traer las reservas: ", err));
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            const data = await adminReservas.indexAdmin();
+            setAdminReservas(data);
 
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
@@ -97,6 +106,28 @@ function Perfil() {
 
     </div >));
 
+const listaAdmin = adminReservas && adminReservas.map(empresa => (<div key={empresa.id}>
+    <Table variant="warning" striped bordered hover   >
+        <thead>
+            <tr className="row">
+                <th className="col-4 text-center colorth radius-top-izq">ID viaje</th>
+                <th className="col-4 text-center colorth">Asiento reservado</th>
+                <th className="col-4 text-center colorth radius-top-der">Estado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <th className="col-4 text-center colorth radius-top-izq">{empresa.nombre}</th>
+
+        </tbody>
+
+    </Table>
+
+
+    <hr className="perfileshr" />
+
+</div >));
+
     const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
 
@@ -159,6 +190,7 @@ function Perfil() {
             authData.user.id === 1 ?
                 (<>
                     <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
+                    {listaAdmin}
                 </>) :
 
                 authData.user.id === 2 ?
