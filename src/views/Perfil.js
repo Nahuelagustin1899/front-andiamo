@@ -152,7 +152,7 @@ function Perfil() {
 
         <div className="caja-perfil">
             <img className="imagen" src={urlbase + authData.user.logo} alt={authData.user.name} />
-            <p className="text-center badge badge-warning nombre-perfil"><b>Nombre :</b>  {authData.user.name}</p>
+            <p className="text-center badge badge-warning nombre-perfil"><b>Nombre: </b>  {authData.user.name}</p>
         </div>
 
         {

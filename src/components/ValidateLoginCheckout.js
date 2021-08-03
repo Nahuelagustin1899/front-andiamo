@@ -9,6 +9,27 @@ const ValidateLoginCheckout = (props) => {
 
   const history = useHistory();
 
+  const [msjCard, setMjsCard] = useState(''); 
+  const handleChangeCard = (e, setFieldValue) => {
+    
+
+    setFieldValue('numTarj', e.target.value)
+    console.log(e.target.value)
+
+
+    switch (Number(e.target.value)) {
+      case 4:
+        setMjsCard('La tarjeta que esta ingresando es visa')
+        break;
+        case 5:
+          setMjsCard('La tarjeta que esta ingresando es visa')
+          break;
+      default:
+        break;
+    }
+
+  }
+
   return <Formik
     initialValues={{
       nombre: "",
@@ -60,7 +81,8 @@ const ValidateLoginCheckout = (props) => {
         errors,
         handleChange,
         handleBlur,
-        handleSubmit
+        handleSubmit,
+        setFieldValue
       } = props;
 
 
@@ -141,7 +163,8 @@ const ValidateLoginCheckout = (props) => {
                 maxlength="16"
                 placeholder="Número de tarjeta"
                 value={values.numTarj}
-                onChange={handleChange}
+                onChange={(e) => handleChangeCard(e, setFieldValue)}
+                onEnded={}
                 onBlur={handleBlur}
                 className='form-control'
 
@@ -149,6 +172,11 @@ const ValidateLoginCheckout = (props) => {
               {errors.numTarj && touched.numTarj && (
                 <div className="alert alert-danger mt-1">{errors.numTarj}</div>
               )}
+              {
+                msjCard && (
+                  <div className="alert alert-success mt-1">{msjCard}</div>
+                )
+              }
             </div>
 
             <div className="col-md-12 mb-3">
