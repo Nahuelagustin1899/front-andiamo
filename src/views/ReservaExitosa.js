@@ -53,7 +53,7 @@ function ReservaExitosa() {
                         <Modal.Header closeButton>
                             <Modal.Title className="text-success h5 text-weight-bold">¡La calificación fue exitosa!</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body className="text-weight-bold">¡Muchas gracias, Andiamo!</Modal.Body>
+                        <Modal.Body className="text-weight-bold">¡Muchas gracias!</Modal.Body>
                         <Modal.Footer>
                             <a type="button" className="btn btn-primary" href="/">
                                 Terminar
