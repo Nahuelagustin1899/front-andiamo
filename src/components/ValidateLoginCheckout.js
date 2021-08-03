@@ -69,13 +69,13 @@ const ValidateLoginCheckout = (props) => {
         .required("El campo email no puede estar vacío"),
       dni: Yup.number()
         .required("El campo DNI no puede estar vacío")
-        .min(8, "El campo debe contener al menos 8 dígitos"),
+        .min(8, "El campo debe contener 8 dígitos"),
       codigo: Yup.number()
         .required("El campo còdigo no puede estar vacío")
-        .min(3, "El campo debe contener al menos 3 dígitos"),
+        .min(3, "El campo debe contener 3 dígitos"),
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío")
-        .min(16, "El campo debe contener al menos 16 dígitos"),
+        .min(16, "El campo debe contener 16 dígitos"),
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
