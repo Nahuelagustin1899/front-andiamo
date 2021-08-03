@@ -28,7 +28,7 @@ function Perfil() {
 
     useEffect(() => {
         (async () => {
-            const data = await adminReservas.indexAdmin();
+            const data = await reservasService.indexAdmin();
             setAdminReservas(data);
 
         })().catch(err => console.log("Error al traer las reservas: ", err));

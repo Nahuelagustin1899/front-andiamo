@@ -49,6 +49,20 @@ const reservasService = {
         return reservas;
     },
 
+    async indexAdmin() {
+      
+        const fetchRes = await fetch(API + '/reserva/index/admin', {
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            credentials: 'include'
+        });
+        const response = await fetchRes.json();
+        reservas = response.data;
+        return reservas;
+    },
+
 
 
     
