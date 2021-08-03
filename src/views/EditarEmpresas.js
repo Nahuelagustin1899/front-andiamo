@@ -82,7 +82,7 @@ function EditarEmpresas(props) {
                             onChange={handleFile}
                         />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <p>Previsualización de la imagen</p>
                         {empresa.logo ? <img defaultValue={empresa.logo} className="img-registro" src={urlbase + empresa.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
                     </div>
