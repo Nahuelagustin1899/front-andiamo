@@ -879,6 +879,113 @@ img {
 
 
     @media (min-width: 768px) and (max-width: 1024px) {
+       
+        /* Home */
+        .img-card-informacion{
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+     
+        .card-informacion{
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+     
+        .h1-informacion{
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            display: block;
+        }
+
+        .card-home{
+            margin:auto;
+            display:inline-block; 
+            margin-top:2em;
+            margin-left: 7.5em;
+        
+        }
+
+    
+     
+        /* Menu hamburguesa */
+     
+        .imagenperfil{
+         width: 100px;
+         display: block;
+         margin: auto;
+         height: 100px;
+         border-radius: 150px;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         border: 1px solid #ddd;
+         padding: 5px;
+         }
+     
+         .iniciar-sesion{
+             text-align: center;
+             margin: auto;
+             font-weight: bold;
+         }
+     
+       /*  Blog */
+     
+         .h1-blog{
+         font-size: 2.2em;
+         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+         }
+
+         .card-columns{
+             margin-left: 4px;
+             margin-right: 4px;
+         }
+
+        /* Empresas usuarios */
+
+        .li-empresas{
+            list-style: none;
+        }
+
+        .imagen-empresa{
+            width:200px;
+            height:200px;
+            border-radius:150px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin: auto;
+            display: block;
+        }
+
+        .informacion-empresa{
+            text-align: center;
+            margin: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            background-color: #f9f6db;
+            padding: 1em;
+            border-radius: 1em;
+            width: 60%;
+        }
+
+        /* Viajes usuarios */
+
+        .viajes-us-p{
+            text-align: center;
+            width: 68%;
+            display: block;
+            margin: auto;
+        }
+
+        .nombreviaje {
+            justify-content: space-between;
+            flex-direction: row;
+            text-align: center;
+            font-weight: bold;
+            margin: 1em;
+        }
+
         .listadoviajes {
             border-radius: 5px;
             border: 2px solid black;
@@ -887,38 +994,104 @@ img {
             background: url("img/agua.jpg") no-repeat ;	
             background-size: cover;
             list-style: none;
-            width: 99%;
+            width: 70%;
             margin: auto;
             margin-top: 2em;
            
         }
 
-
-        .iniciar-sesion{
-            text-align: center;
-            margin: auto;
-        }
-
-    
-        .nombre-panel{
-            margin-top: 10%;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-        .imagen-panel{
-            width: 200px;
-            height: 200px;
-        }
+        /* Elegir asientos */
 
         .nuevo{
             text-align: center;
             font-weight: bold;
+            font-size: 2.2em;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
         }
 
-        .button-grabar{
-            width: 50%;
+        .disp{
+            background-color: #ffc107;
+            display: inline-block;
+            margin: auto;
+            width: 20%;
+            margin-left: 2.3em;
+            text-align: center;
+            color: #2f2e2d;
+            border-radius: 0.5em;
+            border: 2px solid #ffc107;
+        }
+    
+        .ocupado{
+            background-color: red;
+            display: inline-block;
+            margin: auto;
+            margin-left: 2em;
+            width: 20%;
+            text-align: center;
+            color: #e6dcdc;
+            margin-bottom: 2em;
+            border-radius: 0.5em;
+            border: 2px solid red;
+        }
+
+        .div-ocup-disp{
+            margin-left: 32%;
+        }
+
+        .conductor{
             display: block;
             margin: auto;
+            margin-bottom: 1em;
+        }
+
+        .asientos-borde{
+            border: 2px solid #c1ab33;;
+            padding: 3.2em;
+            width: 27%;
+            display: block;
+            margin: auto;
+            box-shadow: inset 0px 0px 10px 10px #c1ab33;
+        }
+
+        .amarillos{
+            width: 3.5em;
+            height: 3.5em;
+            margin:3px;
+        }
+
+        .video{
+            display: block;
+            margin: auto;
+            margin-top: 2em;
+            margin-bottom:2em ;
+        }
+
+        .carrito-boton{
+            display: block;
+            margin: auto;
+            width: 80%;
+            margin-top: 3em;
+        }
+
+        /* Checkout */
+
+        .check{
+            font-size: 2.2em;
+            font-weight: bold;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .checkout{
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
+
+        /* Panel viajes */
+
+        .hr{
+            border: 2px solid black;
         }
 
         .labelcolor{
@@ -926,100 +1099,377 @@ img {
         }
 
         .busqueda{
-            width: 70%;
+            width: 40%;
             background-color: #ecdb72;;;
             padding: 2em;
-            border-radius: 1em;
+            display: block;
             margin: auto;
-            margin-top: 1em;
-            margin-bottom: 1em;
+            border-radius: 1em;
+        }
+
+        .boton-eliminar-perfil{
+            display: inline-block;
+            width: 30%;
+            margin-left: 18%;
+        }
+
+        .boton-editar-perfil{
+            display: inline-block;
+            width: 30%;
+            margin-left: 2%;
+        }
+
+        .colorth{
+            background-color: #ffb300;
+        }
+
+        .editar-perfil{
+            font-size: 2.2em;
+            font-weight: bold;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .form-editar-viajes{
+            width: 40%;
+            background-color: #ffb300;
+            padding: 2em;
+            display: block;
+            margin: auto;
+            border-radius: 4px;
+            margin-top: 3em;
+        }
+
+        .img-registro{
+            width: 10em;
+            display: block;
+            margin: auto;     
+        }
+
+        .boton-terminar-edit{
+            width: 40%;
+            margin: auto;
             display: block;
         }
 
-        .boton-buscador{
+        .checkout {
+            background-color: #ffd146;
+            padding: 1em;
+            border-radius: 7px;
+            margin-bottom: 2em;
+        }
+
+        .box-stars {
+            background-color: #14529a;
+            padding: 2em;
+            border-radius: 3px;
             width: 50%;
             margin: auto;
+        }
+
+        .estrellas {
+            margin-left: 35%;
+            margin-top: 1em;
+        }
+
+        .link-stars {
+            margin-left: 35%;
+            width: 15%;
+        }
+
+        .link-stars2 {
+            margin-left: 1em;
+            width: 15%;
+        }
+
+        .filtros-perfil {
+            background-color: #ebd865;
+            padding: 2em;
+            border-radius: 5px;
+            margin: auto auto 1em;
+            border: 2px solid #b9b339;
+            width: 50%;
+        }
+
+        .buscar-perfil{
+            width: 30%;
+        }
+
+        .inputs-filtros-perfil {
+            display: inline-block;
+            width: 60%;
+            margin-right: 1em;
+        }
+
+        /* Cargar viajes */
+
+        .divs{
+            background-color: #ffd146;;
+            padding: 2em;
+            margin: auto;
+            margin-bottom: auto;
+            border-radius: 7px;
+            margin-bottom: 2em;
+            width:60%;
             display: block;
         }
 
-        .viajes-empresa{
-            text-align: center;
-            font-size: 2.2em;
-             background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        #botones{
+            margin-left: 89%;
+            margin-bottom: 2em;
+            margin-right: 1em;
         }
-
-        .hr{
-            border: 2px solid black;
-        }
-    
-
+        #botones1{
+            margin-left: 1em;
         
+        }
+
+   
+
         .box{
             width: 50%;
             margin: auto;
             display: block;
-            background-color: #d3e8fb;
+            background-color: #ffd24a;
             padding-top: 3em;
             padding-bottom: 3em;
             border-radius: 1em;
         }
-        .boton-empresa{
-            display: block;
+
+        
+        .button-grabar{
+            width: 40%;
+            display:block;
+            margin:auto;
+        }
+
+        /* Login */
+
+        .boton-ingresar{
+            display: inline-block;
+            width: 30%;
+            margin-left: 17%;
+            margin-top: 3em;
+        }
+
+        .boton-registrar{
+            display: inline-block;
+            width: 30%;
+            margin-left: 5%;
+            margin-top: 3em;
+        }
+
+        .div-sesion{
+            width: 40%;
             margin: auto;
-            width: 100%;
+            display: block;
+            background-color: #ffd24a;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            border-radius: 1em;
+        }
+
+        /* Registarse */
+
+        .form-registrarse{
+            width: 50%;
+            background-color: #ffd24a;
+            padding: 3em;
+            border-radius: 1em;
+            margin: auto;
+            display: block;
+        }
+
+        /* Nuevas Empresas */
+
+        .viajes-empresa{
+            text-align: center;
+            font-weight: bold;
+            font-size: 3.2em;
+         background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+        }
+
+        .crear-empresas{
+            margin-right: 2.5em;
+        }
+
+      
+
+       /*  Editar perfil */
+
+       .imagen{
+        width:200px;
+        height:200px;
+        border-radius:150px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 1px solid #ddd;
+        padding: 5px;
+        margin: auto;
+        display: block;
+        }
+
+        .nombre-perfil{
+            display: block;
+            padding: 1em;
             margin-top: 1em;
         }
 
+        /* Grabar empresa */
 
-   
-        .card-home{
-            margin:auto;
-            
-        
-        }
-
-        .li-empresas{
-            list-style: none;
-            text-align: center;
-        }
-        .viajes{
-            text-align: center;
-            font-size: 2.2em;
-             background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
-        }
-        .imagen{
-            width:200px;
-            height:200px;
+        .img-empresa{
+            width:100px;
+            height:100px;
             border-radius:150px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border: 1px solid #ddd;
             padding: 5px;
+            margin: auto;
+            display: block;
         }
-       
-        .h1-blog{
-            font-size: 2.2em;
-             background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));
+
+        .boton-empresa{
+            width: 25%;
         }
+
+        .boton{
+            margin-left: 2em;
+        }
+
+        /* Filtros */
+
+    .filtros{
+        background-color: #ebd865;
+        padding: 2em;
+        border-radius: 5px;
+        width:50%;
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        border: 2px solid #b9b339;
+    }
+
+    .btn-fecha{
+        margin-left: 5%;
+    }
+
+    .inputs-filtros{
+        display: inline-block;
+        width: 60%;
+        margin-right: 2em;
+    }
+
+    .limpiar-filtro{
+        margin: auto;
+        display: block;
+        width: 50%;
+        margin-top: 2em;
+    }
+
+
+
+        /*  Termina aca */
+     
     
-        .listadoviajes {
-            border-radius: 5px;
-            border: var(--border);
-            box-shadow: var(--shadow);
-        }
+        .viajes{
+            text-align: center;
+            font-size: 3.2em;
+            background-image: linear-gradient(to right, rgba(249, 237, 226, 0), rgb(234, 214, 96));}
+
+
+            
+            .listadoviajes {
+                border-radius: 5px;
+                border: var(--border);
+                box-shadow: var(--shadow);
+            }
+            
+            
+            .salida{
+                width: 60%;
+                display: flex;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-bottom-style: dashed;
+                border-top-style: dashed;
+                padding: 1em;
+            }
         
-        .nombreviaje {
-            display: flex;
-            flex-direction: column;
-            padding: var(--padding-box);
-        }
+            .llegada{
+                width: 60%;
+                display: flex;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-bottom-style: dashed;
+                padding: 1em;
+            }
+            .empresa{
+                width: 60%;
+                display: flex;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-bottom-style: dashed;
+                padding: 1em;
+            }
         
+            
         
-        .bordes{
-        border: 2px solid black;
-        }
-        
-        
-        
+            .precio{
+                width: 60%;
+                display: flex;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-bottom-style: dashed;
+                padding: 1em;
+            }
+            
+            .bordes{
+            border: 2px solid black;
+            }
+            
+            
+            .listadoviajes{
+                margin-bottom: 2em;
+            }
+
+           
+            
+
+            .informacion{
+                text-align: center;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                background-color: #f9f6db;
+                padding: 1em;
+                border-radius: 1em;
+                width: 60%;
+            }
+
+            .asientos{
+                width: 60%;
+                display: flex;
+                margin: auto;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                border-bottom-style: dashed;
+                padding: 1em;
+            } 
+            .comprar{
+                display: block;
+                margin: auto;
+                width: 100%;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                padding: 1em;
+            }
+
+            .perfileshr{
+                border: 3px solid #131311;
+            }
         
       }
     
