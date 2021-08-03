@@ -1556,6 +1556,10 @@ img {
                 margin-bottom: 1em;
                 padding: 1em;
             }
+
+            .perfileshr{
+                border: 3px solid #131311;
+            }
            
      }
 
