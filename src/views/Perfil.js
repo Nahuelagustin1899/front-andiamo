@@ -106,27 +106,37 @@ function Perfil() {
 
     </div >));
 
-const listaAdmin = adminReservas && adminReservas.map(empresa => (<div key={empresa.id}>
-    <Table variant="warning" striped bordered hover   >
-        <thead>
-            <tr className="row">
-                <th className="col-4 text-center colorth radius-top-izq">ID viaje</th>
-                <th className="col-4 text-center colorth">Asiento reservado</th>
-                <th className="col-4 text-center colorth radius-top-der">Estado</th>
-            </tr>
-        </thead>
+    const listaAdmin = adminReservas && adminReservas.map(empresa => (<div key={empresa.id}>
+        <Table variant="warning" striped bordered hover   >
+            <thead>
+                <tr className="row">
+                    <th className="col-4 text-center colorth radius-top-izq">Empresa</th>
+                    <th className="col-4 text-center colorth">ID viaje</th>
+                    <th className="col-4 text-center colorth radius-top-der">Asiento reservadi</th>
+                </tr>
+            </thead>
 
-        <tbody>
-        <th className="col-4 text-center colorth radius-top-izq">{empresa.nombre}</th>
+            <tbody>
+                {empresa.reservas.map(espacio =>
+                    <tr className="row">
+                        <td className="col-4 text-center colortd radius-bottom-izq">
+                            {empresa.nombre}
+                        </td>
+                        <td className="col-4 text-center colortd">
+                            {espacio.viaje_id}
+                        </td>
+                        <td className="col-4 text-center colortd radius-bottom-der">
+                            {espacio.asiento_reservado}
+                        </td>
+                    </tr>
+                )}
+            </tbody>
+        </Table>
 
-        </tbody>
 
-    </Table>
+        <hr className="perfileshr" />
 
-
-    <hr className="perfileshr" />
-
-</div >));
+    </div >));
 
     const lista = reservas && reservas.map(reserva => (<div key={reserva.id}>
 
