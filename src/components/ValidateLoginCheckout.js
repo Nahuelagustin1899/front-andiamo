@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-
+import master from '../img/master.svg';
+import visa from '../img/visa.svg';
+import american from '../img/american.svg';
+import cabal from '../img/cabal.svg';
 
 const ValidateLoginCheckout = (props) => {
 
   const history = useHistory();
-
   const [msjCard, setMjsCard] = useState(''); 
   const handleChangeCard = (e, setFieldValue) => {
     
@@ -18,18 +20,23 @@ const ValidateLoginCheckout = (props) => {
 
 
     switch (Number(e.target.value)) {
-      case 4:
-        setMjsCard('La tarjeta que esta ingresando es visa')
+        case 3:
+        setMjsCard(<img width="80" height="80" src={american} alt="tarjeta american express"/>)
+        break;
+        case 4:
+        setMjsCard(<img width="80" height="80" src={visa} alt="tarjeta visa"/>)
         break;
         case 5:
-          setMjsCard('La tarjeta que esta ingresando es visa')
+          setMjsCard(<img width="80" height="80" src={master} alt="tarjeta mastercard"/>)
           break;
+        case 6:
+            setMjsCard(<img width="80" height="80" src={cabal} alt="tarjeta cabal"/>)
+            break;
       default:
         break;
     }
 
   }
-
   return <Formik
     initialValues={{
       nombre: "",
@@ -38,7 +45,6 @@ const ValidateLoginCheckout = (props) => {
       tipo: "",
       expiracion: "",
       numTarj: "",
-      codigo: "",
     }}
 
     onSubmit={(values, { setSubmitting }) => {
@@ -66,9 +72,6 @@ const ValidateLoginCheckout = (props) => {
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío")
         .min(16, "El campo debe contener al menos 16 digitos"),
-        codigo: Yup.number()
-        .required("El campo del còdigo no puede estar vacío")
-        .min(3, "El campo debe contener al menos 3 digitos"),
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
@@ -173,27 +176,9 @@ const ValidateLoginCheckout = (props) => {
               )}
               {
                 msjCard && (
-                  <div className="alert alert-success mt-1">{msjCard}</div>
+                  <div className="mt-1">{msjCard}</div>
                 )
               }
-            </div>
-
-            <div className="col-md-12 mb-3">
-              <label htmlFor="codigo">Código de expiración</label>
-              <input
-                name="codigo"
-                type="text"
-                maxlength="3"
-                placeholder="Código de expiración"
-                value={values.codigo}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className='form-control'
-
-              />
-              {errors.codigo && touched.codigo && (
-                <div className="alert alert-danger mt-1">{errors.codigo}</div>
-              )}
             </div>
 
 
