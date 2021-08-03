@@ -164,7 +164,6 @@ const ValidateLoginCheckout = (props) => {
                 placeholder="Número de tarjeta"
                 value={values.numTarj}
                 onChange={(e) => handleChangeCard(e, setFieldValue)}
-                onEnded={}
                 onBlur={handleBlur}
                 className='form-control'
 
