@@ -1335,6 +1335,7 @@ img {
             border-radius: 5px;
             margin: auto auto 1em;
             border: 2px solid #b9b339;
+            width: 50%;
         }
 
         .inputs-filtros-perfil {
