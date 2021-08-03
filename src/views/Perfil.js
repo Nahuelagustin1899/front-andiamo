@@ -112,7 +112,7 @@ function Perfil() {
                 <tr className="row">
                     <th className="col-4 text-center colorth radius-top-izq">Empresa</th>
                     <th className="col-4 text-center colorth">ID viaje</th>
-                    <th className="col-4 text-center colorth radius-top-der">Asiento reservadi</th>
+                    <th className="col-4 text-center colorth radius-top-der">Asiento reservado</th>
                 </tr>
             </thead>
 
