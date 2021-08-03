@@ -1315,8 +1315,17 @@ img {
         }
 
         .estrellas {
-            margin-left: 25%;
-            margin-top: 6px;
+            margin-left: 35%;
+            margin-top: 1em;
+        }
+
+        .link-stars {
+            margin-left: 18%;
+        }
+
+        .link-stars2 {
+            margin-left: 1em;
+            width: 30%;
         }
 
         /* Cargar viajes */
