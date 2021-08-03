@@ -74,7 +74,7 @@ function EditarEmpresas(props) {
                 </div>
 
                 <div className="form-row">
-                    <div className="form-group col-md-6">
+                    <div className="form-group col-md-12">
                         <label htmlFor="logo"><b>Logo</b></label>
                         <input
                             type="file"
