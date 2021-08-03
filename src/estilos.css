@@ -1329,6 +1329,14 @@ img {
             width: 15%;
         }
 
+        .filtros-perfil {
+            background-color: #ebd865;
+            padding: 2em;
+            border-radius: 5px;
+            margin: auto auto 1em;
+            border: 2px solid #b9b339;
+        }
+
         /* Cargar viajes */
 
         .divs{
