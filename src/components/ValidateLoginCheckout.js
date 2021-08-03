@@ -45,6 +45,7 @@ const ValidateLoginCheckout = (props) => {
       tipo: "",
       expiracion: "",
       numTarj: "",
+      codigo: "",
     }}
 
     onSubmit={(values, { setSubmitting }) => {
@@ -68,10 +69,13 @@ const ValidateLoginCheckout = (props) => {
         .required("El campo email no puede estar vacío"),
       dni: Yup.number()
         .required("El campo DNI no puede estar vacío")
-        .min(8, "El campo debe contener al menos 8 digitos"),
+        .min(8, "El campo debe contener al menos 8 dígitos"),
+      codigo: Yup.number()
+        .required("El campo còdigo no puede estar vacío")
+        .min(3, "El campo debe contener al menos 3 dígitos"),
       numTarj: Yup.number()
         .required("El campo número de tarjeta no puede estar vacío")
-        .min(16, "El campo debe contener al menos 16 digitos"),
+        .min(16, "El campo debe contener al menos 16 dígitos"),
       expiracion: Yup.date()
         .required("El campo fecha de expiración no puede estar vacío"),
     })}
@@ -179,6 +183,24 @@ const ValidateLoginCheckout = (props) => {
                   <div className="mt-1">{msjCard}</div>
                 )
               }
+            </div>
+
+            <div className="col-md-12 mb-3">
+              <label htmlFor="codigo">Codigo de seguridad</label>
+              <input
+                name="codigo"
+                type="text"
+                placeholder="Codigo de la tarjeta"
+                maxlength="3"
+                value={values.codigo}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className='form-control'
+
+              />
+              {errors.codigo && touched.codigo && (
+                <div className="alert alert-danger mt-1">{errors.codigo}</div>
+              )}
             </div>
 
 
