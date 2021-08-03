@@ -1320,12 +1320,13 @@ img {
         }
 
         .link-stars {
-            margin-left: 18%;
+            margin-left: 35%;
+            width: 15%;
         }
 
         .link-stars2 {
             margin-left: 1em;
-            width: 30%;
+            width: 15%;
         }
 
         /* Cargar viajes */
