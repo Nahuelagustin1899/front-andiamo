@@ -1284,6 +1284,7 @@ img {
             display: block;
             margin: auto;
             border-radius: 4px;
+            margin-top: 1em;
         }
 
         .img-registro{
