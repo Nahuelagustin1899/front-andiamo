@@ -1338,6 +1338,10 @@ img {
             width: 50%;
         }
 
+        .buscar-perfil{
+            width: 30%;
+        }
+
         .inputs-filtros-perfil {
             display: inline-block;
             width: 60%;
