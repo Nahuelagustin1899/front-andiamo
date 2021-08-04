@@ -7,9 +7,13 @@ import * as yup from "yup";
 
 const validateSchema = yup.object().shape({
 
-    name: yup.string().required(),
-    email: yup.string().required(),
-    password: yup.string().required(),
+    name: yup.string()
+        .required("El campo nombre no puede estar vacío"),
+    email: yup.string()
+        .email("El email no es válido")
+        .required("El campo email no puede estar vacío"),
+    password: yup.string()
+        .required("La contraseña no puede estar vacía"),
 
 });
 
