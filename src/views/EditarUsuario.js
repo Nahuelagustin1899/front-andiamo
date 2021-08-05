@@ -4,6 +4,8 @@ import { AuthContext } from "../services/auth";
 import { API} from "../constants";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 function EditarUsuario(props) {
 
