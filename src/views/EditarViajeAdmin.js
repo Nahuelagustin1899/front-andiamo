@@ -45,7 +45,7 @@ function EditarViajeAdmin(props) {
             props.notExitosa({
                 ...fetchData.data
             });
-            history.push('/viajes')
+            history.push('/paneladmin')
         }
 
         /* history.push('/viajes') */
