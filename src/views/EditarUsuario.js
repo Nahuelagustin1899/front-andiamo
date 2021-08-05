@@ -12,7 +12,13 @@ function EditarUsuario(props) {
     const history = useHistory();
     console.log(authData);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const SignupSchema = yup.object().shape({
+        nombre: yup.string().required('El campo nombre no puede estar vacío'),
+    });
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(SignupSchema)
+    });
 
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
     
@@ -73,7 +79,7 @@ function EditarUsuario(props) {
                         className="form-control"
                         {...register("name", { required: true })}
                     />
-                    {errors.name && errors.name.type === "required" && <span className="alert alert-danger">Campo nombre vacío</span>}
+                    {errors.nombre && <span className="form-control alert alert-danger errores">{errors.nombre.message}</span>}
                 </div>
 
                 <div className="form-row">

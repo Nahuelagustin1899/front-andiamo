@@ -15,7 +15,6 @@ function EditarEmpresas(props) {
 
     const SignupSchema = yup.object().shape({
         nombre: yup.string().required('El campo nombre no puede estar vacío'),
-        logo: yup.mixed().required('El campo logo no puede estar vacío'),
     });
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -99,7 +98,6 @@ function EditarEmpresas(props) {
                         <p>Previsualización de la imagen</p>
                         {empresa.logo ? <img defaultValue={empresa.logo} className="img-registro" src={urlbase + empresa.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
 
-                        {errors.empresa.logo && <span className="form-control alert alert-danger errores">{errors.empresa.logo.message}</span>}
 
                     </div>
 
