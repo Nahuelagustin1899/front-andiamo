@@ -1,12 +1,14 @@
 import React from 'react';
 import sanber from '../img/sanber.jpg';
 import Image from 'react-bootstrap/Image'
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function SanBernardo() {
 
     return (
         <div className="fondopantalla p-5">
+            <a className="btn btn-primary mb-4 btn-volver" href="/"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion">San Bernardo</h1>
             <Image className="img-card-informacion" src={sanber} alt="La costa San Bernardo" fluid />
             <Card className="card-informacion">
