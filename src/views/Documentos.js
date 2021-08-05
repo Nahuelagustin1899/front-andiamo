@@ -2,13 +2,13 @@ import React from 'react';
 import Image from 'react-bootstrap/Image'
 import Card from 'react-bootstrap/Card'
 import doc from '../img/doc.jpg';
-import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function Documentos() {
     return (
 
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary" href="/blog"><AssignmentReturnIcon/></a>
+            <a className="btn btn-primary" href="/blog"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion h4 p-1">¿Querés viajar? <br/> ¡Llevá los documentos!</h1>
             <Image className="img-card-informacion" src={doc} alt="Chico con la tablet en un bar" fluid />
             <Card className="card-informacion">
