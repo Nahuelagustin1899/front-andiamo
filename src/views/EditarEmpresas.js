@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function EditarEmpresas(props) {
 
@@ -70,6 +70,7 @@ function EditarEmpresas(props) {
     return (
         <div className="fondopantalla p-5">
             <h1 className="viajes">Editar Empresas</h1>
+            <a className="btn btn-primary" href="/empresaspanel"><KeyboardReturnSharpIcon/></a>
             <form className="form-editar-viajes"
                 onSubmit={handleSubmit(onSubmit)}>
 
