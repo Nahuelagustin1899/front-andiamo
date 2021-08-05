@@ -67,10 +67,10 @@ function EditarEmpresas(props) {
                     <input
                         defaultValue={empresa.nombre}
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         {...register("nombre", { required: true })}
                     />
-                    {errors.nombre && errors.nombre.type === "required" && <span className="alert alert-danger">This is required</span>}
+                    {errors.nombre && errors.nombre.type === "required" && <span className="alert alert-danger">El campo empresa no puede estar vacio</span>}
                 </div>
 
                 <div className="form-row">
@@ -78,13 +78,15 @@ function EditarEmpresas(props) {
                         <label htmlFor="logo"><b>Logo</b></label>
                         <input
                             type="file"
-                            className="form-control"
+                            className="form-control mb-2"
                             onChange={handleFile}
                         />
                     </div>
                     <div className="col-md-12">
                         <p>Previsualización de la imagen</p>
                         {empresa.logo ? <img defaultValue={empresa.logo} className="img-registro" src={urlbase + empresa.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
+
+                        {errors.empresa.logo  && errors.empresa.logo.type === "required" && <span className="alert alert-danger">El campo logo no puede estar vacio</span>}
                     </div>
 
                 </div>
