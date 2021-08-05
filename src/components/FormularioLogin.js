@@ -107,7 +107,8 @@ function FormularioLogin(props) {
 
             <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
 
-            <a className="btn btn-success boton-registrar" href="/registrarse">Registrarse</a>
+            <a className="text-center" href="/registrarse">¿No tenes usuario? Registrate</a>
+
         </form></div>);
 }
 
