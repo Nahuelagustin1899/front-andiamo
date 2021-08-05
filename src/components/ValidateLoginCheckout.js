@@ -77,7 +77,8 @@ const ValidateLoginCheckout = (props) => {
         .required("El campo número de tarjeta no puede estar vacío")
         .min(16, "El campo debe contener 16 dígitos"),
       expiracion: Yup.date()
-        .required("El campo fecha de expiración no puede estar vacío"),
+        .required("El campo fecha de expiración no puede estar vacío")
+        .min(new Date(2021, 7), "No puede elegir fechas pasadas"),
     })}
   >
 
