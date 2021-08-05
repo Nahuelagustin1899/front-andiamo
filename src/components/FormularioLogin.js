@@ -88,7 +88,7 @@ function FormularioLogin(props) {
         >
             <div className="form-group">
                 <label htmlFor="email"><b>Email</b></label>
-                <input type="email" name="email" id="email" className="form-control" value={user.email} onChange={handleChange} />
+                <input type="text" name="email" id="email" className="form-control" value={user.email} onChange={handleChange} />
                 {
                     errores.email ? (
                         <div className="alert alert-danger">{errores.email[0]}</div>
