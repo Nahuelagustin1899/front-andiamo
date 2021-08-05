@@ -70,7 +70,7 @@ function EditarEmpresas(props) {
     return (
         <div className="fondopantalla p-5">
             <h1 className="viajes">Editar Empresas</h1>
-            <a className="btn btn-primary" href="/empresaspanel"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/empresaspanel"><KeyboardReturnSharpIcon/></a>
             <form className="form-editar-viajes"
                 onSubmit={handleSubmit(onSubmit)}>
 
