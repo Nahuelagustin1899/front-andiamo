@@ -774,6 +774,10 @@ img {
         padding: 5px;
     }
 
+    .btn-volver{
+        margin-left: 1em;
+    }
+
     .li-empresas{
         list-style: none;
     }
