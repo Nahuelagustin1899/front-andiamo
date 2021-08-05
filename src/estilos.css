@@ -302,14 +302,11 @@ img {
     }
 
     .boton-ingresar{
-        display: inline-block;
-        width: 40%;
-        margin-left: 8%;
+        width: 100%;
         margin-top: 1em;
     }
 
     .boton-registrar{
-        display: inline-block;
         width: 42%;
         margin-left: 2%;
         margin-top: 1em;
