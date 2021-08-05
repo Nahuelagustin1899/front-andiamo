@@ -8,7 +8,7 @@ function Documentos() {
     return (
 
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary" href="/blog"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/blog"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion h4 p-1">¿Querés viajar? <br/> ¡Llevá los documentos!</h1>
             <Image className="img-card-informacion" src={doc} alt="Chico con la tablet en un bar" fluid />
             <Card className="card-informacion">
