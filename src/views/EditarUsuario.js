@@ -73,7 +73,7 @@ function EditarUsuario(props) {
                         className="form-control"
                         {...register("name", { required: true })}
                     />
-                    {errors.name && errors.name.type === "required" && <span className="alert alert-danger">This is required</span>}
+                    {errors.name && errors.name.type === "required" && <span className="alert alert-danger">Campo nombre vacío</span>}
                 </div>
 
                 <div className="form-row">

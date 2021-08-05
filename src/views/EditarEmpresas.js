@@ -4,16 +4,25 @@ import { API } from "../constants";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 
 function EditarEmpresas(props) {
 
 
     const history = useHistory();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(SignupSchema)
+    });
+
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/";
     const [file, setFile] = React.useState();
     const location = useLocation()
+
+    const SignupSchema = yup.object().shape({
+        nombre: yup.string().required('El campo nombre no puede estar vacío'),
+    });
 
     let empresa;
     console.log(location);
@@ -70,7 +79,7 @@ function EditarEmpresas(props) {
                         className="form-control mb-3"
                         {...register("nombre", { required: true })}
                     />
-                    {errors.nombre && errors.nombre.type === "required" && <span className="alert alert-danger">La empresa no debe estar vacia</span>}
+                    {errors.nombre && <span className="form-control alert alert-danger errores">{errors.nombre.message}</span>}
                 </div>
 
                 <div className="form-row">
