@@ -1839,11 +1839,12 @@ img {
         .boton-ingresar{
             width: 100%;
             margin-top: 3em;
+            margin-bottom: 2em;
         }
 
         .boton-registrar{
             width: 30%;
-            margin-left: 5%;
+            margin-left: 28%;
             margin-top: 3em;
         }
 
