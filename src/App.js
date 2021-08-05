@@ -20,6 +20,7 @@ import Miramar from "./views/Miramar";
 import SanBernardo from "./views/SanBernardo";
 import EditarUsuario from "./views/EditarUsuario";
 import EditarViaje from "./views/EditarViaje";
+import EditarViajeAdmin from "./views/EditarViajeAdmin";
 import EditarEmpresas from "./views/EditarEmpresas";
 import Registrarse from "./views/Registrarse";
 import Documentos from "./views/Documentos";
@@ -187,6 +188,11 @@ function App() {
               </Route>
               <AuthRoute path="/editarviaje">
                 <EditarViaje exact component={EditarViaje} 
+                notExitosa={handleEditarViaje}
+                />
+              </AuthRoute>
+                <AuthRoute path="/editarviajeadmin">
+                <EditarViajeAdmin exact component={EditarViajeAdmin} 
                 notExitosa={handleEditarViaje}
                 />
               </AuthRoute>

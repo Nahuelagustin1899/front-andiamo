@@ -27,7 +27,7 @@ function PanelAdmin(props) {
     const handleShow = () => setShow(true);
 
     const editarViaje = (item) => {
-        history.push({ pathname: "/editarviaje", state: { item: item } })
+        history.push({ pathname: "/editarviajeadmin", state: { item: item } })
     }
 
     useEffect(() => {
