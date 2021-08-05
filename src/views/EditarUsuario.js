@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function EditarUsuario(props) {
 
@@ -68,6 +69,7 @@ function EditarUsuario(props) {
 
     return (
         <div className="fondopantalla p-5">
+            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
             <h1 className="viajes">Editar Perfil</h1>
             <form className="form-editar-viajes"
                 onSubmit={handleSubmit(onSubmit)}>
