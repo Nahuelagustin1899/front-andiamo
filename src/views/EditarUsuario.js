@@ -69,7 +69,7 @@ function EditarUsuario(props) {
 
     return (
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/perfil"><KeyboardReturnSharpIcon/></a>
             <h1 className="viajes">Editar Perfil</h1>
             <form className="form-editar-viajes"
                 onSubmit={handleSubmit(onSubmit)}>
