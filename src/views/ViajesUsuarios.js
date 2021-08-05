@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
+import { CgDanger } from "react-icons/cg";
 import TextField from '@material-ui/core/TextField';
 import ReactPlayer from 'react-player';
 
@@ -63,7 +64,7 @@ function ViajesUsuarios() {
         <div className="fondopantalla p-1">
 
             <h1 className="mb-5 viajes">Viajes</h1>
-            <p className="alert alert-danger font-weight-bold viajes-us-p">Para reservar un pasajes tendrás que pagar un 25% del mismo</p>
+            <p className="alert alert-danger font-weight-bold viajes-us-p"><CgDanger style={{ fontSize: 15 }} />Para reservar un pasajes tendrás que pagar un 25% del mismo</p>
 
             <div className="video">
 
