@@ -64,7 +64,7 @@ function ViajesUsuarios() {
         <div className="fondopantalla p-1">
 
             <h1 className="mb-5 viajes">Viajes</h1>
-            <p className="alert alert-danger font-weight-bold viajes-us-p"><CgDanger style={{ fontSize: 15 }} />Para reservar un pasajes tendrás que pagar un 25% del mismo</p>
+            <p className="alert alert-danger font-weight-bold viajes-us-p"><CgDanger style={{ fontSize: 25 }} />Para reservar un pasajes tendrás que pagar un 25% del mismo</p>
 
             <div className="video">
 
