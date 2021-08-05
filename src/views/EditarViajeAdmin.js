@@ -6,6 +6,8 @@ import { useLocation } from 'react-router-dom';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import TextField from '@material-ui/core/TextField';
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
+
 
 function EditarViajeAdmin(props) {
 
@@ -57,6 +59,7 @@ function EditarViajeAdmin(props) {
     return (
         <div className="fondopantalla p-5">
             <h1 className="viajes-empresa">Editar viaje</h1>
+            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
             <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
