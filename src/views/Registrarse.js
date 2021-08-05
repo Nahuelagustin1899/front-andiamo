@@ -133,7 +133,7 @@ function Registrarse(props) {
     <div className="fondopantalla p-4">
     <form className="form-registrarse" onSubmit={handleSubmit}>
         <fieldset disabled={cargando}>
-            
+            <h1 className="font-weight-bold text-center h3">Registrate</h1>
             <div className="form-group">
                 <label htmlFor="name"><b>Nombre</b></label>
                 <input
