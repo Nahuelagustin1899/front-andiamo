@@ -12,6 +12,11 @@ function EditarEmpresas(props) {
 
 
     const history = useHistory();
+
+    const SignupSchema = yup.object().shape({
+        nombre: yup.string().required('El campo nombre no puede estar vacío'),
+    });
+    
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(SignupSchema)
     });
@@ -20,9 +25,7 @@ function EditarEmpresas(props) {
     const [file, setFile] = React.useState();
     const location = useLocation()
 
-    const SignupSchema = yup.object().shape({
-        nombre: yup.string().required('El campo nombre no puede estar vacío'),
-    });
+   
 
     let empresa;
     console.log(location);
