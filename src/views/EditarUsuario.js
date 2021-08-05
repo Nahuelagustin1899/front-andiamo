@@ -15,7 +15,7 @@ function EditarUsuario(props) {
     console.log(authData);
 
     const SignupSchema = yup.object().shape({
-        nombre: yup.string().required('El campo nombre no puede estar vacío'),
+        name: yup.string().required('El campo nombre no puede estar vacío'),
     });
 
     const { register, handleSubmit, formState: { errors } } = useForm({
