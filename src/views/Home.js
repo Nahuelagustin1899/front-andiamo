@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import playa2 from '../img/playa2.jpg';
 import playa1 from '../img/playa1.jpg';
 import playa3 from '../img/playa3.jpg';
-import clemente from '../img/clemente.jpg';
-import clemente2 from '../img/clemente2.jpg';
+import teresita from '../img/teresita.jpg';
+import miramar from '../img/miramar.jpg';
+import sanber from '../img/sanber.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
 import { NavLink } from "react-router-dom";
@@ -49,7 +50,7 @@ function Home() {
       </Carousel.Item>
     </Carousel>
     <Card className="card-home mb-5 mt-5" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={playa3} className="imgs" />
+      <Card.Img variant="top" src={teresita} alt="barco negro en santa teresita" className="imgs" />
       <Card.Body>
         <Card.Title className="text-center font-weight-bold">Santa Teresita</Card.Title>
         <Card.Text>
@@ -59,7 +60,7 @@ function Home() {
       </Card.Body>
     </Card>
     <Card className="card-home mb-5 mt-5" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={clemente2} className="imgs" />
+      <Card.Img variant="top" src={miramar} alt="M grande miramar" className="imgs" />
       <Card.Body>
         <Card.Title className="text-center font-weight-bold">Miramar</Card.Title>
         <Card.Text>
@@ -69,7 +70,7 @@ function Home() {
       </Card.Body>
     </Card>
     <Card className="card-home mb-5 mt-5" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={clemente} className="imgs" />
+      <Card.Img variant="top" src={sanber} alt="La costa atlantica" className="imgs" />
       <Card.Body>
         <Card.Title className="text-center font-weight-bold">San bernardo</Card.Title>
         <Card.Text>
