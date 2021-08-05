@@ -81,7 +81,7 @@ function EditarUsuario(props) {
                         className="form-control"
                         {...register("name", { required: true })}
                     />
-                    {errors.nombre && <span className="form-control alert alert-danger errores">{errors.nombre.message}</span>}
+                    {errors.name && <span className="form-control alert alert-danger errores">{errors.name.message}</span>}
                 </div>
 
                 <div className="form-row">
