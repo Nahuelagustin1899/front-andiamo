@@ -70,7 +70,7 @@ function EditarEmpresas(props) {
                         className="form-control mb-3"
                         {...register("nombre", { required: true })}
                     />
-                    {errors.nombre && errors.nombre.type === "required" && <span className="alert alert-danger">El campo empresa no puede estar vacio</span>}
+                    {errors.nombre && errors.nombre.type === "required" && <span className="alert alert-danger">La empresa no debe estar vacia</span>}
                 </div>
 
                 <div className="form-row">
