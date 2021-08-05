@@ -773,6 +773,7 @@ img {
         border: 1px solid #ddd;
         padding: 5px;
     }
+
     .li-empresas{
         list-style: none;
     }
@@ -1953,6 +1954,10 @@ img {
         display: block;
         width: 50%;
         margin-top: 2em;
+    }
+
+    .imagenperfil:hover{
+        border: 2px blue solid;
     }
 
 
