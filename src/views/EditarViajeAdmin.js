@@ -16,7 +16,7 @@ function EditarViajeAdmin(props) {
     if (location.state) {
         viaje = location.state.item;
     } else {
-        history.push('/viajes')
+        history.push('/paneladmin')
     }
 
     const SignupSchema = yup.object().shape({
