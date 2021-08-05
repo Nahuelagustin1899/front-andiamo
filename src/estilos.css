@@ -1240,16 +1240,13 @@ img {
         /* Login */
 
         .boton-ingresar{
-            display: inline-block;
-            width: 30%;
-            margin-left: 17%;
+            width: 100%;
             margin-top: 3em;
+            margin-bottom: 2em;
         }
 
         .boton-registrar{
-            display: inline-block;
-            width: 30%;
-            margin-left: 5%;
+            margin-left: 15%;
             margin-top: 3em;
         }
 
