@@ -18,10 +18,10 @@ const validateSchema = yup.object().shape({
 });
 
 function Registrarse(props) {
-    
+
     const history = useHistory();
 
- 
+
     const [registrar, setRegistarse] = useState({
         name: '',
         logo: null,
@@ -40,22 +40,22 @@ function Registrarse(props) {
 
     const [cargando, setCargando] = useState(false);
 
-   
+
     const refs = {
-       
+
         logo: useRef(null),
     };
 
-   
+
     const handleImageChange = ev => {
-      
-        const name = ev.target.name; 
+
+        const name = ev.target.name;
         const file = refs[name].current.files[0];
-       
+
 
         const reader = new FileReader();
 
-        reader.addEventListener('load', function() {
+        reader.addEventListener('load', function () {
 
             setRegistarse({
                 ...registrar,
@@ -67,10 +67,10 @@ function Registrarse(props) {
     };
 
     const handleChange = ev => {
-       
+
         setRegistarse({
             ...registrar,
-           
+
             [ev.target.name]: ev.target.value
         });
     };
@@ -78,19 +78,19 @@ function Registrarse(props) {
     const handleSubmit = ev => {
         ev.preventDefault();
 
-        
+
         validateSchema.validate(registrar, {
-                abortEarly: false 
-            })
+            abortEarly: false
+        })
             .then(data => {
-                
+
 
                 setCargando(true);
-               
+
                 authService.registrarse(registrar)
                     .then(rta => {
                         setCargando(false);
-                        if(!rta.errors) {
+                        if (!rta.errors) {
                             setErrores(ErroresTotales);
                             setRegistarse({
                                 name: '',
@@ -99,8 +99,8 @@ function Registrarse(props) {
                                 password: '',
                             });
                             console.log("El registro fue exitoso", rta);
-                            
-                            if(typeof props.notExitosa === "function") {
+
+                            if (typeof props.notExitosa === "function") {
                                 props.notExitosa({
                                     ...rta.data
                                 });
@@ -117,95 +117,95 @@ function Registrarse(props) {
             })
             .catch(err => {
                 console.log("Error de validación: ", err);
-               
-                const nuevosErrores = {...ErroresTotales};
-               
+
+                const nuevosErrores = { ...ErroresTotales };
+
                 err.inner.forEach((error) => {
                     nuevosErrores[error.path] = [error.message];
                 });
-                
+
                 setErrores(nuevosErrores);
             });
     };
 
 
     return (
-    <div className="fondopantalla p-4">
-    <form className="form-registrarse" onSubmit={handleSubmit}>
-        <fieldset disabled={cargando}>
-            <h1 className="font-weight-bold text-center h3 mb-5">Registrate</h1>
-            <div className="form-group">
-                <label htmlFor="name"><b>Nombre</b></label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="form-control"
-                    value={registrar.name}
-                    onChange={handleChange}
-                />
-                {
-                    errores.name ? (
-                        <div className="alert alert-danger">{errores.name[0]}</div>
-                    ) : null
-                }
-            </div>
+        <div className="fondopantalla p-4">
+            <form className="form-registrarse" onSubmit={handleSubmit}>
+                <fieldset disabled={cargando}>
+                    <h1 className="font-weight-bold text-center h3 mb-5">Registrate</h1>
+                    <div className="form-group">
+                        <label htmlFor="name"><b>Nombre</b></label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            className="form-control"
+                            value={registrar.name}
+                            onChange={handleChange}
+                        />
+                        {
+                            errores.name ? (
+                                <div className="alert alert-danger">{errores.name[0]}</div>
+                            ) : null
+                        }
+                    </div>
 
-            <div className="form-group">
-                <label htmlFor="email"><b>Email</b></label>
-                <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    className="form-control"
-                    value={registrar.email}
-                    onChange={handleChange}
-                />
-                {
-                    errores.email ? (
-                        <div className="alert alert-danger">{errores.email[0]}</div>
-                    ) : null
-                }
-            </div>
+                    <div className="form-group">
+                        <label htmlFor="email"><b>Email</b></label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            className="form-control"
+                            value={registrar.email}
+                            onChange={handleChange}
+                        />
+                        {
+                            errores.email ? (
+                                <div className="alert alert-danger">{errores.email[0]}</div>
+                            ) : null
+                        }
+                    </div>
 
-            <div className="form-group">
-                <label htmlFor="password"><b>Contraseña</b></label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="form-control"
-                    value={registrar.password}
-                    onChange={handleChange}
-                />
-                {
-                    errores.password ? (
-                        <div className="alert alert-danger">{errores.password[0]}</div>
-                    ) : null
-                }
-               
-            </div>
+                    <div className="form-group">
+                        <label htmlFor="password"><b>Contraseña</b></label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            className="form-control"
+                            value={registrar.password}
+                            onChange={handleChange}
+                        />
+                        {
+                            errores.password ? (
+                                <div className="alert alert-danger">{errores.password[0]}</div>
+                            ) : null
+                        }
+
+                    </div>
 
 
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="logo"><b>Avatar</b></label>
-                    <input
-                        type="file"
-                        id="logo"
-                        name="logo"
-                        className="form-control"
-                        ref={refs.logo}
-                        onChange={handleImageChange}
-                    />
-                </div>
-                <div className="col-md-6">
-                    <p>Previsualización de la imagen</p>
-                    {registrar.logo ? <img className="img-registro" src={registrar.logo} alt="Imagen seleccionada ."/> : 'No hay imagen'}
-                </div>
-            </div>
-            <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando/> : 'Registrarse'}</button>
-        </fieldset>
-    </form></div>);
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="logo"><b>Avatar</b></label>
+                            <input
+                                type="file"
+                                id="logo"
+                                name="logo"
+                                className="form-control"
+                                ref={refs.logo}
+                                onChange={handleImageChange}
+                            />
+                        </div>
+                        <div className="col-md-6">
+                            <p>Previsualización de la imagen</p>
+                            {registrar.logo ? <img className="img-registro" src={registrar.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
+                        </div>
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block mt-5" disabled={cargando}>{cargando ? <Cargando /> : 'Registrarse'}</button>
+                </fieldset>
+            </form></div>);
 }
 export default Registrarse;

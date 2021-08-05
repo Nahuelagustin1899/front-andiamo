@@ -38,7 +38,7 @@ function ViajesUsuarios() {
 
 
     const filtro = () => {
-        
+
         const newData = viajes.filter((item) => {
             const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
             const itemPrecio = item.precio;

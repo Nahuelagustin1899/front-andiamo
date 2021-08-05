@@ -39,7 +39,7 @@ function PanelAdmin(props) {
     }, []);
 
     const filtro = () => {
-        
+
         const newData = viajes.filter((item) => {
             const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
             const itemPrecio = item.precio;
@@ -111,7 +111,7 @@ function PanelAdmin(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton><b>
-                    De :{" " + item.salida.nombre}  <hr/> <br/> A: {item.destino.nombre}</b>
+                    De :{" " + item.salida.nombre}  <hr /> <br /> A: {item.destino.nombre}</b>
                 </Modal.Header>
                 <Modal.Body>¿Estás seguro que deseas eliminar este viaje?</Modal.Body>
                 <Modal.Footer>
@@ -151,49 +151,49 @@ function PanelAdmin(props) {
             <h1 className="mb-5 viajes-empresa">Panel de viajes</h1>
             <div>
 
-            <div className="filtros">
-                
-                <div className="form-group ">
-                    <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }}/></label>    
-                    <input
-                        className="form-control inputs-filtros"
-                        type="text"
-                        value={empresa}
-                        placeholder="Buscar por empresa"
-                        onChange={(e) => setEmpresa(e.target.value)}
-                    />
-                    <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
-                </div>
+                <div className="filtros">
 
-                <div className="form-group ">
-                    <label className="d-block " htmlFor="date">Fecha salida <SiGooglecalendar className="ml-2" style={{ fontSize: 23 }}/></label>  
-                    <TextField
+                    <div className="form-group ">
+                        <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
+                        <input
+                            className="form-control inputs-filtros"
+                            type="text"
+                            value={empresa}
+                            placeholder="Buscar por empresa"
+                            onChange={(e) => setEmpresa(e.target.value)}
+                        />
+                        <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                    </div>
+
+                    <div className="form-group ">
+                        <label className="d-block " htmlFor="date">Fecha salida <SiGooglecalendar className="ml-2" style={{ fontSize: 23 }} /></label>
+                        <TextField
                             className="form-control inputs-filtros"
                             type="date"
                             value={salida}
                             onChange={(e) => setSalida(e.target.value)}
-                        /> 
-                    <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
+                        />
+                        <button className="btn btn-success d-inline-block w-25 btn-fecha" onClick={filtro}>Buscar</button>
+                    </div>
+
+                    <div className="form-group ">
+                        <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                        <input
+                            className="form-control inputs-filtros"
+                            type="text"
+                            value={precio}
+                            placeholder="Buscar por precio"
+                            onChange={(e) => setPrecio(e.target.value)}
+                        />
+                        <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                    </div>
+
+
+                    <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                 </div>
-
-                <div className="form-group ">
-                    <label className="d-block" htmlFor="empresa">Precio <FaMoneyBillAlt className="ml-2" style={{ fontSize: 25 }}/></label>        
-                    <input
-                        className="form-control inputs-filtros"
-                        type="text"
-                        value={precio}
-                        placeholder="Buscar por precio"
-                        onChange={(e) => setPrecio(e.target.value)}
-                    />
-                     <button className="btn btn-success d-inline-block w-25" onClick={filtro}>Buscar</button>
+                <div className="p-4">
+                    {lista}
                 </div>
-
-
-                <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
-            </div>
-            <div className="p-4">
-                    {lista}  
-                </div>       
             </div>
         </div>
     )

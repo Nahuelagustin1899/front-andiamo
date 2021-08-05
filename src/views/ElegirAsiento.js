@@ -12,15 +12,15 @@ function ElegirAsiento() {
   const location = useLocation()
   const [reservados, setReservados] = useState([]);
   const history = useHistory();
- 
-    console.log(location);
-    let viaje;
-    if (location.state) {
-      viaje = location.state.viaje;
-      console.log(viaje);
-    } else {
-        history.push('/viajesusuarios')
-    }
+
+  console.log(location);
+  let viaje;
+  if (location.state) {
+    viaje = location.state.viaje;
+    console.log(viaje);
+  } else {
+    history.push('/viajesusuarios')
+  }
 
   useEffect(() => {
     console.log(location);

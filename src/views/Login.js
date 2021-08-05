@@ -9,7 +9,8 @@ function Login(props) {
 
                 <FormularioLogin
                     notExitosa={props.notExitosa} />
-            </div></div>);
+            </div>
+        </div>);
 }
 
 export default Login;

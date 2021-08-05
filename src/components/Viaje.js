@@ -7,9 +7,7 @@ export default function Viaje(props) {
 
 
     const { viaje, handleClick } = props;
-
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 

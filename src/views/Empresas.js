@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Empresas(props) {
-    const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/" ;
+    const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/";
     const [empresas, setEmpresas] = useState([]);
     const [cargando, setCargando] = useState(true);
     const classes = useStyles();
@@ -32,7 +32,7 @@ function Empresas(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const history = useHistory();
-    
+
     const editarEmpresa = (item) => {
         history.push({ pathname: "/editarempresa", state: { item: item } })
     }
@@ -63,7 +63,7 @@ function Empresas(props) {
 
 
                             <Fab id="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
-                                <DeleteIcon  />
+                                <DeleteIcon />
                             </Fab>
 
                             <Fab id="botones1" onClick={() => editarEmpresa(item)} color="primary" aria-label="edit">
@@ -73,36 +73,36 @@ function Empresas(props) {
                     </tr>
                 </tbody>
             </Table>
-            
+
             <Modal show={show} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                   <b> {item.nombre} </b>
-                                </Modal.Header>
-                                <Modal.Body>¿Estás seguro que deseas eliminar esta empresa?</Modal.Body>
-                                <Modal.Footer>
-                                    <Button variant="secondary" onClick={handleClose}>
-                                        <button className="btn btn-secondary">
-                                            Cerrar
-                                        </button>
-                                    </Button>
-                                    <Button onClick={handleClose}>
-                                        <button className="btn btn-primary" onClick={() => {
-                                            empresasService.delete(item.id)
-                                                .then(data => {
-                                                    setEmpresas(empresas.filter(empresa => empresa.id !== item.id));
-                                                    if (typeof props.notExitosaEliminar === 'function') {
-                                                        props.notExitosaEliminar(data);
-                                                    }
-                                                })
-                                                .catch(err => {
-                                                    if (typeof props.notDenegadaEliminar === 'function') {
-                                                        props.notDenegadaEliminar(item);
-                                                    }
-                                                });
-                                        }}>Eliminar</button>
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
+                <Modal.Header closeButton>
+                    <b> {item.nombre} </b>
+                </Modal.Header>
+                <Modal.Body>¿Estás seguro que deseas eliminar esta empresa?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        <button className="btn btn-secondary">
+                            Cerrar
+                        </button>
+                    </Button>
+                    <Button onClick={handleClose}>
+                        <button className="btn btn-primary" onClick={() => {
+                            empresasService.delete(item.id)
+                                .then(data => {
+                                    setEmpresas(empresas.filter(empresa => empresa.id !== item.id));
+                                    if (typeof props.notExitosaEliminar === 'function') {
+                                        props.notExitosaEliminar(data);
+                                    }
+                                })
+                                .catch(err => {
+                                    if (typeof props.notDenegadaEliminar === 'function') {
+                                        props.notDenegadaEliminar(item);
+                                    }
+                                });
+                        }}>Eliminar</button>
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     ));
 

@@ -55,7 +55,7 @@ function Home() {
         <Card.Title className="text-center font-weight-bold">Santa Teresita</Card.Title>
         <Card.Text>
           Santa Teresita es una ciudad turística argentina, en el partido de La Costa, provincia de Buenos Aires. La localidad ha nacido y crecido con un fin turístico ...
-        <NavLink type="button" className="nav-link " to="/santateresita">Ver más..</NavLink>
+          <NavLink type="button" className="nav-link " to="/santateresita">Ver más..</NavLink>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -65,7 +65,7 @@ function Home() {
         <Card.Title className="text-center font-weight-bold">Miramar</Card.Title>
         <Card.Text>
           Miramar es una ciudad costera argentina situada en el sudeste de la provincia de Buenos Aires. Es la cabecera del partido de General Alvarado...
-        <NavLink type="button" className="nav-link" to="/miramar">Ver más..</NavLink>
+          <NavLink type="button" className="nav-link" to="/miramar">Ver más..</NavLink>
         </Card.Text>
       </Card.Body>
     </Card>
@@ -75,7 +75,7 @@ function Home() {
         <Card.Title className="text-center font-weight-bold">San bernardo</Card.Title>
         <Card.Text>
           San Bernardo del Tuyú, mas conocida como San Bernardo, es una ciudad balnearia y turística argentina en el partido de La Costa...
-        <NavLink type="button" className="nav-link " to="/sanber">Ver más..</NavLink>
+          <NavLink type="button" className="nav-link " to="/sanber">Ver más..</NavLink>
         </Card.Text>
       </Card.Body>
     </Card>

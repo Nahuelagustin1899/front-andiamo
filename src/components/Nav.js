@@ -11,7 +11,7 @@ const toggleMenu = ({ isOpen }) => {
     ? menuWrap.setAttribute("aria-hidden", false)
     : menuWrap.setAttribute("aria-hidden", true);
 };
-const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/" ;
+const urlbase = "https://andiamo-back.herokuapp.com/imgs/perfiles/logos/";
 const Nav = (props) => {
 
   const authData = useContext(AuthContext);
@@ -35,7 +35,7 @@ const Nav = (props) => {
             });
             history.push('/iniciar-sesion')
           }
-          
+
         }
       })
       .catch(e => console.log('Error: ', e));
@@ -98,7 +98,7 @@ const Nav = (props) => {
           (<>
             <a className="menu-item bm-item" href="/empresaspanel">
               Panel empresas
-      </a>
+            </a>
           </>) :
           (<>
 
@@ -113,7 +113,7 @@ const Nav = (props) => {
           (<>
             <a className="menu-item bm-item" href="/viajes">
               Panel viajes
-      </a>
+            </a>
           </>) :
           (<>
 
