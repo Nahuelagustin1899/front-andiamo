@@ -2,10 +2,12 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import familia from '../img/familia.jpg';
 import Image from 'react-bootstrap/Image'
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function Menores() {
      return (
           <div className="fondopantalla p-5">
+               <a className="btn btn-primary mb-4" href="/blog"><KeyboardReturnSharpIcon/></a>
                <h1 className="badge-warning h1-informacion p-1 h4">Traslado de MENORES</h1>
                <Image className="img-card-informacion" src={familia} alt="Familia unida abrazandose" fluid />
                <Card className="card-informacion">

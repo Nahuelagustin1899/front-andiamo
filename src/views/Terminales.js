@@ -2,10 +2,12 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import terminal from '../img/terminal.jpg';
 import Image from 'react-bootstrap/Image'
+import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
 
 function Terminales() {
     return (
         <div className="fondopantalla p-5">
+            <a className="btn btn-primary mb-4" href="/blog"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion p-1 h4">Terminales</h1>
             <Image className="img-card-informacion" src={terminal} alt="Hombre sonriendo al lado de micro blanco" fluid />
             <Card className="card-informacion">
