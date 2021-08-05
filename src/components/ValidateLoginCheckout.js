@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router";
@@ -11,27 +11,27 @@ import cabal from '../img/cabal.svg';
 const ValidateLoginCheckout = (props) => {
 
   const history = useHistory();
-  const [msjCard, setMjsCard] = useState(''); 
+  const [msjTarjeta, setMsjTarjeta] = useState('');
   const handleChangeCard = (e, setFieldValue) => {
-    
+
 
     setFieldValue('numTarj', e.target.value)
     console.log(e.target.value)
 
 
     switch (Number(e.target.value)) {
-        case 3:
-        setMjsCard(<img width="80" height="80" src={american} alt="tarjeta american express"/>)
+      case 3:
+        setMsjTarjeta(<img width="80" height="80" src={american} alt="tarjeta american express" />)
         break;
-        case 4:
-        setMjsCard(<img width="80" height="80" src={visa} alt="tarjeta visa"/>)
+      case 4:
+        setMsjTarjeta(<img width="80" height="80" src={visa} alt="tarjeta visa" />)
         break;
-        case 5:
-          setMjsCard(<img width="80" height="80" src={master} alt="tarjeta mastercard"/>)
-          break;
-        case 6:
-            setMjsCard(<img width="80" height="80" src={cabal} alt="tarjeta cabal"/>)
-            break;
+      case 5:
+        setMsjTarjeta(<img width="80" height="80" src={master} alt="tarjeta mastercard" />)
+        break;
+      case 6:
+        setMsjTarjeta(<img width="80" height="80" src={cabal} alt="tarjeta cabal" />)
+        break;
       default:
         break;
     }
@@ -167,8 +167,8 @@ const ValidateLoginCheckout = (props) => {
                 <div className="alert alert-danger mt-1">{errors.numTarj}</div>
               )}
               {
-                msjCard && (
-                  <div className="mt-1">{msjCard}</div>
+                msjTarjeta && (
+                  <div className="mt-1">{msjTarjeta}</div>
                 )
               }
             </div>
