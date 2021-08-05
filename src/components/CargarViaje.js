@@ -10,8 +10,8 @@ const validateSchema = yup.object().shape({
     empresa_id: yup.number().typeError('La empresa no puede estar vacia'),
     salida_id: yup.number().typeError('La salida no puede estar vacia'),
     destino_id: yup.number().typeError('El destino no puede estar vacio'),
-    fecha_salida: yup.date().min(new Date(2021, 8, 4), "No puede elegir fechas pasadas").typeError('La fecha de salida no puede estar vacia'),
-    fecha_llegada: yup.date().min(new Date(2021, 8, 4), "No puede elegir fechas pasadas").typeError('La fecha de llegada no puede estar vacia'), 
+    fecha_salida: yup.date().min(new Date(2021, 7, 4), "No puede elegir fechas pasadas").typeError('La fecha de salida no puede estar vacia'),
+    fecha_llegada: yup.date().min(new Date(2021, 7, 4), "No puede elegir fechas pasadas").typeError('La fecha de llegada no puede estar vacia'), 
     precio: yup.number().typeError('El precio no puede estar vacio'),
 });
 
