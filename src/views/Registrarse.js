@@ -154,7 +154,7 @@ function Registrarse(props) {
             <div className="form-group">
                 <label htmlFor="email"><b>Email</b></label>
                 <input
-                    type="email"
+                    type="text"
                     id="email"
                     name="email"
                     className="form-control"

@@ -133,6 +133,14 @@ function App() {
     });
   };
 
+  const handleRegistroUsuario = data => {
+    setNotification({
+      type: 'success',
+      text: 'El registro fue exitoso',
+      title: 'Felicidades'
+    });
+  };
+
 
 
 
@@ -173,7 +181,9 @@ function App() {
                 />          
               </AuthRoute>
               <Route path="/registrarse">
-                <Registrarse exact component={Registrarse} />
+                <Registrarse exact component={Registrarse} 
+                  notExitosa={handleRegistroUsuario}
+                />
               </Route>
               <AuthRoute path="/editarviaje">
                 <EditarViaje exact component={EditarViaje} 
