@@ -86,7 +86,6 @@ function EditarEmpresas(props) {
                         <p>Previsualización de la imagen</p>
                         {empresa.logo ? <img defaultValue={empresa.logo} className="img-registro" src={urlbase + empresa.logo} alt="Imagen seleccionada ." /> : 'No hay imagen'}
 
-                        {errors.empresa.logo  && errors.empresa.logo.type === "required" && <span className="alert alert-danger">El campo logo no puede estar vacio</span>}
                     </div>
 
                 </div>
