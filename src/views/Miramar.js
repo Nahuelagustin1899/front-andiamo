@@ -10,7 +10,7 @@ function Miramar() {
 
     return (
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary mb-4 btn-volver" href="/"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion">Miramar</h1>
             <Image className="img-card-informacion" src={miramar} alt="Estatua de la M de minamar" fluid />
             <Card className="card-informacion">

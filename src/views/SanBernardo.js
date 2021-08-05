@@ -8,7 +8,7 @@ function SanBernardo() {
 
     return (
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary mb-4 btn-volver" href="/"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion">San Bernardo</h1>
             <Image className="img-card-informacion" src={sanber} alt="La costa San Bernardo" fluid />
             <Card className="card-informacion">

@@ -58,7 +58,7 @@ function EditarViaje(props) {
     return (
         <div className="fondopantalla p-5">
             <h1 className="viajes-empresa">Editar viaje</h1>
-            <a className="btn btn-primary mb-4 btn-volver" href="/viajes"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary btn-volver" href="/viajes"><KeyboardReturnSharpIcon/></a>
             <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >

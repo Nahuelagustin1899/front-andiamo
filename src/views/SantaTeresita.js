@@ -8,7 +8,7 @@ function SantaTeresita() {
 
     return (
         <div className="fondopantalla p-5">
-            <a className="btn btn-primary mb-4 btn-volver" href="/"><KeyboardReturnSharpIcon/></a>
+            <a className="btn btn-primary mb-4" href="/"><KeyboardReturnSharpIcon/></a>
             <h1 className="badge-warning h1-informacion">Santa Teresita</h1>
             <Image className="img-card-informacion" src={teresita} alt="Barco Santa Teresita" fluid />
             <Card className="card-informacion">
