@@ -22,8 +22,12 @@ function EditarViaje(props) {
 
     const SignupSchema = yup.object().shape({
         precio: yup.string().required('El campo precio no puede estar vacío'),
-        fecha_salida: yup.string().min(new Date(2021, 7, 4), "No puede elegir fechas pasadas").required('El campo fecha de salida no puede estar vacío'),
-        fecha_llegada: yup.string().min(new Date(2021, 7, 4), "No puede elegir fechas pasadas").required('El campo fecha de llegada no puede estar vacío'),
+        fecha_salida: yup.string()
+        .required('El campo fecha de salida no puede estar vacío')
+        .min(new Date(2021, 7, 4), "No puede elegir fechas pasadas"),
+        fecha_llegada: yup.string()
+        .required('El campo fecha de llegada no puede estar vacío')
+        .min(new Date(2021, 7, 4), "No puede elegir fechas pasadas"),
     });
 
 
