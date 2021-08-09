@@ -16,7 +16,12 @@ function EnviarCodigo() {
         });
 
         const fetchData = await response.json();
-        history.push('/cambiarpassword')
+        if (typeof props.notExitosa === "function") {
+            props.notExitosa({
+                ...fetchData.data
+            });
+            history.push('/cambiarpassword')
+        }        
         return { ...fetchData.data };
 
     };

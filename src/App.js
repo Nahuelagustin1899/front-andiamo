@@ -144,6 +144,14 @@ function App() {
     });
   };
 
+  const handleEnviarCodigo = data => {
+    setNotification({
+      type: 'success',
+      text: 'El código se envió exitosamente',
+      title: 'Felicidades'
+    });
+  };
+
 
 
 
@@ -247,7 +255,9 @@ function App() {
               <Route exact path="/menores" component={Menores} />
               <Route exact path="/documentos" component={Documentos} />
               <Route exact path="/terminales" component={Terminales} />
-              <Route exact path="/codigo" component={EnviarCodigo} />
+              <Route exact path="/codigo" component={EnviarCodigo} 
+                  notExitosa={handleEnviarCodigo}
+              />
               <Route exact path="/cambiarpassword" component={CambiarPassword} />
             </Switch>
             <Footer />
