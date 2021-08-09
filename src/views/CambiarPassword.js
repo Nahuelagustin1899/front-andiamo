@@ -52,7 +52,7 @@ function CambiarPassword() {
                 <div className="form-group">
                     <label htmlFor="password"><b>Contraseña</b></label>
                     <input
-                        type="text"
+                        type="password"
                         className="form-control"
                         {...register("password", { required: true })}
                     />
