@@ -104,6 +104,7 @@ function FormularioLogin(props) {
                     ) : null
                 }
             </div>
+            <a className="boton-registrar text-center" href="/codigo">¿Olvidaste tu contraseña?</a>
 
             <button type="submit" className="btn btn-primary boton-ingresar">Ingresar</button>
 
