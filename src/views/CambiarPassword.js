@@ -9,7 +9,7 @@ function CambiarPassword() {
     const history = useHistory();
 
     const onSubmit = async data => {
-        const response = await fetch(API + '/auth/passwordNew/', {
+        const response = await fetch(API + '/auth/passwordNew', {
             method: 'POST',
             headers: FETCH_HEADERSS,
             body: JSON.stringify(data),

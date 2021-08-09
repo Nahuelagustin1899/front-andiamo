@@ -8,7 +8,7 @@ function EnviarCodigo() {
     const history = useHistory();
 
     const onSubmit = async data => {
-        const response = await fetch(API + '/auth/codigo/', {
+        const response = await fetch(API + '/auth/codigo', {
             method: 'POST',
             headers: FETCH_HEADERSS,
             body: JSON.stringify(data),
