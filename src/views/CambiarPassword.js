@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { API, FETCH_HEADERSS} from "../constants";
 import { useHistory } from "react-router-dom";
 
-function CambiarPassword() {
+function CambiarPassword(props) {
 
     const { register, handleSubmit } = useForm();
     const history = useHistory();
