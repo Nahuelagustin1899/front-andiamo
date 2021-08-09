@@ -2,9 +2,20 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { API, FETCH_HEADERSS } from "../constants";
 import { useHistory } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 function EnviarCodigo(props) {
-    const { register, handleSubmit } = useForm();
+
+    const SignupSchema = yup.object().shape({
+        email: yup.string()
+        .email("El email no es válido")
+        .required("El campo email no puede estar vacío"),
+    });
+
+    const { register, handleSubmit,  formState: { errors } } = useForm({
+        resolver: yupResolver(SignupSchema)
+    });
     const history = useHistory();
 
     const onSubmit = async data => {
@@ -42,11 +53,12 @@ function EnviarCodigo(props) {
                         className="form-control"
                         {...register("email", { required: true })}
                     />
+                    {errors.email && <span className="form-control alert alert-danger errores">{errors.email.message}</span>}
                 </div>
 
                
 
-                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar</button>
+                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar código</button>
             </form>
 
       </div>
