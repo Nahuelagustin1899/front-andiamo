@@ -1,12 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { API, FETCH_HEADERS } from "../constants";
-import { AuthContext } from "../services/auth";
 import { useHistory } from "react-router-dom";
 
 function EnviarCodigo() {
-    const authData = useContext(AuthContext);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const history = useHistory();
 
     const onSubmit = async data => {
