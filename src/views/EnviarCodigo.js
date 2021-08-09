@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { API, FETCH_HEADERS } from "../constants";
+import { API, FETCH_HEADERSS } from "../constants";
 import { useHistory } from "react-router-dom";
 
 function EnviarCodigo() {
