@@ -10,7 +10,7 @@ function EnviarCodigo() {
     const onSubmit = async data => {
         const response = await fetch(API + '/auth/codigo/', {
             method: 'POST',
-            headers: FETCH_HEADERS,
+            headers: FETCH_HEADERSS,
             body: JSON.stringify(data),
             credentials: 'include'
         });
