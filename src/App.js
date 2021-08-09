@@ -28,6 +28,8 @@ import Menores from "./views/Menores";
 import Terminales from "./views/Terminales";
 import ReservaExitosa from "./views/ReservaExitosa";
 import PanelAdmin from "./views/PanelAdmin";
+import EnviarCodigo from "./views/EnviarCodigo";
+import CambiarPassword from "./views/CambiarPassword";
 
 /* Components */
 import Nav from "./components/Nav";
@@ -245,6 +247,8 @@ function App() {
               <Route exact path="/menores" component={Menores} />
               <Route exact path="/documentos" component={Documentos} />
               <Route exact path="/terminales" component={Terminales} />
+              <Route exact path="/codigo" component={EnviarCodigo} />
+              <Route exact path="/cambiarpassword" component={CambiarPassword} />
             </Switch>
             <Footer />
           </BrowserRouter>
