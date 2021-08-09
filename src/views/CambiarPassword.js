@@ -11,10 +11,10 @@ function CambiarPassword(props) {
         email: yup.string()
             .email("El email no es válido")
             .required("El campo email no puede estar vacío"),
-        verification_code: Yup.number()
+        verification_code: yup.number()
             .required("El campo còdigo no puede estar vacío")
             .min(6, "El campo debe contener 6 dígitos"),
-        password: Yup.string()
+        password: yup.string()
             .required("La contraseña no puede estar vacía")
     });
 
