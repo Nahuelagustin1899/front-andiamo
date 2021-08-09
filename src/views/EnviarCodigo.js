@@ -20,8 +20,11 @@ function EnviarCodigo(props) {
             props.notExitosa({
                 ...fetchData.data
             });
-            history.push('/cambiarpassword')
-        }        
+           
+        }
+
+        history.push('/cambiarpassword')
+
         return { ...fetchData.data };
 
     };
