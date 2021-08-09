@@ -26,7 +26,7 @@ const authService = {
   
     async login(credenciales) {
         const rta = await fetch(API + '/auth/login', {
-            headers: FETCH_HEADERS,
+            headers: FETCH_HEADERSS,
             method: 'post',
             body: JSON.stringify(credenciales),
          
