@@ -255,9 +255,12 @@ function App() {
               <Route exact path="/menores" component={Menores} />
               <Route exact path="/documentos" component={Documentos} />
               <Route exact path="/terminales" component={Terminales} />
-              <Route exact path="/codigo" component={EnviarCodigo} 
-                  notExitosa={handleEnviarCodigo}
-              />
+              <Route exact path="/codigo" component={EnviarCodigo}>
+                <EnviarCodigo
+                notExitosa={handleEnviarCodigo}
+                />
+              </Route> 
+      
               <Route exact path="/cambiarpassword" component={CambiarPassword} />
             </Switch>
             <Footer />
