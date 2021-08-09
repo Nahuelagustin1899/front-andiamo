@@ -18,7 +18,13 @@ function CambiarPassword() {
         
 
         const fetchData = await response.json();
-        history.push('/iniciar-sesion')
+        if (typeof props.notExitosa === "function") {
+            props.notExitosa({
+                ...fetchData.data
+            });
+            history.push('/iniciar-sesion')
+        }
+        
         return { ...fetchData.data };
 
     };

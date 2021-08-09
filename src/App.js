@@ -151,8 +151,14 @@ function App() {
       title: 'Felicidades'
     });
   };
-
-
+  
+  const handleCambiarPassword = data => {
+    setNotification({
+      type: 'success',
+      text: 'La contraseña se cambió exitosamente',
+      title: 'Felicidades'
+    });
+  };
 
 
   return (
@@ -182,28 +188,28 @@ function App() {
                 <Pago exact component={Pago} />
               </AuthRoute>
               <AuthRoute path="/editarempresa">
-                <EditarEmpresas exact component={EditarEmpresas} 
-                notExitosa={handleEditarEmpresa}
+                <EditarEmpresas exact component={EditarEmpresas}
+                  notExitosa={handleEditarEmpresa}
                 />
               </AuthRoute>
               <AuthRoute path="/editarusuario">
-                <EditarUsuario exact component={EditarUsuario} 
-                 notExitosa={handleEditarPerfil}
-                />          
+                <EditarUsuario exact component={EditarUsuario}
+                  notExitosa={handleEditarPerfil}
+                />
               </AuthRoute>
               <Route path="/registrarse">
-                <Registrarse exact component={Registrarse} 
+                <Registrarse exact component={Registrarse}
                   notExitosa={handleRegistroUsuario}
                 />
               </Route>
               <AuthRoute path="/editarviaje">
-                <EditarViaje exact component={EditarViaje} 
-                notExitosa={handleEditarViaje}
+                <EditarViaje exact component={EditarViaje}
+                  notExitosa={handleEditarViaje}
                 />
               </AuthRoute>
-                <AuthRoute path="/editarviajeadmin">
-                <EditarViajeAdmin exact component={EditarViajeAdmin} 
-                notExitosa={handleEditarViaje}
+              <AuthRoute path="/editarviajeadmin">
+                <EditarViajeAdmin exact component={EditarViajeAdmin}
+                  notExitosa={handleEditarViaje}
                 />
               </AuthRoute>
               <AuthRoute path="/carrito">
@@ -220,11 +226,11 @@ function App() {
                   notDenegadaEliminar={handleViajeErrorEliminar}
                 />
               </AuthRoute>
-              <AuthRoute path="/paneladmin" component={PanelAdmin}> 
-              <PanelAdmin exact
-                notExitosaEliminar={handleEmpresaEliminada}
-                notDenegadaEliminar={handleEmpresaErrorEliminar}
-              /> 
+              <AuthRoute path="/paneladmin" component={PanelAdmin}>
+                <PanelAdmin exact
+                  notExitosaEliminar={handleEmpresaEliminada}
+                  notDenegadaEliminar={handleEmpresaErrorEliminar}
+                />
               </AuthRoute>
               <Route exact path="/viajesusuarios" component={ViajesUsuarios} />
               <AuthRoute path="/empresaspanel">
@@ -257,11 +263,15 @@ function App() {
               <Route exact path="/terminales" component={Terminales} />
               <Route exact path="/codigo" component={EnviarCodigo}>
                 <EnviarCodigo
-                notExitosa={handleEnviarCodigo}
+                  notExitosa={handleEnviarCodigo}
                 />
-              </Route> 
-      
-              <Route exact path="/cambiarpassword" component={CambiarPassword} />
+              </Route>
+
+              <Route exact path="/cambiarpassword" component={CambiarPassword}>
+                <CambiarPassword
+                  notExitosa={handleCambiarPassword}
+                />
+              </Route>
             </Switch>
             <Footer />
           </BrowserRouter>
