@@ -1,11 +1,26 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { API, FETCH_HEADERSS} from "../constants";
+import { API, FETCH_HEADERSS } from "../constants";
 import { useHistory } from "react-router-dom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 function CambiarPassword(props) {
 
-    const { register, handleSubmit } = useForm();
+    const SignupSchema = yup.object().shape({
+        email: yup.string()
+            .email("El email no es válido")
+            .required("El campo email no puede estar vacío"),
+        verification_code: Yup.number()
+            .required("El campo còdigo no puede estar vacío")
+            .min(6, "El campo debe contener 6 dígitos"),
+        password: Yup.string()
+            .required("La contraseña no puede estar vacía")
+    });
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(SignupSchema)
+    });
     const history = useHistory();
 
     const onSubmit = async data => {
@@ -15,7 +30,7 @@ function CambiarPassword(props) {
             body: JSON.stringify(data),
             credentials: 'include'
         });
-        
+
 
         const fetchData = await response.json();
         if (typeof props.notExitosa === "function") {
@@ -24,16 +39,16 @@ function CambiarPassword(props) {
             });
             history.push('/iniciar-sesion')
         }
-        
+
         return { ...fetchData.data };
 
     };
 
-  return (
-    <div className="fondopantalla p-5">
-      <h1 className="mt-3 mb-5 text-center">Cambiar contraseña</h1>
+    return (
+        <div className="fondopantalla p-5">
+            <h1 className="mt-3 mb-5 text-center">Cambiar contraseña</h1>
 
-      <form className="divs container mt-5"
+            <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
 
@@ -44,6 +59,7 @@ function CambiarPassword(props) {
                         className="form-control"
                         {...register("email", { required: true })}
                     />
+                    {errors.email && <span className="form-control alert alert-danger errores">{errors.email.message}</span>}
                 </div>
 
                 <div className="form-group">
@@ -51,8 +67,10 @@ function CambiarPassword(props) {
                     <input
                         type="text"
                         className="form-control"
+                        maxlength="6"
                         {...register("verification_code", { required: true })}
                     />
+                    {errors.verification_code && <span className="form-control alert alert-danger errores">{errors.verification_code.message}</span>}
                 </div>
 
                 <div className="form-group">
@@ -62,15 +80,16 @@ function CambiarPassword(props) {
                         className="form-control"
                         {...register("password", { required: true })}
                     />
+                    {errors.password && <span className="form-control alert alert-danger errores">{errors.password.message}</span>}
                 </div>
 
-               
+
 
                 <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar</button>
             </form>
 
-      </div>
-   );
+        </div>
+    );
 }
 
 export default CambiarPassword;
