@@ -50,7 +50,7 @@ function CambiarPassword(props) {
             <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <h1 className="mt-3 mb-5 text-center">Cambiar contraseña</h1>
+                <h1 className="mt-3 mb-5 text-center h2 font-weight-bold">Cambiar contraseña</h1>
                 <div className="form-group">
                     <label htmlFor="precio"><b>Email</b></label>
                     <input
@@ -62,7 +62,7 @@ function CambiarPassword(props) {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="cod"><b>Codigo</b></label>
+                    <label htmlFor="cod"><b>Código</b></label>
                     <input
                         type="text"
                         className="form-control"
@@ -73,7 +73,7 @@ function CambiarPassword(props) {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="password"><b>Contraseña</b></label>
+                    <label htmlFor="password"><b>Contraseña nueva</b></label>
                     <input
                         type="password"
                         className="form-control"
