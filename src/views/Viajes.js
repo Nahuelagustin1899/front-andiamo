@@ -14,6 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
 import TextField from '@material-ui/core/TextField';
+import Cargando from "../components/Cargando";
 
 const useStyles = makeStyles((theme) => ({
     margin: {
@@ -34,6 +35,7 @@ function Viajes(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const classes = useStyles();
+    const [cargando, setCargando] = useState(true);
 
     const editarViaje = (item) => {
         history.push({ pathname: "/editarviaje", state: { item: item } })
@@ -44,6 +46,7 @@ function Viajes(props) {
             const data = await viajesService.indexEmpresa();
             setViajes(data);
             setViajesAux(data);
+            setCargando(false);
         })().catch(err => console.log("Error al traer los viajes: ", err));
     }, []);
 
@@ -196,8 +199,10 @@ function Viajes(props) {
                             Crear viaje
                         </Fab>
                     </Link>
-
-                    {lista}
+                    {cargando ?
+                        <Cargando /> :
+                        { lista }
+                    }
                 </div>
             </div>
         </div>
