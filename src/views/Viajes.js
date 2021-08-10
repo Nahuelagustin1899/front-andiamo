@@ -199,10 +199,11 @@ function Viajes(props) {
                             Crear viaje
                         </Fab>
                     </Link>
-                    {cargando ?
-                        <Cargando /> :
-                        { lista }
-                    }
+                        { cargando ?
+                            <Cargando /> :
+                            lista 
+                        }
+                    
                 </div>
             </div>
         </div>
