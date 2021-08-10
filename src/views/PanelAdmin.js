@@ -12,6 +12,7 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 import { SiGooglecalendar } from "react-icons/si";
 import TextField from '@material-ui/core/TextField';
 import { BsFillBriefcaseFill } from "react-icons/bs";
+import Cargando from "../components/Cargando";
 
 
 
@@ -25,6 +26,7 @@ function PanelAdmin(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [cargando, setCargando] = useState(true);
 
     const editarViaje = (item) => {
         history.push({ pathname: "/editarviajeadmin", state: { item: item } })
@@ -35,6 +37,8 @@ function PanelAdmin(props) {
             const data = await viajesService.index();
             setViajes(data);
             setViajesAux(data);
+            setCargando(false);
+
         })().catch(err => console.log("Error al traer los viajes: ", err));
     }, []);
 
@@ -192,7 +196,9 @@ function PanelAdmin(props) {
                     <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
                 </div>
                 <div className="p-4">
-                    {lista}
+                    {cargando ?
+                        <Cargando /> :
+                        lista}
                 </div>
             </div>
         </div>
