@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
 import { FaBusAlt } from "react-icons/fa";
+import Cargando from "../components/Cargando";
 
 function Perfil() {
 
@@ -17,6 +18,7 @@ function Perfil() {
     const [viajeId, setViajeId] = useState("");
     const [viajesAux, setViajesAux] = useState([]);
     const [todasReservas, setTodasReservas] = useState([]);
+    const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
         (async () => {
@@ -39,6 +41,7 @@ function Perfil() {
         (async () => {
             const data = await reservasService.indexEmpresa();
             setEmpresasReservas(data);
+            setCargando(false);
             setViajesAux(data);
             setTodasReservas(data[0].reservas)
             console.log(data);
@@ -197,42 +200,49 @@ function Perfil() {
         </div>
 
         {
-            authData.user.id === 1 ?
-                (<>
-                    <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
-                    {listaAdmin}
-                </>) :
-
-                authData.user.id === 2 ?
-
+            cargando ?
+                <Cargando /> :
+                authData.user.id === 1 ?
                     (<>
-
-                        <div className="filtros-perfil">
-                            <div className="form-group ">
-                                <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }} /></label>
-                                <input
-                                    className="form-control inputs-filtros-perfil"
-                                    type="text"
-                                    value={viajeId}
-                                    onChange={(e) => setViajeId(e.target.value)}
-                                />
-                                <button className="btn btn-success d-inline-block buscar-perfil" onClick={filtro}>Buscar</button>
-
-                                <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
-                            </div>
-                        </div>
                         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
-                        {listaEmpresa}
+                        {listaAdmin}
                     </>) :
-                    authData.user.id >= 3 ?
-                        (<>
-                            <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
-                            {lista}
 
-                        </>) :
+                    cargando ?
+                        <Cargando /> :
+                        authData.user.id === 2 ?
 
-                        (<>
-                        </>)
+                            (<>
+
+                                <div className="filtros-perfil">
+                                    <div className="form-group ">
+                                        <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                                        <input
+                                            className="form-control inputs-filtros-perfil"
+                                            type="text"
+                                            value={viajeId}
+                                            onChange={(e) => setViajeId(e.target.value)}
+                                        />
+                                        <button className="btn btn-success d-inline-block buscar-perfil" onClick={filtro}>Buscar</button>
+
+                                        <button className="btn btn-primary limpiar-filtro" onClick={clear}>Limpiar</button>
+                                    </div>
+                                </div>
+                                <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
+                                {listaEmpresa}
+                            </>) :
+
+                            cargando ?
+                                <Cargando /> :
+                                authData.user.id >= 3 ?
+                                    (<>
+                                        <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
+                                        {lista}
+
+                                    </>) :
+
+                                    (<>
+                                    </>)
         }
 
     </div>);
