@@ -22,11 +22,17 @@ function PanelAdmin(props) {
     const [precio, setPrecio] = useState("");
     const [salida, setSalida] = useState("");
     const [viajes, setViajes] = useState([]);
+    const [viajeEliminar, setViajeEliminar] = useState();
     const [empresa, setEmpresa] = useState("");
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setViajeEliminar(null)
+        setShow(false);
+
+    }
     const handleShow = () => setShow(true);
     const [cargando, setCargando] = useState(true);
+    
 
     const editarViaje = (item) => {
         history.push({ pathname: "/editarviajeadmin", state: { item: item } })
@@ -102,7 +108,10 @@ function PanelAdmin(props) {
                 </tbody>
             </Table>
             <div>
-                <Fab id="botones" color="secondary" onClick={handleShow} aria-label="delete">
+                <Fab id="botones" color="secondary"  onClick={() => {
+                    setViajeEliminar(item)
+                    handleShow()
+                }} aria-label="delete">
                     <DeleteIcon />
                 </Fab>
 
@@ -115,7 +124,7 @@ function PanelAdmin(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton><b>
-                    De :{" " + item.salida.nombre}  <hr /> <br /> A: {item.destino.nombre}</b>
+                    De :{" " + viajeEliminar?.salida.nombre ?? ''} a {viajeEliminar?.destino.nombre ?? ''}</b>
                 </Modal.Header>
                 <Modal.Body>¿Estás seguro que deseas eliminar este viaje?</Modal.Body>
                 <Modal.Footer>
@@ -127,9 +136,9 @@ function PanelAdmin(props) {
                     <Button onClick={handleClose}>
                         <button className="btn btn-primary"
                             onClick={() => {
-                                viajesService.delete(item.id)
+                                viajesService.delete(viajeEliminar.id)
                                     .then(data => {
-                                        setViajes(viajes.filter(viaje => viaje.id !== item.id));
+                                        setViajes(viajes.filter(viaje => viaje.id !== viajeEliminar.id));
                                         if (typeof props.notExitosaEliminar === 'function') {
                                             props.notExitosaEliminar(data);
 
@@ -139,7 +148,7 @@ function PanelAdmin(props) {
 
                                     .catch(err => {
                                         if (typeof props.notDenegadaEliminar === 'function') {
-                                            props.notDenegadaEliminar(item);
+                                            props.notDenegadaEliminar(viajeEliminar);
                                         }
                                     });
                             }}>Eliminar</button>
