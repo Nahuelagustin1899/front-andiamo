@@ -50,7 +50,7 @@ function CambiarPassword(props) {
             <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <h1 className="mt-3 mb-5 text-center h2 font-weight-bold">Cambiar contraseña</h1>
+                <h1 className="mt-3 mb-5 text-center h2 font-weight-bold">Restablecer contraseña</h1>
                 <div className="form-group">
                     <label htmlFor="precio"><b>Email</b></label>
                     <input
@@ -84,7 +84,7 @@ function CambiarPassword(props) {
 
 
 
-                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar</button>
+                <button type="submit" className="btn btn-primary boton-terminar-edit" >Cambiar contraseña</button>
             </form>
 
         </div>
