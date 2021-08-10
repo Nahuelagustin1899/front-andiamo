@@ -10,6 +10,8 @@ import { SiGooglecalendar } from "react-icons/si";
 import { CgDanger } from "react-icons/cg";
 import TextField from '@material-ui/core/TextField';
 import ReactPlayer from 'react-player';
+import Cargando from "../components/Cargando";
+
 
 function ViajesUsuarios() {
     const [viajesAux, setViajesAux] = useState([]);
