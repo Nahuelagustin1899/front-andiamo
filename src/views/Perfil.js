@@ -147,14 +147,14 @@ function Perfil() {
         <Table variant="warning" striped bordered hover   >
             <thead>
                 <tr className="row">
-                    <th className="col-4 text-center colorth radius-top-izq">Nombre</th>
+                    <th className="col-4 text-center colorth radius-top-izq">Asiento reservado</th>
                     <th className="col-4 text-center colorth">Fecha salida</th>
                     <th className="col-4 text-center colorth radius-top-der">Fecha llegada</th>
                 </tr>
             </thead>
             <tbody>
                 <tr className="row">
-                    <td className="col-4 text-center colortd radius-bottom-izq">{reserva.user.name}</td>
+                    <td className="col-4 text-center colortd radius-bottom-izq">{reserva.asiento_reservado}</td>
                     <td className="col-4 text-center colortd">{format(new Date(reserva.viaje.fecha_salida), 'dd-MM-yyyy hh:mm:ss a')}</td>
                     <td className="col-4 text-center colortd radius-bottom-izq">{format(new Date(reserva.viaje.fecha_llegada), 'dd-MM-yyyy hh:mm:ss a')}</td>
                 </tr>
