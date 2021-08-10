@@ -60,7 +60,7 @@ function EnviarCodigo(props) {
 
 
 
-                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar código</button>
+                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar</button>
             </form>
 
         </div>
