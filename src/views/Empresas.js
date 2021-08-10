@@ -101,6 +101,7 @@ function Empresas(props) {
                                     if (typeof props.notExitosaEliminar === 'function') {
                                         props.notExitosaEliminar(data);
                                     }
+                                    history.push('/empresaspanel');
                                 })
                                 .catch(err => {
                                     if (typeof props.notDenegadaEliminar === 'function') {
