@@ -6,12 +6,14 @@ import reservasService from '../services/reservas';
 import Asientos from "./../components/Asientos";
 import { Fragment } from 'react';
 import { useHistory } from "react-router-dom";
+import Cargando from "../components/Cargando";
 
 
 function ElegirAsiento() {
   const location = useLocation()
   const [reservados, setReservados] = useState([]);
   const history = useHistory();
+  const [cargando, setCargando] = useState(true);
 
   console.log(location);
   let viaje;
@@ -28,6 +30,7 @@ function ElegirAsiento() {
       (async () => {
         const data = await reservasService.reservasViajes(location.state.viaje.id);
         setReservados(data);
+        setCargando(false);
       })().catch(err => console.log("Error al traer las reservas: ", err));
     }
   }, [location]);
@@ -43,7 +46,10 @@ function ElegirAsiento() {
       </div>
       <div className="container asientos-borde">
         <Button className="conductor" disabled="true" variant="info"> <GiSteeringWheel size={40} /></Button>
-        <Asientos viaje_id={location.state.viaje.id} reservados={reservados} />
+        {cargando ?
+          <Cargando /> :
+          <Asientos viaje_id={location.state.viaje.id} reservados={reservados} />
+        }
       </div>
 
     </div>}
