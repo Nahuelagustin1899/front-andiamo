@@ -87,6 +87,7 @@ function Empresas(props) {
                     </Button>
                     <Button onClick={handleClose}>
                         <button className="btn btn-primary" onClick={() => {
+                            debugger
                             empresasService.delete(item.id)
                                 .then(data => {
                                     setEmpresas(empresas.filter(empresa => empresa.id !== item.id));
