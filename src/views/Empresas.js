@@ -27,9 +27,14 @@ function Empresas(props) {
     const urlbase = "https://andiamo-back.herokuapp.com/imgs/empresas/logos/";
     const [empresas, setEmpresas] = useState([]);
     const [cargando, setCargando] = useState(true);
+    const [empresaEliminar, setEmpresaEliminar] = useState();
     const classes = useStyles();
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setEmpresaEliminar(null)
+        setShow(false);
+
+    }
     const handleShow = () => setShow(true);
     const history = useHistory();
 
@@ -62,7 +67,10 @@ function Empresas(props) {
                         <td className="col-4 text-center colortd radius-bottom-der">
 
 
-                            <Fab id="icon-elim" color="secondary" onClick={handleShow} aria-label="delete">
+                            <Fab id="icon-elim" color="secondary"onClick={() => {
+                                setEmpresaEliminar(item)
+                                handleShow()
+                            }} aria-label="delete">
                                 <DeleteIcon />
                             </Fab>
 
@@ -76,7 +84,7 @@ function Empresas(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <b> {item.nombre} </b>
+                    <b> {empresaEliminar?.nombre ?? ''} </b>
                 </Modal.Header>
                 <Modal.Body>¿Estás seguro que deseas eliminar esta empresa?</Modal.Body>
                 <Modal.Footer>
@@ -87,17 +95,16 @@ function Empresas(props) {
                     </Button>
                     <Button onClick={handleClose}>
                         <button className="btn btn-primary" onClick={() => {
-                            debugger
-                            empresasService.delete(item.id)
+                            empresasService.delete(empresaEliminar.id)
                                 .then(data => {
-                                    setEmpresas(empresas.filter(empresa => empresa.id !== item.id));
+                                    setEmpresas(empresas.filter(empresa => empresa.id !== empresaEliminar.id));
                                     if (typeof props.notExitosaEliminar === 'function') {
                                         props.notExitosaEliminar(data);
                                     }
                                 })
                                 .catch(err => {
                                     if (typeof props.notDenegadaEliminar === 'function') {
-                                        props.notDenegadaEliminar(item);
+                                        props.notDenegadaEliminar(empresaEliminar);
                                     }
                                 });
                         }}>Eliminar</button>
