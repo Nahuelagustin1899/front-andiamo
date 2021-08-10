@@ -9,11 +9,11 @@ function EnviarCodigo(props) {
 
     const SignupSchema = yup.object().shape({
         email: yup.string()
-        .email("El email no es válido")
-        .required("El campo email no puede estar vacío"),
+            .email("El email no es válido")
+            .required("El campo email no puede estar vacío"),
     });
 
-    const { register, handleSubmit,  formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(SignupSchema)
     });
     const history = useHistory();
@@ -33,18 +33,19 @@ function EnviarCodigo(props) {
             });
             history.push('/cambiarpassword')
         }
-                
+
         return { ...fetchData.data };
 
     };
 
-  return (
-    <div className="fondopantalla p-5">
-      <h1 className="mt-3 mb-5 text-center">Enviar codigo</h1>
+    return (
+        <div className="fondopantalla p-5">
 
-      <form className="divs container mt-5"
+
+            <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
+                <h1 className="mt-3 mb-5 text-center">Enviar codigo</h1>
 
                 <div className="form-group">
                     <label htmlFor="precio"><b>Email</b></label>
@@ -56,13 +57,13 @@ function EnviarCodigo(props) {
                     {errors.email && <span className="form-control alert alert-danger errores">{errors.email.message}</span>}
                 </div>
 
-               
+
 
                 <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar código</button>
             </form>
 
-      </div>
-   );
+        </div>
+    );
 }
 
 export default EnviarCodigo;

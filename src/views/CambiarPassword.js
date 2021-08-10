@@ -11,7 +11,7 @@ function CambiarPassword(props) {
         email: yup.string()
             .email("El email no es válido")
             .required("El campo email no puede estar vacío"),
-        verification_code: yup.number()         
+        verification_code: yup.number()
             .required("El campo còdigo no puede estar vacío")
             .typeError('El campo no puede contener letras')
             .min(6, "El campo debe contener 6 dígitos"),
@@ -47,12 +47,10 @@ function CambiarPassword(props) {
 
     return (
         <div className="fondopantalla p-5">
-            <h1 className="mt-3 mb-5 text-center">Cambiar contraseña</h1>
-
             <form className="divs container mt-5"
                 onSubmit={handleSubmit(onSubmit)}
             >
-
+                <h1 className="mt-3 mb-5 text-center">Cambiar contraseña</h1>
                 <div className="form-group">
                     <label htmlFor="precio"><b>Email</b></label>
                     <input
