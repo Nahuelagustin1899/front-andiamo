@@ -42,7 +42,7 @@ function ViajesUsuarios() {
         const newData = viajes.filter((item) => {
             const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
             const itemPrecio = item.precio;
-            const itemSalida = item.fecha_salida;
+            const itemSalida = item.fecha_llegada;
             const textData = empresa.toUpperCase();
             return itemEmpresa.indexOf(textData) > -1 && itemPrecio.indexOf(precio) > -1 && itemSalida.indexOf(salida) > -1;
         });
