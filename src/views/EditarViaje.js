@@ -82,8 +82,8 @@ function EditarViaje(props) {
                 <div className="form-group">
                     <label htmlFor="fecha_salida"><b>Fecha de salida</b></label>
                     <TextField
-                        type="date"
-                        defaultValue={format(new Date(viaje ? viaje.fecha_salida : ''), 'dd-MM-yyyy')}
+                        type="datetime-local"
+                        defaultValue={format(new Date(viaje ? viaje.fecha_salida : ''), 'dd-MM-yyyy hh:mm:ss a')}
                         className="form-control"
                         {...register("fecha_salida")}
                     />
