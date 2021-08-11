@@ -87,6 +87,7 @@ function EditarViaje(props) {
                         className="form-control"
                         {...register("fecha_salida")}
                     />
+                    {console.log(viaje.fecha_salida)}
                     {errors.fecha_salida && <span className="form-control alert alert-danger errores">{errors.fecha_salida.message}</span>}
                 </div>
 
