@@ -46,7 +46,7 @@ function EnviarCodigo(props) {
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <h1 className="mt-3 mb-3 text-center h2 font-weight-bold">Generar código</h1>
-                <p className="text-center mb-5">Escribí tu email para que te pueda llegar un código y asi restablecer tu contraseña</p>
+                <p className="text-center mb-5">Ingresá tu email. Ahí te llegará un código para restablecer tu contraseña</p>
 
                 <div className="form-group">
                     <label htmlFor="precio"><b>Email</b></label>
@@ -60,7 +60,7 @@ function EnviarCodigo(props) {
 
 
 
-                <button type="submit" className="btn btn-primary boton-terminar-edit" >Enviar</button>
+                <button type="submit" className="btn btn-primary boton-terminar-edit">Enviar</button>
             </form>
 
         </div>
