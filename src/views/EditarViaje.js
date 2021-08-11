@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import TextField from '@material-ui/core/TextField';
 import KeyboardReturnSharpIcon from '@material-ui/icons/KeyboardReturnSharp';
+import { format } from 'date-fns';
 
 function EditarViaje(props) {
 
@@ -82,7 +83,7 @@ function EditarViaje(props) {
                     <label htmlFor="fecha_salida"><b>Fecha de salida</b></label>
                     <TextField
                         type="datetime-local"
-                        defaultValue={viaje ? viaje.fecha_salida : ''}
+                        defaultValue={format(new Date(viaje ? viaje.fecha_salida : ''), 'dd-MM-yyyy hh:mm:ss a')}
                         className="form-control"
                         {...register("fecha_salida")}
                     />
