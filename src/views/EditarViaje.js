@@ -83,7 +83,7 @@ function EditarViaje(props) {
                     <label htmlFor="fecha_salida"><b>Fecha de salida</b></label>
                     <TextField
                         type="datetime-local"
-                        defaultValue={format(new Date(viaje ? viaje.fecha_salida : ''), 'dd:MM:yyyy hh:mm:ss a')}
+                        value={format(new Date(viaje ? viaje.fecha_salida : ''), 'dd:MM:yyyy hh:mm:ss a')}
                         className="form-control"
                         {...register("fecha_salida")}
                     />
@@ -95,7 +95,7 @@ function EditarViaje(props) {
                     <label htmlFor="fecha_llegada"><b>Fecha de llegada</b></label>
                     <TextField
                         type="datetime-local"
-                        defaultValue={format(new Date(viaje ? viaje.fecha_llegada : ''), 'dd:MM:yyyy hh:mm:ss a')}
+                        value={format(new Date(viaje ? viaje.fecha_llegada : ''), 'dd:MM:yyyy hh:mm:ss a')}
                         className="form-control"
                         {...register("fecha_llegada")}
                     />
