@@ -216,7 +216,7 @@ function Perfil() {
 
                                 <div className="filtros-perfil">
                                     <div className="form-group ">
-                                        <label className="d-block " htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }} /></label>
+                                        <label className="d-block font-weight-bold" htmlFor="viajeid">ID viaje <FaBusAlt className="ml-2" style={{ fontSize: 25 }} /></label>
                                         <input
                                             className="form-control inputs-filtros-perfil"
                                             type="text"
