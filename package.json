@@ -16,6 +16,7 @@
     "date-fns": "^2.22.1",
     "formik": "^2.2.9",
     "heroku": "^7.54.1",
+    "moment-timezone": "^0.5.33",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-burger-menu": "^3.0.6",
