@@ -8,7 +8,10 @@ function Login(props) {
                 <h1 className="text-center mb-4">Iniciar Sesión</h1>
 
                 <FormularioLogin
-                    notExitosa={props.notExitosa} />
+                    notExitosa={props.notExitosa} 
+                    notLoginOut={props.notLoginOut}
+                    />
+                    
             </div>
         </div>);
 }
