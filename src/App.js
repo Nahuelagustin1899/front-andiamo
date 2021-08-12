@@ -104,13 +104,15 @@ function App() {
     });
   };
 
+
   const handleLoginOut = data => {
     setNotification({
       type: 'danger',
-      text: 'No iniciaste sesión con éxito. Verificá que tu usuario o contraseña sean correctos',
+      text: 'No niciaste sesión con éxito',
       title: 'Error'
     });
   };
+
 
   const handleLogOut = data => {
     setNotification({
@@ -159,7 +161,7 @@ function App() {
       title: 'Felicidades'
     });
   };
-  
+
   const handleCambiarPassword = data => {
     setNotification({
       type: 'success',
