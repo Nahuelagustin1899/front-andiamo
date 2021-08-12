@@ -255,7 +255,7 @@ function App() {
               <Route path="/iniciar-sesion">
                 <Login exact
                   notExitosa={handleLogin}
-                  notExitosa={handleLoginOut}
+                  notExitosaEliminar={handleLoginOut}
                 />
               </Route>
               <AuthRoute path="/perfil" >
