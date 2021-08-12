@@ -60,15 +60,7 @@ function FormularioLogin(props) {
                             ...rta.data
                         });
                         history.push('/');
-                    }
-                    else{
-                        if (typeof props.notDenegadaEliminar === "function") {
-                            props.notDenegadaEliminar({
-                                ...rta.data
-                            });
-                        }
-                    }
-                        
+                    }          
                 } else {
                     setErrores(rta.errors);
                 }
