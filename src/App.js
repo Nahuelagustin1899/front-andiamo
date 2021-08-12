@@ -108,7 +108,7 @@ function App() {
   const handleLoginOut = data => {
     setNotification({
       type: 'danger',
-      text: 'No iniciaste sesión con éxito. Comprueba tu usuario/contraseña si son correctos.',
+      text: 'Comprueba tu usuario/contraseña si son correctos.',
       title: 'Ocurrió un error'
     });
   };
