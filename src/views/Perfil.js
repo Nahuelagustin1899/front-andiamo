@@ -8,6 +8,7 @@ import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit.js';
 import { FaBusAlt } from "react-icons/fa";
 import Cargando from "../components/Cargando";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 
 function Perfil() {
 
