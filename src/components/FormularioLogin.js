@@ -46,13 +46,21 @@ function FormularioLogin(props) {
         debugger          
         authService.login(user)
             .then(rta => {
-                if (!rta.errors) {
+                if (!rta) {
+                    if (typeof props.notDenegadaEliminar === "function") {
+                        props.notDenegadaEliminar({
+                            ...rta.data
+                        });
+                    }
+                    console.log("Login error");
                     setErrores(ErroresTotales);
                     setUser({
                         nombre: '',
                         logo: '',
                         informacion: '',
                     });
+                   
+                } else {
                     authData.updateAuthData(rta);
                     console.log("Login exitosamente");
                     if (typeof props.notExitosa === "function") {
@@ -61,8 +69,6 @@ function FormularioLogin(props) {
                         });
                     }
                     history.push('/');
-                } else {
-                    setErrores(rta.errors);
                 }
             })
             .catch(e => console.log("Error: ", e));
