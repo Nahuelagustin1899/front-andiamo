@@ -42,6 +42,7 @@ function Perfil() {
     const filtroAdmin = () => {
 
         const newData = adminReservas.filter((item) => {
+            console.log(adminReservas);
             const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
             const textData = empresa.toUpperCase();
             return itemEmpresa.indexOf(textData) > -1;
