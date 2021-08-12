@@ -43,7 +43,7 @@ function FormularioLogin(props) {
             })
 
             .then(data => {
-
+        debugger          
         authService.login(user)
             .then(rta => {
                 if (!rta.errors) {
@@ -59,8 +59,8 @@ function FormularioLogin(props) {
                         props.notExitosa({
                             ...rta.data
                         });
-                        history.push('/');
-                    }          
+                    }
+                    history.push('/');
                 } else {
                     setErrores(rta.errors);
                 }

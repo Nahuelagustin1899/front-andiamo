@@ -107,7 +107,7 @@ function App() {
   const handleLoginOut = data => {
     setNotification({
       type: 'danger',
-      text: 'No niciaste sesión con éxito',
+      text: 'No iniciaste sesión con éxito',
       title: 'Error'
     });
   };
