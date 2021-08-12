@@ -19,12 +19,13 @@ function Perfil() {
     const [viajesAux, setViajesAux] = useState([]);
     const [todasReservas, setTodasReservas] = useState([]);
     const [cargando, setCargando] = useState(true);
+    const [empresa, setEmpresa] = useState("");
 
     useEffect(() => {
         (async () => {
             const data = await reservasService.index();
             setReservas(data);
-
+            setCargando(false);
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
 
@@ -32,9 +33,27 @@ function Perfil() {
         (async () => {
             const data = await reservasService.indexAdmin();
             setAdminReservas(data);
-
+            setCargando(false);
+            setViajesAux(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
     }, []);
+
+    const filtroAdmin = () => {
+
+        const newData = adminReservas.filter((item) => {
+            const itemEmpresa = item.empresa.nombre ? item.empresa.nombre.toUpperCase() : ''.toUpperCase();
+            const textData = empresa.toUpperCase();
+            return itemEmpresa.indexOf(textData) > -1;
+        });
+
+        console.log(newData);
+        setAdminReservas(newData);
+    }
+
+    const clearAdmin = () => {
+        setEmpresa('');
+        setAdminReservas(viajesAux);
+    }
 
 
     useEffect(() => {
@@ -44,7 +63,6 @@ function Perfil() {
             setCargando(false);
             setViajesAux(data);
             setTodasReservas(data[0].reservas)
-            console.log(data);
         })().catch(err => console.log("Error al traer las reservas: ", err));
 
     }, []);
@@ -66,11 +84,11 @@ function Perfil() {
         setEmpresasReservas(newData);
     }
 
+
     const clear = () => {
         setViajeId('');
         var misViajes = viajesAux;
         misViajes[0].reservas = todasReservas;
-        console.log(misViajes);
         setEmpresasReservas(misViajes);
     }
 
@@ -204,6 +222,18 @@ function Perfil() {
                 <Cargando /> :
                 authData.user.id === 1 ?
                     (<>
+                        <div className="form-group ">
+                            <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
+                            <input
+                                className="form-control inputs-filtros"
+                                type="text"
+                                value={empresa}
+                                placeholder="Buscar por empresa"
+                                onChange={(e) => setEmpresa(e.target.value)}
+                            />
+                            <button className="btn btn-success d-inline-block w-25" onClick={filtroAdmin}>Buscar</button>
+                        </div>
+
                         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                         {listaAdmin}
                     </>) :
