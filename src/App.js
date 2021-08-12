@@ -104,6 +104,14 @@ function App() {
     });
   };
 
+  const handleLoginOut = data => {
+    setNotification({
+      type: 'danger',
+      text: 'No niciaste sesión con éxito',
+      title: 'Error'
+    });
+  };
+
   const handleLogOut = data => {
     setNotification({
       type: 'success',
@@ -247,6 +255,7 @@ function App() {
               <Route path="/iniciar-sesion">
                 <Login exact
                   notExitosa={handleLogin}
+                  notDenegadaEliminar={handleLoginOut}
                 />
               </Route>
               <AuthRoute path="/perfil" >

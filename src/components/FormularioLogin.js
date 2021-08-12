@@ -59,8 +59,14 @@ function FormularioLogin(props) {
                         props.notExitosa({
                             ...rta.data
                         });
-                    }
-                    history.push('/');
+                        history.push('/');
+                    }else{
+                         (typeof props.notDenegadaEliminar === "function") 
+                            props.notDenegadaEliminar({
+                                ...rta.data
+                            });
+                        }
+                        
                 } else {
                     setErrores(rta.errors);
                 }
