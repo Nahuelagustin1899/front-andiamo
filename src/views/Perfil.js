@@ -227,13 +227,13 @@ function Perfil() {
                             <div className="form-group ">
                                 <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
                                 <input
-                                    className="form-control inputs-filtros"
+                                    className="form-control inputs-filtross"
                                     type="text"
                                     value={empresa}
                                     placeholder="Buscar por empresa"
                                     onChange={(e) => setEmpresa(e.target.value)}
                                 />
-                                <button className="btn btn-success d-inline-block w-25" onClick={filtroAdmin}>Buscar</button>
+                                <button className="btn btn-success d-inline-block" onClick={filtroAdmin}>Buscar</button>
                             </div>
                             <button className="btn btn-primary limpiar-filtro" onClick={clearAdmin}>Limpiar</button>
                         </div>

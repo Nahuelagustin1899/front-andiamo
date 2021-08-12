@@ -729,6 +729,12 @@ img {
         display: block;
     }
 
+    .inputs-filtross{
+        display: inline-block;
+        width: 65%;
+        margin-right: 0.7em;
+    }
+
     .nuevo{
         text-align: center;
         font-weight: bold;
