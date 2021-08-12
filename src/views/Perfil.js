@@ -235,8 +235,9 @@ function Perfil() {
                                 />
                                 <button className="btn btn-success d-inline-block w-25" onClick={filtroAdmin}>Buscar</button>
                             </div>
+                            <button className="btn btn-primary limpiar-filtro" onClick={clearAdmin}>Limpiar</button>
                         </div>
-                        <button className="btn btn-primary limpiar-filtro" onClick={clearAdmin}>Limpiar</button>
+                       
 
                         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                         {listaAdmin}
