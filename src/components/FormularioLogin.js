@@ -61,11 +61,11 @@ function FormularioLogin(props) {
                         });
                         history.push('/');
                     }else{
-                         (typeof props.notDenegadaEliminar === "function") 
+                         if (typeof props.notDenegadaEliminar === "function") {
                             props.notDenegadaEliminar({
                                 ...rta.data
                             });
-                        }
+                        }}
                         
                 } else {
                     setErrores(rta.errors);
