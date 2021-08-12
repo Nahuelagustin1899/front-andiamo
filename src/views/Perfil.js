@@ -223,17 +223,20 @@ function Perfil() {
                 <Cargando /> :
                 authData.user.id === 1 ?
                     (<>
-                        <div className="form-group ">
-                            <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
-                            <input
-                                className="form-control inputs-filtros"
-                                type="text"
-                                value={empresa}
-                                placeholder="Buscar por empresa"
-                                onChange={(e) => setEmpresa(e.target.value)}
-                            />
-                            <button className="btn btn-success d-inline-block w-25" onClick={filtroAdmin}>Buscar</button>
+                        <div className="filtros">
+                            <div className="form-group ">
+                                <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
+                                <input
+                                    className="form-control inputs-filtros"
+                                    type="text"
+                                    value={empresa}
+                                    placeholder="Buscar por empresa"
+                                    onChange={(e) => setEmpresa(e.target.value)}
+                                />
+                                <button className="btn btn-success d-inline-block w-25" onClick={filtroAdmin}>Buscar</button>
+                            </div>
                         </div>
+                        <button className="btn btn-primary limpiar-filtro" onClick={clearAdmin}>Limpiar</button>
 
                         <h3 className="mt-5 text-center mb-5 badge badge-warning"><b>Pasajes Reservados</b></h3>
                         {listaAdmin}
