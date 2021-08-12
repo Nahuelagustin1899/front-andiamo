@@ -47,8 +47,8 @@ function FormularioLogin(props) {
         authService.login(user)
             .then(rta => {
                 if (!rta) {
-                    if (typeof props.notExitosa === "function") {
-                        props.notExitosa({
+                    if (typeof props.notDenegadaEliminar === "function") {
+                        props.notDenegadaEliminar({
                             ...rta.data
                         });
                     }
