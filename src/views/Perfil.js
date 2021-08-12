@@ -223,7 +223,7 @@ function Perfil() {
                 <Cargando /> :
                 authData.user.id === 1 ?
                     (<>
-                        <div className="filtros">
+                        <div>
                             <div className="form-group ">
                                 <label className="d-block ml-2" htmlFor="empresa">Empresa <BsFillBriefcaseFill className="ml-2" style={{ fontSize: 25 }} /></label>
                                 <input
