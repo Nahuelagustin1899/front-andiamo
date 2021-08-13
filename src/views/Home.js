@@ -72,7 +72,7 @@ function Home() {
     <Card className="card-home mb-5 mt-5" style={{ width: '18rem' }}>
       <Card.Img variant="top" src={sanber} alt="La costa atlantica" className="imgs" />
       <Card.Body>
-        <Card.Title className="text-center font-weight-bold">San bernardo</Card.Title>
+        <Card.Title className="text-center font-weight-bold">San Bernardo</Card.Title>
         <Card.Text>
           San Bernardo del Tuyú, mas conocida como San Bernardo, es una ciudad balnearia y turística argentina en el partido de La Costa...
           <NavLink type="button" className="nav-link " to="/sanber">Ver más..</NavLink>
